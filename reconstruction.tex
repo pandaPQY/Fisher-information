@@ -1,0 +1,424 @@
+\begin{section}{Reconstruction Algorithm}
+  \label{sec:Reconstruction}
+    We use the algorithm and numerical method called Adaptive Particle-mesh (APM), discribed in citebib:...,bib:... to reconstruct the density field. The basic idea is to build a PM scheme on a curvilinear coordinate system, in which the number of the particles per grid cell is set approximately constant. 
+    Consider a numerical grid of curvilinear coordinates $\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$. In order to determine the physical position of each grid point, one needs to specify the Euclidean coordinate $\bm{x}(\bm{\xi},t)$ as a function of grid position. In the Euclidean coordinate, the flat metric is Kronecker delta function $\delta_{ij}$, while the curvilinear metric is given by
+\begin{align}
+    g_{\mu\nu}=\frac{\partial x^i}{\partial \xi ^\mu} \frac{\partial x^j}{\partial \xi ^\nu}\delta_{ij}.
+\end{align}
+    We use the convention that Latin indices denote Cartesian coordinate, while Greek indices denote the curvilinear grid coordinate.
+    In principle, there are many different methods to connect the Cartesian coordiante and curvilinear coordinate of each grid cell. In APM method, the connetction is described by an irrotational deformation,
+\begin{align}
+    x^i=\xi ^\mu \delta ^i _\mu + \Delta x^i,
+\end{align}
+where
+\begin{align}
+ \label{eq:disp}
+    \Delta x^i=\frac{\partial \phi}{\partial \xi ^ \nu}\delta ^i _\nu .
+\end{align}
+    This choice of the deformation can minimize mesh distortion and twisting. $\phi$ is called the deformation potential, and $\Delta x^i$ the lattice displacement. The deformation potential can be given in terms of the continuity equation in curvilinear coordinate,
+\begin{align}
+ \label{eq:continue_eq}
+    \frac{\partial \sqrt{g} \rho }{\partial t}+\partial_\mu \left[\rho \sqrt{g} e^\mu _i \left(v^i - \Delta \dot{x}^i \right) \right] =0
+\end{align}
+where $\sqrt{g} \equiv (\partial x^i / \partial \xi ^ \alpha)$ is the volume element and $e^i _\mu = \partial \xi ^\mu / \partial x^i$ is the triad. $\Delta \dot{x}=\delta ^{i\nu}\partial _\nu dot{\phi}$ is chosen such that the first term in equation \ref{eq:continue_eq} is zero, resulting in a constant mass per volume element. And the velocity field divergence is replaced by the deviation density field $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be zero. Then the deformation potential is described in the elliptic equation,
+\begin{align}
+ \label{eq:li_elip}
+    \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}\partial_\nu \Delta \phi)=\Delta \rho
+\end{align}
+The equation \ref{eq:li_elip} can be solved using multigrid algorithm described in Ref. .... Then the displacement is given by the gradiant of the deformation potential as in \ref{eq:disp}. One layer of the deformed grids and the original density field of that layer is given in Fig. \ref{fig:reconstrucion}. As expeted, there's no grid crossing after reconstruction.
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=0.5\textwidth]{reconstruction.eps}
+   \caption{The density field and the deformed grids of a random selected layer of a random selected density field from 139 simulation.}
+  \label{fig:reconstruction}
+ \end{center}
+\end{figure}
+
+     
+%%  \begin{subsection}{Sound speeds}
+%    In solving Eq. \ref{eq:fluid_eqn}, we assumed a constant sound
+%    speed despite the fact that $\Pi = -c_s^2 k^2 \delta$ does not
+%    enforce $c_s$ to be constant.  Since we have solutions for $\Pi$
+%    and $\delta$ in Eq. \ref{eq:vlasov_str} and \ref{eq:vlasov_den},
+%    we can compute the exact sound speed as a function of wavenumber:
+%    \begin{align}
+%      c_s^2  = \frac{1}{\beta^2}\frac{ \int_{-\infty}^{s} ds'
+%      a^2(-k^2\phi)(s-s') \langle u^2 j_0(ku(s-s')/\beta) \rangle_0 }{ \int_{-\infty}^{s} ds'
+%      a^2(-k^2\phi)(s-s') \langle j_0(ku(s-s')/\beta) \rangle_0 }.
+%    \end{align}
+%    We show this as solid lines in Fig. \ref{fig:vlasov_cs}.
+%    \begin{figure}[htbp]
+%      \begin{center}
+%        \includegraphics[width=0.5\textwidth]{./vlasov_cs_mass.eps}
+%        \caption{Sound speeds computed from the linearized Vlasov
+%          equation.  Solid lines are computed with respect to the
+%          stress , $\Pi$, with darker lines indicating heavier
+%          neutrino mass.  The dashed and dash-dotted lines are
+%          computed with respect to the pressure $k^2P$ and the
+%          anisotropic stress $\tau$ for $m_\nu = 50$ \mev.  Horizontal
+%          dotted lines are pre-computed asymptotic behaviours which
+%          are independent of both neutrino mass and time.
+%          $\beta=m/(k_BT_\nu c)$.}
+%        \label{fig:vlasov_cs}
+%      \end{center}
+%    \end{figure}
+%    We see that neutrinos are approximately bimodal with constant
+%    sound speed at large and small $k$.  Both these values are
+%    computable.  For $k\rightarrow 0$, $j_0(ku(s-s')/\beta) \simeq 1$.
+%    This means the velocity integral becomes separable from the $s$
+%    integral and we find
+%    \begin{align}
+%      \label{eq:cs_lowk}
+%      -\frac{\beta^2}{k^2}\Pi &\simeq 
+%                                \int ds' a^2(-k^2\phi)(s-s')
+%                                \sigma^2 \nonumber \\
+%      \delta &\simeq \int ds' a^2(-k^2\phi)(s-s')  \\
+%      \therefore  c_s^2 &=\left( \frac{\sigma}{\beta} \right)^2 \nonumber
+%    \end{align}
+%    where $\sigma$ is the velocity dispersion
+%    $\sigma^2 = \langle u^2 \rangle_0 \simeq 12.94$.  For large $k$,
+%    the sinusoids in the velocity integral oscillate rapidly and add
+%    to zero unless $s'\simeq s$
+%    \cite{bib:Ringwald2004,bib:AliHaimoud2012}.  Under this
+%    assumption, $(a\delta_m)(s') \simeq (a\delta_m)(s)$ and can be
+%    factored out of the integral yielding:
+%    \begin{align}
+%      \label{eq:cs_highk}
+%      -\frac{\beta^2}{k^2}\Pi &\simeq a^2(-k^2\phi) \left(\frac{\beta}{k}\right)^2 \nonumber \\
+%      \delta &\simeq a^2(-k^2\phi) \left(\frac{\beta}{k}\right)^2
+%               \Sigma^{-2}  \\
+%      \therefore c_s^2& =  \left(\frac{\Sigma}{\beta}\right)^2 \nonumber
+%    \end{align}
+%    where one must be particularly careful in changing the order of
+%    integration and $\Sigma$ is an ``inverse dispersion''
+%    $\Sigma^{-2} = \langle u^{-2} \rangle_0 \simeq 0.38$.  This second
+%    sound speed is also the one that goes into defining the free
+%    streaming wavenumber
+%    $k_{fs} = \sqrt{ \frac{3}{2} \Omega_m a }
+%    H_0\frac{\beta}{\Sigma}$.
+%    A simple ``instantaneous'' approximation on small scales is easily
+%    found by considering Eq. \ref{eq:fluid_eqn}: for large $k$,
+%    $\delta_{ss} \ll c_s^2 k^2 \delta$ and so
+%    $\delta \simeq \frac{-a^2k^2\phi}{c_s^2 k^2}$ or:
+%    \begin{align}
+%      \label{eq:delta_highk}
+%      \delta \simeq \left(\frac{k_{fs}}{k} \right)^2 \delta_m
+%    \end{align}
+%    on small scales.  Equivalently, we can treat this as an equation
+%    for the sound speed:
+%    \begin{align}
+%      \label{eq:cs_highk_den}
+%      c_s^2 = \frac{ \frac{3}{2}H_0^2 \Omega_m a}{k^2} \frac{\delta_m}{\delta}.
+%    \end{align}
+%    Finally, we can divide the stress tensor into pressure, $P$, and
+%    anisotropic stress,$\tau$, $\Pi = -k^2P + \tau$.  Equations for
+%    these components are again derived in the Supplement:
+%    \begin{align}
+%      \beta^2 P &= \int_{-\infty}^s ds' a^2 (-k^2\phi) (s-s') \frac{1}{3} \langle u^2
+%                  (j_0(ku(s-s')/\beta)+\nonumber \\ &\hspace{1cm}+2 j_1(ku(s-s')/\beta)/(ku(s-s')/\beta) \rangle_0 \label{eq:vlasov_pre} \\
+%      -\frac{\beta^2}{k^2} \tau &= \int_{-\infty}^s ds' a^2 (-k^2\phi) (s-s') \frac{2}{3} \langle u^2
+%                                  (j_0(ku(s-s')/\beta) \nonumber \\
+%                &\hspace{1cm}-j_1(ku(s-s')/\beta)/(ku(s-s')/\beta) \rangle_0 \label{eq:vlasov_ani}
+%    \end{align}
+%    We can now repeat our small scale approximations for these two
+%    components, e.g. $P/(\delta)$ and $\tau/(-k^2\delta)$.  For the
+%    pressure on small scales, we expand the sinusoides to find
+%    $\frac{1}{3} (j_0(x)+2j_1(x)/x) \simeq \frac{5}{9} x$ and so the
+%    sound speed is $\sqrt{5/9}\sigma$.  This result was derived by
+%    \cite{bib:Shoji2010}.  On small scales, repeating the above
+%    derivation shows that $k^2 P\rightarrow \Pi$ and
+%    $\tau\rightarrow 0$.  These approximations are shown as horizontal
+%    lines in Fig. \ref{fig:vlasov_cs} and closely match the integrated
+%    values (dashed and dash-dotted lines).
+%  \end{subsection}
+%
+%  \begin{subsection}{Perturbed Distribution Function}
+%    We now repeat the arguments used in computing the large and small
+%    scale sound speed limits but for the distribution function
+%    instead.  Assuming negligible initial conditions,
+%    Eq. \ref{eq:vlasov_sln} can be written as:
+%    \begin{align}
+%      f(s,k,v,\mu) = \int_{-\infty}^s ds' a^2 i k \phi \mu
+%      \frac{df^0}{dv} e^{-ikv\mu(s-s')} \nonumber
+%    \end{align}
+%    where $\mu=\vec{k}\cdot\vec{v}/(kv)$.  We can now integrate over
+%    angles to find:
+%    \begin{align}
+%      \langle f(s,k,v) \rangle &= \frac{1}{2}\int_{-1}^1d\mu 
+%                                 f(s,k,v,\mu) \nonumber \\
+%                               &=\frac{df^0}{dv}\int_{-\infty}^{s} ds'
+%                                 a^2 k \phi j_1(kv(s-s')). \nonumber
+%    \end{align}
+%    In the large scale limit, $kv(s-s')\ll1$ and
+%    $j_1(kv(s-s')) \simeq kv(s-s')/3$.  Using this approximation and
+%    substituting the density obtained in Eq. \ref{eq:cs_lowk} yields:
+%    \begin{align}
+%      \langle f \rangle = -\frac{1}{3} v \frac{df^0}{dv} \delta. \nonumber
+%    \end{align}
+%    In the small scale limit limit limit, we again use $s\simeq s'$
+%    and find
+%    \begin{align}
+%      \langle f \rangle &= \frac{df^0}{dv} a^2 k \phi \int_{-\infty}^s
+%                          ds' j_1(kv(s-s')) \nonumber \\
+%                        &=\frac{1}{v}\frac{df^0}{dv} a^2 \phi
+%                          \int_0^\infty j_1(x) dx \nonumber \\
+%                        &=-\frac{1}{v}\frac{df^0}{dv}\frac{\Sigma^2}{\beta^2}
+%                          \delta \nonumber
+%    \end{align}
+%    where we use the density in Eq. \ref{eq:cs_highk} instead.  This
+%    result was also computed in \cite{bib:AliHaimoud2012} using a
+%    different technique.  We note now that strictly speaking these are
+%    not ``low-k'' and ``high-k'' limits, rather, they refer to limits
+%    where $kv\ll $ or $ \gg (\Delta s)^{-1}$ for some timescale
+%    $\Delta s$.  Nonetheless we will refer to the limits as such
+%    throughout the paper.  Both the low- and high-k perturbations are
+%    separable in position and velocity and so we can define the
+%    velocity space perturbation as
+%    $f^1(v) = \langle f \rangle (v,k,s)/\delta(k,s)$.  In terms of the
+%    dimensionless velocity $u=\beta v$ we have:
+%    \begin{align}
+%      \label{eq:perturbed_f}
+%      \bar{f}^1(u) &= \frac{\langle f \rangle (u,k,s)}{\delta(k,s)} \nonumber \\
+%                  &=\frac{1}{u}\frac{e^u}{\left ( e^u +1 \right )} \bar{f}^0(u) \begin{cases} \frac{1}{3}u^2
+%                    & ku(\Delta s)/\beta \ll 1 \\ \Sigma^2 & ku(\Delta s)/\beta \gg
+%                    1. \end{cases}
+%    \end{align}
+%
+%    \begin{figure}
+%      \begin{center}
+%        \includegraphics[width=0.5\textwidth]{./distributions.eps}
+%        \caption{The unperturbed Fermi-Dirac distribution $\bar{f}^0(u)$ as a
+%          function of $u=\beta v$ is shown as a solid curve.  The
+%          first order perturbations $\bar{f}^1(u)$ are shown as dashed
+%          (low-k limit) and dash-dotted (high k limit).  Note that we
+%          include the $u^2$ part of $d^3u$ in the distributions.
+%          $\beta=m/(k_BT_\nu c)$}
+%        \label{fig:distributions}
+%      \end{center}
+%    \end{figure}
+%
+%    We plot $\bar{f}^1(u)$ in Fig. \ref{fig:distributions} and compare
+%    it to $\bar{f}^0(u)$.  We see that the
+%    low-k limit tends to shift neutrinos to higher velocities;
+%    presumably due to the gravitational accelerations.  This is
+%    qualitatively consistent with the velocity distributions seen in
+%    simulations, e.g. Fig. 4 and 13 of
+%    \cite{bib:VillaescusaNavarro2012}.  On the other hand, the high-k
+%    limit favours low velocity neutrinos and, to our knowledge, has
+%    not previously been seen.  We have also been unable to find
+%    particles distributed this way in simple tests of our own
+%    simulations.
+%
+%    If neutrinos were distributed according to $\bar{f}^1(u)$ rather
+%    than $\bar{f}^0(u)$, the asymptotic sound speeds would change.
+%    For the $kv(\Delta s) \ll 1$ limit, the asymptotic values would be
+%    $\sqrt{\langle u^2 \rangle_1} = \sqrt{5/3}\sigma$ at low-k and
+%    $1/\sqrt{\langle u^{-2} \rangle_1}=\sqrt{3}\Sigma$ at high k.  For
+%    $kv(\Delta s) \gg 1$, the low-k asymptote becomes
+%    $\sqrt{\langle u^2 \rangle_1} = \sqrt{3}\Sigma$; however, the
+%    high-k asymptote goes to zero.  This is due to integrating from
+%    $u=0$, which clearly violates $ku(\Delta s)/\beta \gg 1$ regardless
+%    of k (the reverse case, for low-k, is less of a problem as
+%    $\bar{f}^0$ is truncating $u\rightarrow\infty$ and we can also
+%    simply consider $k=0$).  Hence, the sound speed need not necessarily be
+%    zero as the approximation technique is somewhat inapplicable.
+%    Nonetheless, the high-k perturbation is more sensitive
+%    to low velocity neutrinos and therefore the asymptotic sound
+%    speed should decrease when including higher perturbations.
+%
+%  \end{subsection}
+%
+%  \begin{subsection}{Simulation Sound Speed}
+%    \label{ssec:simcs}
+%
+%    Eq. \ref{eq:cs_highk_den} depends only on the total matter density
+%    field and the neutrino density field.  We can therefore use our
+%    simulation power spectra to estimate the sound speed with the
+%    approximation $\delta(k) = \sqrt{\Delta^2(k)}$.  We show the
+%    results in Fig. \ref{fig:data_cs}.  We find that this estimate of
+%    the sound speed is significantly lower than the linear theory
+%    prediction of Eq. \ref{eq:cs_highk} with values $\beta c_s \sim 1$
+%    rather than $\sim \Sigma$.  There is also now significant mass
+%    dependence of the asymptotic value, consistent with our
+%    expectation that heavier neutrinos should behave less linearly,
+%    and more like CDM (which has no sound speed).
+%
+%    \begin{figure}[htbp]
+%      \begin{center}
+%        \includegraphics[width=0.5\textwidth]{./data_cs.eps}
+%        \caption{Estimates of the simulation sound speed for different
+%          neutrino masses.  Dots are estimated using the instantaneous
+%          approximation (Eq. \ref{eq:cs_highk_den}) and are valid only
+%          at high k.  Lines show asymptotic values (note that
+%          $\varsigma$ is calibrated to the instantaneous approximation
+%          shown).  $\beta=m/(k_BT_\nu c)$}
+%        \label{fig:data_cs}
+%      \end{center}
+%    \end{figure}
+%    With this behaviour we can now interpret the discrepency between
+%    linear response and N-body.  The k-dependence of the sound speed
+%    is proportional to $\delta_m/(k^2\delta)$.  By definition,
+%    $\delta_m$ is perfectly linear in $\delta_m$.  Therefore, in order
+%    to drive the sound speed to lower values $\delta$ must be larger.
+%    This can only occur if, on small scales, non-linearities affect
+%    $\delta$ much more than they do $\Pi$.  This makes sense as the
+%    $\Pi$ is weighted by $v^2$ as compared to $v^0$ for $\delta$.
+%    Hence, we expect Eq. \ref{eq:vlasov_str} to be more accurate than
+%    Eq. \ref{eq:vlasov_den} as high velocity neutrinos behave more
+%    linearly.  Furthermore, a decrease in $c_s$ causes the density to
+%    grow more non-linearly, inducing feedback to continue decreasing
+%    $c_s$.  Since low mass neutrinos are more linear in $\delta$, they
+%    are less affected by this instability and so their sound speed is
+%    closer to the linear theory asymptotic value, $\Sigma$.
+%    
+%  \end{subsection}
+%
+%  \begin{subsection}{Neutrino Power Spectrum}
+%    \label{ssec:nupower}
+%    We show the neutrino power spectrum for $m_\nu = 400$ \mev{} in the
+%    top panel of Fig. \ref{fig:power}.  Black points correspond to the
+%    N-body results.  Black dashed lines are linear response solutions,
+%    integrated against linear theory (lower curve) or with a
+%    non-linear correction:
+%    $\delta_m \rightarrow \delta_m \sqrt{P_{NL}/P_{L}}$ (upper curve).
+%    The dashed grey curve is the adiabatic approximation:
+%    $P_\nu = (T_\nu/T_m)^2P_{NL}$.  We see that it is a reasonably
+%    good fit to linear response.  However, neither linear response or
+%    adiabatic solutions reproduce N-body results.  This is despite the
+%    fact that the usual criterion for non-linearity, $\Delta^2(k) >
+%    1$, is not met on any scale.  On the other hand,
+%    the grey curve shows the solution corresponding to
+%    Eq. \ref{eq:fluid_sln}, with a sound speed measured from
+%    Fig. \ref{fig:data_cs}, and agrees very well with N-body on small
+%    scales.  Finally, we show asymptotic behaviour
+%    (e.g. Eq. \ref{eq:delta_highk}) for linear and non-linear
+%    potentials as dotted lines.
+%
+%    \begin{figure}[htbp]
+%      \begin{center}
+%        \includegraphics[width=0.5\textwidth]{./power_mass.eps}
+%        \caption{{\it Top Panel} Neutrino power spectrum at $z=0$ for
+%          $m_\nu=400$ \mev.  Dashed black lines indicate linear response
+%          to linear (lower curve) and \hfit{} (higher curve)
+%          potentials.  The dashed grey line is the adiabatic
+%          approximation.  The dots are from our N-body simulations.
+%          The solid grey curve corresponds to the sound speed solution
+%          chosen to match the high k behaviour.  Dotted lines are
+%          asymptotic behaviours $\propto \delta_m/k^2$.  Finally, the
+%          solid black line is our model. {\it Bottom Panel} Residuals
+%          between model and N-body for different neutrino masses.}
+%        \label{fig:power}
+%      \end{center}
+%    \end{figure}
+%
+%    We now present a simple model relating the neutrino power
+%    spectrum, $\Delta^2_\nu(k,z,m_\nu)$ to the matter power spectrum,
+%    $\Delta^2_m(k,z,m_\nu)$:
+%    \begin{align}
+%      \label{eq:pmodel}
+%      \Delta^2_\nu = \Delta^2_m\left[\frac{T_\nu}{T_m} +
+%      \left( \frac{k_\beta}{k}\right)^2\left( \frac{1}{\varsigma^2}-\frac{1}{\Sigma^2}\right)W(k/k_\varsigma) \right]^2
+%    \end{align}
+%    where $T_i$ are linear transfer functions computed via a Boltzmann
+%    code such as \class{},
+%    $k_\beta(z) = \Sigma k_{fs} = \sqrt{ \frac{3}{2} \Omega_m a } H_0
+%    \beta$
+%    is a typical fluid free-streaming scale neglecting the impact of
+%    the Fermi-Dirac distribution,
+%    $\beta c_s = \varsigma=\varsigma(z,m_\nu)$ is the best fitting
+%    sound speed at high-k, and $W(k/k_\varsigma)$ is a high pass
+%    filter that truncates the high-k accoustic behaviour.  
+%    
+%    We now explain each portion of the model.  The factor of
+%    $T_\nu/T_m$ corresponds to linear behaviour under adiabatic
+%    initial conditions (which, as previously noted, is quite close to
+%    linear response when given the non-linear \hfit{} potential).  The
+%    second term is the calibrated asymptotic behaviour at high-k, e.g.
+%    $\delta_\nu \propto \delta_m/k^2$ after subtracting out the linear
+%    behaviour (with $-1/\Sigma^2$).  We compute
+%    $\varsigma = \beta c_s$ at redshift $z=0$ by averaging the last
+%    three points in Fig. \ref{fig:data_cs}\footnote{For $m_\nu=100$
+%      \mev{} the last point takes a sudden dip so we neglect it and
+%      average the three points before that.  For $m_\nu=50$ \mev{} we
+%      average three points in the same k-region as the other masses
+%      and neglect one point that seems spuriously high.}.  We know it
+%    must depend on time as it should go to its linear value, $\Sigma$,
+%    at high redshift.  We compute $\varsigma$ for a few redshifts and
+%    show the results in the bottom subpanel of
+%    Fig. \ref{fig:redshift_cs}.
+%    \begin{figure}[htbp]
+%      \begin{center}
+%        \includegraphics[width=0.5\textwidth]{./redshift_cs_mass.eps}
+%        \caption{{\it Top Panel} N-body (dots), model (solid) and
+%          adiabatic (dotted) power spectra at redshifts
+%          $z=2.0, 1.0, 0.5,$ and $0.0$ for $m_\nu=200$ \mev.  {\it
+%            Bottom Panel} Redshift dependence of
+%          $\varsigma = \beta c_s$ evaluated at high k using the
+%          instantaneous approximation (Eq. \ref{eq:cs_highk_den}) for
+%          a variety of redshifts and masses.  At redshifts $z>2$ we
+%          are unable to resolve the value.  Solid lines are for the
+%          model given in Eq. \ref{eq:redshiftvar}.}
+%        \label{fig:redshift_cs}
+%      \end{center}
+%    \end{figure}
+%    We model the behaviour as:
+%    \begin{align}
+%      \label{eq:redshiftvar}
+%      \varsigma(z) = \varsigma(0) + (\Sigma - \varsigma(0))Y(z)
+%    \end{align}
+%    where $Y(z)$ goes from $0$ at low redshift to $1$ at high
+%    redshift.  We find $Y(z)=1-e^{-z/2}$ works reasonably well and is
+%    shown in the bottom panel of Fig. \ref{fig:redshift_cs}.
+%    Unfortunately we are unable to resolve the power spectra (and
+%    hence $\varsigma$) at high k for neutrinos below $200$ \mev{} at
+%    higher redshifts.  Finally, we find the following form for $W$
+%    provides a good fit:
+%    \begin{align}
+%      \label{eq:hpfilter}
+%      W(x) = \frac{1}{1+x^{-n}}
+%    \end{align}
+%    where $n$ must be $> 2$ so that at small scales we recover linear
+%    behaviour\footnote{We note that filters of the form
+%      $1/(1+(k/k_{fs})^2)$ have been shown to describe the neutrino
+%      density contrast quite well in
+%      \cite{bib:Ringwald2004,bib:AliHaimoud2012} - here we wish to
+%      model from high-k to low-k so the exponent is negative.}.  We
+%    find $n=2.25$ allows for good fits to all neutrino masses.  
+%
+%    Thus, our model has one
+%    parameter that can be calibrated from simulations,
+%    $\varsigma(m_\nu, z=0)$, one fitted parameter
+%    $k_\varsigma(m_\nu)$, and two functions $W(k)$ and $Y(z)$, the
+%    former depending on $n=2.25$.  We fit between
+%    $0.2 < k/(\hmpc) < 9 $ (the lower bound is to avoid low-k
+%    variance) and tabulate these values at $z=0$ in Table
+%    \ref{tab:varsigma}.
+%    \begin{table}[h]
+%      \begin{tabular}{l | c | c | c | c}
+%        \hline
+%        Mass (\mev) & 50 & 100 & 200 & 400 \\\hline
+%        $\varsigma=\beta c_s$ & 1.30 & 1.10 & 0.89 & 0.75 \\ %\hline
+%        $k_{\varsigma} (\hmpc)$ & 1.11 & 0.92 & 1.20 & 1.65\\\hline
+%        \end {tabular}
+%        \caption{Parameters used in modeling the neutrino power
+%          spectrum.  $\varsigma$ is the dimensionless sound speed calibrated from
+%          high-k measurements in N-body simulations.  $k_\varsigma$ is a
+%          best fit parameter.}
+%      \label{tab:varsigma}
+%    \end{table}
+%    This model is shown as a solid black curve in Fig. \ref{fig:power}
+%    and residuals for all neutrino masses are shown in the bottom
+%    subpanel.  We see that in regions $0.1 < k/(\hmpc) < 10$ our model
+%    is accurate to $~10\%$.  Since we do not consider time dependence
+%    of $k_\varsigma$ (or $n$), at higher redshifts our model does not
+%    describe the simulated power spectra as well.  For instance, for
+%    $m_\nu = 400$ \mev{} there is over $ 50\%$ difference at $z=0.5$.
+%    Nonetheless, this is still much better than linear response, as seen in
+%    the top panel of Fig. \ref{fig:redshift_cs} where we show power
+%    spectra at various redshifts along with the adiabatic
+%    approximation for $m_\nu = 200$ \mev.
+%
+%  \end{subsection}
+
+\end{section}
+

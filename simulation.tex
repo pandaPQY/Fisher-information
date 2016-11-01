@@ -1,0 +1,150 @@
+\begin{section}{N-body Simulation of Dark Matter Density Fields}
+  \label{sec:theory}
+%  \begin{subsection}{Vlasov Equation}
+%    \label{ssec:vlasov_eqn}
+    We run 139 simulations with a box size of 300 $h^{-1}Mpc$, resolution of $1024^3$ cells and $512^3$ particles, using the cosmological simulation code CubeP3M(CITA Computing 2008?).The initial condition is .... Then Zel'dovich approximation is used to calculate the displacement field and velocity field, which are assigned to the particles. The cosmological parameters used are $\Omega_M=0.32$, $\Omega_{\Lambda}=0.679$, $h=i dont know$, $\sigma_8=0.83$, and $n_s=0.96$. And we use the same seed to produce the initial condition so that those simulations are indipendent to each other? Then the initial densities are evolved up to $z=0$. Projection of one of those density fields is plotted in Fig. \ref{fig:simulation}, in which the magnitude is the average of number of particles per cell over the dimension perpendicular to the paper.
+\begin{figure}[tbp]
+ \begin{center}
+  \includegraphics[width=0.5\textwidth]{simulation.eps}
+   \caption{Map of a randomly selected density field from 139 N-body simulations, with a 300 $h^{-1}$ Mpc width box and $1024^3$ pixels. It's the projection along the axis perpendicular to the paper, and the magnitude is the average of number of particles per cell.}
+  \label{fig:simulation}
+ \end{center}
+\vspace{-0.7cm}
+\end{figure}
+
+
+\end{section}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%    The Vlasov equation in an expanding Universe for non-relativistic
+%    particles well inside the Hubble scale is given by
+%    where subscripts denote partial differentiation, $a$ is the
+%
+%    scalefactor, $s$ is the Newtonian (``Superconformal'') time
+%    defined by $dt = a^2 ds$, $v^i= a \frac{dx^i}{d\tau}$ is the
+%    conjugate velocity with $d\tau = a dt$ being the conformal time
+%    and $x^i$ being the comoving position, $f$ is the one particle
+%    distribution function and $\phi$ is the gravitational potential.
+%    For a pedagogical discussion of this equation we refer the reader
+%    to \cite{bib:Bertschinger1995}.  $\phi$ can be computed from the
+%    matter field via Poisson's equation:
+%    \begin{align}
+%      % \label{eq:poisson_eqn}
+%      \phi_{x^ix^i} = 4 \pi G \rho_{cr} \delta_m a^2 = \frac{3}{2} H_0^2
+%      \Omega_m \frac{\delta_m}{a} \nonumber
+%    \end{align}
+%    where $\rho_{cr}$ is the critical density of the universe,
+%    $\delta_m$ is the matter density contrast defined via
+%    $\rho_m = \rho_{cr}(1+\delta_m)$, $H_0$ is the present day Hubble
+%    parameter and $\Omega_m = \Omega_c + \Omega_b + \Omega_\nu$ is the
+%    present day matter fraction of the Universe.  Since
+%    $\Omega_\nu \ll 1$, $\phi$ is approximately independent of
+%    neutrinos and Eq. \ref{eq:vlasov_eqn} is linear in neutrino
+%    perturbations.  Nonetheless, it is not first order in cosmological
+%    perturbations until it is ``linearized'' by taking
+%    $f_{v^i} \rightarrow f^0_{v^i}$ with $f^0(v; \beta)$ being the
+%    relativistic Fermi-Dirac distribution:
+%    \begin{align}
+%      \label{eq:fermi_dirac}
+%      f^0(v ; \beta) = \frac{1}{e^{\beta v}+1} \nonumber\\
+%      \bar{f}^0(v) = f^0(v; 1)
+%    \end{align}
+%    with $\beta = \frac{m}{k_B T_\nu c}$ and $\bar{f}^0$ will be used
+%    in subsequent calculations.  This is equivalent to neglecting the
+%    acceleration,
+%    $\frac{\partial v}{\partial s} = -a^2 \phi_{x^i} \simeq 0$,
+%    leading to the term ``free streaming''.  Furthermore, it adds a
+%    source term given by a homogeneous background of neutrino
+%    particles.  The integral solution to this equation is easy to
+%    obtain in Fourier space as:
+%    \begin{align}
+%      \label{eq:vlasov_sln}
+%      f(s,\vec{k},\vec{v}) = &f(s_i,\vec{k},\vec{v}) e^{-ik^iv^i(s-s^i)}
+%                               + \nonumber \\ &\int_{-\infty}^s ds' a(s')^2 i k^i \phi(s',k) f^0_{v^i}(v) e^{-i
+%                                                k^iv^i(s-s')}.
+%    \end{align}
+%    This solution has been used in many works of which we reference a
+%    few more modern ones
+%    \cite{bib:Ringwald2004,bib:Shoji2010,bib:AliHaimoud2012}. One can
+%    then compute expectation values of the distribution,
+%    $\langle A \rangle = \int d^3v A f / \int d^3v f^0$ which give
+%    quantities like the density contrast,
+%    $\delta = \langle f \rangle $, and the divergence of the stress
+%    tensor, $\Pi = i^2 k^ik^j \langle v^i v^j \rangle$.  For
+%    Eq. \ref{eq:vlasov_sln}, we derive in the Supplement the
+%    following:
+%    \begin{align}
+%      \delta &= \int ds' a^2(-k^2\phi) (s-s')
+%               \langle j_0(k u (s-s')/\beta) \rangle_0 \label{eq:vlasov_den} \\
+%      -\frac{\beta^2}{k^2}\Pi &= \int ds' a^2(-k^2\phi)(s-s')
+%                                \langle u^2 j_0(k u (s-s')/\beta) \rangle_0 \label{eq:vlasov_str} 
+%    \end{align}
+%    where
+%    $\langle F(x,u) \rangle_0 = \int u^2 \bar{f}^0(u) F(x,u) du / \int
+%    u^2 \bar{f}^0(u) du$,
+%    $j_0(x) = \sin(x)/x$ is the first order spherical bessel function
+%    and we have changed velocity variables to the dimensionless
+%    $u=\beta v$.
+%  \end{subsection}
+%
+%  \begin{subsection}{Moment Equations}
+%    \label{ssec:moment_eqn}
+%    An alternative approach to solving Eq. \ref{eq:vlasov_eqn} is to
+%    derive differential equations for the moments themselves.  In the
+%    context of neutrinos, the fluid approximation is studied in detail
+%    by \cite{bib:Shoji2010} and also in the \class{} paper
+%    \cite{bib:Lesgourgues2011}.  The first two moments yield the
+%    continuity and Euler equations:
+%    \begin{align}
+%      \delta_s + \theta &= 0 \nonumber \\%\label{eq:continuity_eqn} \\
+%      \theta_s + \Pi &= a^2 ( (1+\delta)\phi_{x^i})_{x^i} \nonumber %\label{eq:euler_eqn} 
+%    \end{align}
+%    which can be combined by eliminating $\theta$ and introducing the
+%    sound speed $\Pi = -c_s^2 k^2 \delta$:
+%    \begin{align}
+%      \label{eq:fluid_eqn}
+%      \delta_{ss} + c_s^2 k^2 \delta = a^2 (-k^2 \phi)
+%    \end{align}
+%    where we have linearized the right hand side.  In the Supplement
+%    we compute the Green's function solution, assuming $c_s$ is
+%    constant, to this equation and find:
+%    \begin{align}
+%      \label{eq:fluid_sln}
+%      \delta_{c_s} &= \int ds' a^2(-k^2\phi) (s-s') j_0(k c_s (s-s')) \\
+%      \Pi &= - c_s^2 k^2 \delta_{c_s} \nonumber
+%    \end{align}
+%    where we have added the subscript $_{c_s}$ to differentiate from
+%    the Vlasov density contrast.  Comparing Eq. \ref{eq:fluid_sln} to
+%    Eq. \ref{eq:vlasov_den}, we see that by exchanging the order of
+%    integration we can re-write Eq. \ref{eq:vlasov_den} as
+%    \begin{align}
+%      \label{eq:fluid_sum}
+%      \delta = \frac{ \int u^2 \bar{f}^0(u) \delta_{ (u/\beta) } du}{\int
+%      u^2 \bar{f}^0(u) du},
+%    \end{align}
+%    that is, as a weighted sum of fluid solutions.  In principle this
+%    allows a measurement of the linear neutrino power to be decomposed
+%    into a sum of fluid solutions, the distribution of which yielding
+%    information on the neutrino velocity distribution.
+%
+%  \end{subsection}
+
+%\end{section}

@@ -1,0 +1,66 @@
+\documentclass[aps,prd,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootinbib]{revtex4}  % for review and submission
+%\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
+\usepackage{graphicx}  % needed for figures
+\usepackage{dcolumn}   % needed for some tables
+\usepackage{bm}        % for math
+\usepackage{amsmath,amssymb}   % for math
+\usepackage{aas_macros}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{verbatim}
+%\usepackage{times}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+% avoids incorrect hyphenation, added Nov/08 by SSR
+\hyphenation{ALPGEN}
+\hyphenation{EVTGEN}
+\hyphenation{PYTHIA}
+\textheight=584pt
+\begin{document}
+% The following information is for internal review, please remove them for submission
+\widetext
+% the following line is for submission, including submission to the arXiv!!
+%\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
+\title{Increasing the Fisher Information Content in the Matter Power Spectrum through Reconstruction}
+%\author{Qiaoyin Pan}
+%\email{panda@mail.nankai.edu.cn}
+%\affiliation{School of Physics, Nankai University,
+%94 Weijin Rd, Nankai, Tianjin, 300071, China}
+%\author{Ue-Li Pen}
+%\email{pen@cita.utoronto.ca}
+%\affiliation{Canadian Institute for Theoretical
+%  Astrophysics, University of Toronto, M5S 3H8, Ontario, Canada}
+%\affiliation{Dunlap Institute for Astronomy and Astrophysics,
+%  University of Toronto, Toronto, ON M5S 3H4, Canada}
+%\affiliation{Canadian Institute for Advanced Research, Program in
+%  Cosmology and Gravitation} 
+%\affiliation{Perimeter Institute for
+%  Theoretical Physics, Waterloo, ON, N2L 2Y5, Canada}
+
+\date{\today}
+
+\input{./abstract.tex}
+
+%\pacs{}
+\maketitle
+
+%\input{./introduction.tex}
+
+\input{./simulation.tex}
+
+\input{./reconstruction.tex}
+
+\input{./ps_fishinfo.tex}
+
+\input{./conclusion.tex}
+
+%\input{./acknowledgements.tex}
+
+%\bibliographystyle{apsrev}
+%\bibliography{thebib}
+\widetext
+\clearpage
+%\input{./supplement.tex}
+
+\end{document}
