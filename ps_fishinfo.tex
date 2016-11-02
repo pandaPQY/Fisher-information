@@ -1,5 +1,5 @@
 \begin{section}{Power Spectra and Information Content}
-  \label{sec:Power Spectra and Information Content}
+  \label{sec:fisherinfo}
     The power spectrum is the Fourier transform of the correlation function and measures the amoutn of clustering in the matter distribution in terms of the wavenumber $k$ in unit of $h \mathrm{Mpc}^{-1}$,
 \begin{align}
     \langle \delta \left( \bm{k} \right) \delta \left( \bm{k'}\right) \rangle =\left( 2\pi \right) ^3 P \left( \bm{k} \right) \hat{\delta} \left( \bm{k}-\bm{k'} \right),
@@ -51,13 +51,18 @@ The corelation matrices for density fields from simulations and deformation pote
 %   \caption{Cross-correlation coefficient matrix as found from 139 power spectra of (\textbf{a}) the non-linear density field from simulation, (\textbf{b}) the deformation potential field from reconstruction, (\textbf{c}) the linear density field from simulation and (\textbf{d}) a normal random number field.}
 %  \label{fig:corr_matrix}
 \end{figure}
-    The cumulative, or Fisher, information function of $k_n$ is then defined as the trace of the inverse of subsection of the normalized covariance matrix up to $k_n$ scale
+    The cumulative, or Fisher, information function of $k_n$ is then defined as the sum of the elements of inverse of subsection of the normalized covariance matrix up to $k_n$ scale
 \begin{align}
-    I \left( < k_n\right) = \mathrm{Tr} \left[ C^{-1}_{norm} \left( k_i,k_j \right)\right] \left( i,j \leq n \right),
+    I \left( < k_n\right) = \sum_{i,j=1}^n \left[ C^{-1}_{norm} \left( k_i,k_j \right)\right] \left( i,j \leq n \right),
 \end{align}
 where $C^{-1}_{norm}$ is the normalized covariance matrix, defined as
 \begin{align}
     C^{-1}_{norm} \left( k,k' \right)=\frac{\mathrm{Cov}(k,k')}{\langle P(k)\rangle\langle P(k)\rangle}.
+\end{align}
+  
+  The signal-to-noise ratio, sometimes also called Fisher information, can be given by the inverse matrix of covariance. Since the signal-to-noise ratio was given in some work, we also present it for a better comparison. 
+\begin{align}
+\left( \frac{S}{N}\right)^2 (k_{n}) =\sum_{i,j=1}^n P_i \mathrm{Cov}^{-1}(i,j) P_j
 \end{align}
 As seen above, cumulative information is a measurement of the number of independent Fourier modes presented in a field up to a given $k_n$, which represents how linear a field is. We plot the cumulative information of the power specta of density fields from simulations and deformation potentials from reconstructions in Fig.\ref{fig:fisherinfo}. In the translinear regime, where $k~0.2$, the cumulative information of the non-linear density field has a flat plateau. It indicates that there's nearly no independent information in the non-linear regime of the power spectrum. While the information curve of the reconstructed deformation potential keeps incresing at that point and reach it's plateau at $k~0.5$ up to a factor of 400, which is better than the result of any other existing reconstruction method??? One can also find that the reconstrcted Fisher information is higher even than that of linear density field in large at the scale from $k~0.1$ to $k~1$.(Unbelievable? )(Not knowing the situation in smaller scale so far) It indicates that APM method can strongly recover the lost information within this scale. 
 \begin{figure}[htbp]
