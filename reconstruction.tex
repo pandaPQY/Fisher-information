@@ -1,6 +1,6 @@
 \begin{section}{Reconstruction Algorithm}
   \label{sec:reconstruction}
-    We use the algorithm and numerical method called Adaptive Particle-mesh (APM), discribed in citebib:...,bib:... to reconstruct the density field. The basic idea is to build a PM scheme on a curvilinear coordinate system, in which the number of the particles per grid cell is set approximately constant. 
+    We use the algorithm and numerical method called Adaptive Particle-mesh (APM), discribed in \cite{bib:Pen1995,bib:Pen1998}. to reconstruct the density field. The basic idea is to build a PM scheme on a curvilinear coordinate system, in which the number of the particles per grid cell is set approximately constant. 
     Consider a numerical grid of curvilinear coordinates $\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$. In order to determine the physical position of each grid point, one needs to specify the Euclidean coordinate $\bm{x}(\bm{\xi},t)$ as a function of grid position. In the Euclidean coordinate, the flat metric is Kronecker delta function $\delta_{ij}$, while the curvilinear metric is given by
 \begin{align}
     g_{\mu\nu}=\frac{\partial x^i}{\partial \xi ^\mu} \frac{\partial x^j}{\partial \xi ^\nu}\delta_{ij}.

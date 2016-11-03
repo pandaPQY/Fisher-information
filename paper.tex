@@ -1,6 +1,8 @@
 \documentclass[aps,prd,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootinbib]{revtex4}  % for review and submission
 %\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
 \usepackage{graphicx}  % needed for figures
+\usepackage[caption = false]{subfig}
+\usepackage{lipsum}
 \usepackage{dcolumn}   % needed for some tables
 \usepackage{bm}        % for math
 \usepackage{amsmath,amssymb}   % for math
@@ -23,21 +25,28 @@
 % the following line is for submission, including submission to the arXiv!!
 %\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
 \title{Increasing the Fisher Information Content in the Matter Power Spectrum through Reconstruction}
-%\author{Qiaoyin Pan}
-%\email{panda@mail.nankai.edu.cn}
-%\affiliation{School of Physics, Nankai University,
-%94 Weijin Rd, Nankai, Tianjin, 300071, China}
-%\author{Ue-Li Pen}
-%\email{pen@cita.utoronto.ca}
-%\affiliation{Canadian Institute for Theoretical
-%  Astrophysics, University of Toronto, M5S 3H8, Ontario, Canada}
-%\affiliation{Dunlap Institute for Astronomy and Astrophysics,
-%  University of Toronto, Toronto, ON M5S 3H4, Canada}
-%\affiliation{Canadian Institute for Advanced Research, Program in
-%  Cosmology and Gravitation} 
-%\affiliation{Perimeter Institute for
-%  Theoretical Physics, Waterloo, ON, N2L 2Y5, Canada}
-
+\author{Qiaoyin Pan}
+\email{panda@mail.nankai.edu.cn}
+\affiliation{School of Physics, Nankai University,
+94 Weijin Rd, Nankai, Tianjin, 300071, China}
+\author{Ue-Li Pen}
+\email{pen@cita.utoronto.ca}
+\affiliation{Canadian Institute for Theoretical
+  Astrophysics, University of Toronto, M5S 3H8, Ontario, Canada}
+\affiliation{Dunlap Institute for Astronomy and Astrophysics,
+  University of Toronto, Toronto, ON M5S 3H4, Canada}
+\affiliation{Canadian Institute for Advanced Research, Program in
+  Cosmology and Gravitation} 
+\affiliation{Perimeter Institute for
+  Theoretical Physics, Waterloo, ON, N2L 2Y5, Canada}
+\author{Derek Inman}
+\affiliation{Canadian Institute for Theoretical Astrophysics,
+University of Toronto, 60 St. George St., Toronto, ON M5S 3H8, Canada}
+\affiliation{Department of Physics, University
+of Toronto, 60 St. George, Toronto, ON M5S 1A7, Canada}
+\author{Hao-Ran Yu}
+\affiliation{Department of Astronomy, Beijing Normal University, Beijing, 100875, P.R.China}
+\affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, M5S 3H8, Ontario, Canada}
 \date{\today}
 
 \input{./abstract.tex}
@@ -55,7 +64,7 @@
 
 \input{./results.tex}
 
-%\input{./acknowledgements.tex}
+\input{./acknowledgements.tex}
 
 \bibliographystyle{apsrev}
 \bibliography{myreference}
