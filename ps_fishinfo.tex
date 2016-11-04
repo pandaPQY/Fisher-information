@@ -8,7 +8,12 @@ where $\delta \left( \bm{k} \right)$ is the density fluctuation in wave space, w
 \begin{align}
     \Delta ^2_k \equiv \frac{k^3 P \left( k \right)}{2\pi ^2}
 \end{align}
-    The power spectra of the mass distributions are calculated using the "Nearest Grid Point" (NGP) mass assignment scheme, which calculates the position of each particle based on which grid point it is nearest. In Fig.... we plot the mean power spectrum (and error bars) of 139 density fields and reconstruced deformation potentials.
+    The power spectra of the mass distributions are calculated using the "Nearest Grid Point" (NGP) mass assignment scheme, which calculates the position of each particle based on which grid point it is nearest. In Fig.\ref{fig:powerspectrum} we plot the mean power spectrum (and error bars) of 136 linear and non-linear density fields and reconstruced density fields simply given by $\delta_r=\bm{k}\bm{k}\xi$. The linear density field is given by the linear density field at $z=0$.
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\textwidth]{powerspectrum-crop.pdf}
+\caption{Mean power spectrum with error bar of 136 linear density fields, non-linear density fields and reconstruced density fields.}
+\end{figure}
     To calculate the cumulative Fisher information of the density fields, the covariance matrix of the power spectra should be first given. Mathematically, the the covariance matrix is defined as
 \begin{align}
     \mathrm{Cov}\left(k,k'\right)\equiv \frac{1}{N-1}\sum_{i=1}^{N}\left[ P_i \left( k \right) - \langle P \left( k \right) \rangle \right]\left[ P_j \left( k' \right) - \langle P \left( k' \right)\rangle \right],
@@ -57,9 +62,10 @@ where $C_{norm}$ is the normalized covariance matrix, defined as
 %\left( \frac{S}{N}\right)^2 (k_{n}) =\sum_{i,j=1}^n P_i \mathrm{Cov}^{-1}(i,j) P_j
 %\end{align}
 As seen above, cumulative information is a measurement of the number of independent Fourier modes presented in a field up to a given $k_n$, which represents how linear a field is. We plot the cumulative information of the power specta of density fields from simulations and deformation potentials from reconstructions in Fig.\ref{fig:fisherinfo}. In the translinear regime, where $k\sim0.1$, the cumulative information of the non-linear density field has a flat plateau. It indicates that there's nearly no independent information in the translinear regime of the power spectrum. At $k\sim0.8$, the information increase slightly aggain. But the information curve of the reconstructed deformation potential keeps incresing and reaches it's plateau at $k\sim0.6-0.7$ up to a factor of 20. It indicates that APM method can strongly recover the lost information within this scale. 
-\begin{figure}[htbp]
+\begin{figure}[t!]
+%[htbp]
  \begin{center}
-  \includegraphics[width=0.5\textwidth]{fishernew-crop.pdf}
+  \includegraphics[width=0.5\textwidth]{fisherall-crop.pdf}
    \caption{Cumulative information in the power spectra as a function of wavenumber. The blue cycles correspond to the non-linear density field by simulation; the black squares correspond to the the reconstructed deformation potential; the red dash line corresponds to linear density field at $z=0$; the green crosses correspond to linear density field at $z=100$.}
   \label{fig:fisherinfo}
  \end{center}
