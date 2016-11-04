@@ -19,16 +19,16 @@ where angle brackets mean the expected values.
     \mathrm{Corr}\left(k,k'\right)=\frac{\mathrm{Cov}\left(k,k'\right)}{\sqrt{\mathrm{Cov}\left(k,k\right)\mathrm{Cov}\left(k',k'\right)}}.
 \end{align}
 The corelation matrices for density fields from simulations and deformation potentials from reconstructions are shown in Fig. \ref{fig:corrall}. For the original density fields, the linear regime, where $k<0.1$, is diagonal, while in the non-linear regime, the power spectra of different $k$ modes are strongly correlated by at least $60\%$ . For the reconstructed deformation potential correlation matrix, however, the linear regime expand up to $k~0.2$. The correlation matrix is closer to that for the power spectra of linear density fields.
-\begin{figure*}[t!]
+\begin{figure}
  \centering
 % \begin{subfigure*}[b]{0.5\textwidth}
 % \centering
-  \includegraphics[width=0.45\textwidth]{corrnbnew-crop.pdf}
+  \includegraphics[width=0.5\textwidth]{corr2-crop.pdf}
 %\label{fig:corrnb}
 % \end{subfigure*}
 % \begin{subfigure*}[b]{0.5\textwidth}
 % \centering
-  \includegraphics[width=0.45\textwidth]{corrrecnew-crop.pdf}
+%  \includegraphics[width=0.45\textwidth]{corrrecnew-crop.pdf}
 %\label{fig:corrrec}
 % \end{subfigure*}
 %\begin{subfigure}
@@ -39,16 +39,10 @@ The corelation matrices for density fields from simulations and deformation pote
 %    \centering
 %    \includegraphics[width=\textwidth,height=0.5\textwidth]{corrall.eps}
 %
-  \caption{Cross-correlation coefficient matrix as found from 136 power spectra of (\textbf{a}) the non-linear density field from simulation, (\textbf{b}) the deformation potential field from reconstruction}   
+  \caption{Cross-correlation coefficient matrix as found from 136 power spectra of the non-linear density field from simulation (the upper triangle) and the deformation potential field from reconstruction(the lower triangle).}   
 
     \label{fig:corrall}
-
-%\begin{figure}
-% \centering
-%  \includegraphics[width=0.9\textwidth]{corr_all.eps}
-%   \caption{Cross-correlation coefficient matrix as found from 139 power spectra of (\textbf{a}) the non-linear density field from simulation, (\textbf{b}) the deformation potential field from reconstruction, (\textbf{c}) the linear density field from simulation and (\textbf{d}) a normal random number field.}
-%  \label{fig:corr_matrix}
-\end{figure*}
+\end{figure}
     The cumulative, or Fisher, information function of $k_n$ is then defined as the sum of the elements of inverse of subsection of the normalized covariance matrix up to $k_n$ scale
 \begin{align}
     I \left( < k_n\right) = \sum_{i,j=1}^n \left[ C^{-1}_{norm} \left( k_i,k_j \right)\right] \left( i,j \leq n \right),
