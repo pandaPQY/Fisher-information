@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.8.11)  24 NOV 2016 13:31
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.8.11)  24 NOV 2016 18:08
 entering extended mode
  %&-line parsing enabled.
-**paper.tex
+**paper
 (./paper.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -357,38 +357,33 @@ Underfull \hbox (badness 1796) in paragraph at lines 46--59
  []
 
 [1{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./simulation.tex
-<sar_analysis-crop.pdf, id=89, 548.0475pt x 467.7475pt>
-File: sar_analysis-crop.pdf Graphic file (type pdf)
+<sar_best_analysis-crop.pdf, id=89, 546.04pt x 487.8225pt>
+File: sar_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use sar_analysis-crop.pdf>) (./reconstruction.tex) (./ps_fishinfo.tex
-<cross_correlaion_analysis-crop.pdf, id=99, 513.92pt x 438.63875pt>
-File: cross_correlaion_analysis-crop.pdf Graphic file (type pdf)
+<use sar_best_analysis-crop.pdf>) (./reconstruction.tex) (./ps_fishinfo.tex
+<cross_correlation_best_analysis-crop.pdf, id=101, 511.9125pt x 416.55624pt>
+File: cross_correlation_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use cross_correlaion_analysis-crop.pdf>
-<power_analysis-crop.pdf, id=100, 531.9875pt x 438.63875pt>
-File: power_analysis-crop.pdf Graphic file (type pdf)
+<use cross_correlation_best_analysis-crop.pdf>
+<power_best_analysis-crop.pdf, id=102, 533.995pt x 416.55624pt>
+File: power_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use power_analysis-crop.pdf> [2] [3 <./sar_analysis-crop.pdf>]
-<corrmat_hot-crop.pdf, id=176, 553.06625pt x 486.81876pt>
+<use power_best_analysis-crop.pdf> [2] [3 <./sar_best_analysis-crop.pdf>]
+[4 <./cross_correlation_best_analysis-crop.pdf> <./power_best_analysis-crop.pdf
+>] <corrmat_hot-crop.pdf, id=286, 553.06625pt x 486.81876pt>
 File: corrmat_hot-crop.pdf Graphic file (type pdf)
 
 <use corrmat_hot-crop.pdf>
-<fisher_addlog_r2_analysis-crop.pdf, id=181, 522.95375pt x 509.905pt>
-File: fisher_addlog_r2_analysis-crop.pdf Graphic file (type pdf)
+<fisher_r2_best_analysis-crop.pdf, id=291, 534.99875pt x 493.845pt>
+File: fisher_r2_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use fisher_addlog_r2_analysis-crop.pdf>
-<fisher_addlog_analysis-crop.pdf, id=182, 522.95375pt x 509.905pt>
-File: fisher_addlog_analysis-crop.pdf Graphic file (type pdf)
+<use fisher_r2_best_analysis-crop.pdf>
+<fisher_best_analysis-crop.pdf, id=292, 534.99875pt x 493.845pt>
+File: fisher_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use fisher_addlog_analysis-crop.pdf> [4 <./cross_correlaion_analysis-crop.pdf>
- <./power_analysis-crop.pdf>]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 208.
-
-) (./results.tex) (./acknowledgements.tex) (./paper.bbl [5 <./corrmat_hot-crop.
-pdf>]) [6 <./fisher_addlog_r2_analysis-crop.pdf> <./fisher_addlog_analysis-crop
-.pdf>]
+<use fisher_best_analysis-crop.pdf>) (./results.tex) (./acknowledgements.tex)
+[5 <./corrmat_hot-crop.pdf>] (./paper.bbl) [6 <./fisher_r2_best_analysis-crop.p
+df> <./fisher_best_analysis-crop.pdf>]
 
 Class revtex4 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
@@ -396,12 +391,12 @@ Use acknowledgments instead.
 (./paper.aux) ) 
 Here is how much of TeX's memory you used:
  5800 strings out of 256216
- 76889 string characters out of 1917072
- 247663 words of memory out of 1500000
+ 76950 string characters out of 1917072
+ 247901 words of memory out of 1500000
  8901 multiletter control sequences out of 10000+200000
  17174 words of font info for 63 fonts, out of 1200000 for 2000
  648 hyphenation exceptions out of 8191
- 35i,11n,38p,1284b,453s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 35i,11n,38p,1280b,382s stack positions out of 5000i,500n,6000p,200000b,15000s
 </usr/share/texmf/fonts/type1/bluesky/ams/cmbsy7.pfb></usr/share
 /texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/
 cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/te
@@ -419,9 +414,9 @@ cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/tex
 mf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
 mti7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti9.pfb></usr/share/texmf/f
 onts/type1/bluesky/ams/msam10.pfb>
-Output written on paper.pdf (6 pages, 1706804 bytes).
+Output written on paper.pdf (6 pages, 1727549 bytes).
 PDF statistics:
- 2794 PDF objects out of 2984 (max. 8388607)
+ 2810 PDF objects out of 2984 (max. 8388607)
  56 named destinations out of 1000 (max. 131072)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

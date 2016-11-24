@@ -18,8 +18,23 @@ spectrum in its dimensionless form, defined as
 grid point it is nearest. In Fig. \ref{fig:cross-correlation-power}(a) we plot the mean cross correlation 
 function, $r=P_{\delta \delta_L}/\sqrt{P_\delta P_{\delta_L}}$ of non-linear power spectrum and 
 linear power spectrum, reconstructed power spectrum and 
-linear power spectrum respectively. One can see that after reconstruction, the damping scale of cross correlation
-shrinks greatly. The wave number where cross correlation drops to a half increase from $k\sim 0.2$ to $k \sim 0.6$.
+linear power spectrum respectively. The wave number where cross correlation drops to a half increase 
+from $k\sim 0.2$ to $k \sim 0.6$.To qualify the improvement of cross correlation in the 
+power spectrum, we compute the damping factors $\mathcal{D}(k)=r^4$ fitting the Gaussian BAO damping models 
+$\mathcal{D}(k)=\mathrm{exp}(-k^2 \Sigma^2/2)$. In Fig. \ref{fig:cross-correlation-power}(a) 
+we plot $\mathcal{D}_\delta^{1/4}$ ($\Sigma = 11.3 \mathrm{Mpc}/h$) and $\mathcal{D}_{\delta_L}^{1/4}$ 
+($\Sigma = 3.9 \mathrm{Mpc}/h$) over $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. 
+We also plot the $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. We also plot $\mathcal{D}(k)^{1/4}$ 
+that match cross correlation function after $E$-mode displacement 
+reconstruction ($ng=512$, box size $=400 \mathrm{Mpc}/h$, $\Sigma = 1.3 \mathrm{Mpc}/h$), 
+which is the result in \cite{bib:Yu2016} and 
+MM reconstruction in a higer resolution ($ng=512$, box size $=600 \mathrm{Mpc}/h$, $\Sigma = 2.6 \mathrm{Mpc}/h$), 
+which is the result in cite(bib:ZhuH2016). We find that with higher resolution, which is more precise, 
+the reconstruction give a cross correlation damping at smaller scale. 
+And it's expected that the $E$-mode displacement reconstruction gives a reconstructed power spectrum more correlated 
+the initial one, since it decompose completely the irrotational part and curl part of the real displacement 
+field in N-body simulation, while the difference between the reconstructed displacement through MM reconstruction 
+and the real displacement still has an irrotational part.
  In Fig. \ref{fig:cross-correlation-power}(b) we plot the linear power spectrum which is the transfer function, and mean 
 power spectrum (with error bars) of 136 non-linear density fields and reconstruced density fields simply 
 given by $\delta_r=\bm{k}\cdot\bm{k}\xi$. The reconstructed power spectrum drops at non-linear scale ($k \gtrsim 0.3$) 
@@ -29,10 +44,11 @@ drops, but in a different scale and a different speed.
 \begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
 \centering
-\includegraphics[width=0.46\textwidth]{cross_correlaion_analysis-crop.pdf} 
-\includegraphics[width=0.48\textwidth]{power_analysis-crop.pdf}
+\includegraphics[width=0.46\textwidth]{cross_correlation_best_analysis-crop.pdf} 
+\includegraphics[width=0.48\textwidth]{power_best_analysis-crop.pdf}
 %\includegraphics[width=0.5\textwidth]{power_nberror-crop.pdf}
-\caption{(a) Cross correlation function $r(\delta,\delta_L)$ (blue line) and $r(\delta_r,\delta_L)$ (red dash line). 
+\caption{(a) Cross correlation function (solid lines) $r(\delta,\delta_L)$ (blue) and $r(\delta_r,\delta_L)$ (red), 
+and BAO damping models (dash lines). 
 (b) Linear power spectrum given by transfer function (black line), mean power spectrum with error bar of
 136 non-linear density fields (blue line) and reconstruced density fields (red dash line)}
 \label{fig:cross-correlation-power}
@@ -149,17 +165,19 @@ but the number and magnitude of negetive off-diagonal elements increase, smalles
 %\left( \frac{S}{N}\right)^2 (k_{n}) =\sum_{i,j=1}^n P_i \mathrm{Cov}^{-1}(i,j) P_j
 %\end{align}
 
-  We plot the 
-cumulative Fisher information of the non-linear, linear and reconstructed power specta in 
+  Cumulative Fisher information is proportional to the volume. We plot the 
+cumulative Fisher information per $\mathrm{Mpc}^3/h$ of the non-linear, linear and reconstructed power specta in 
 Fig.\ref{fig:fisherinfo}(a). The Fisher information of the non-linear power spectra drops 
-from the linear one at $k \sim 0.05$, and has a flat plateau in the translinear regime, $k\sim0.3$. It 
+from the linear one at $k \sim 0.05$, and has a flat plateau in the translinear regime, $k\sim0.3$, with 
+a saturated value of $I \sim 2.5 \times 10^{-5}/(\mathrm{Mpc}^3/h^3)$. It 
 indicates that there's nearly no independent information in the translinear regime of the power 
 spectrum.
 % At $k\sim0.8$, the information increase slightly aggain. 
 But the information curve of 
 the reconstructed power spectra keeps incresing roughly the same as 
-the linear information until $k\sim0.3$, and reaches it's plateau at $k\sim0.8$ 
-up to a factor of 40. It indicates that MM reconstructed method can strongly recover the lost information 
+the linear information until $k\sim0.3$, and reaches it's plateau at $k\sim0.8$ with the 
+value of $I \sim 10^{-3}$,up to 40 times more than that of the non-linear Fisher information. 
+It indicates that MM reconstructed method can strongly recover the lost information 
 within this scale. We compare the Fisher information given by MM reconstruction method with 
 logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate their strength. 
 We find that MM reconstruction gives more thatn 10 times more information than logarithmic mapping. 
@@ -170,21 +188,23 @@ $k \sim 0.2 - 0.5$ is higher than the linear one, which is not expected.
 \begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
 %\centering
-  \includegraphics[width=0.48\textwidth]{fisher_addlog_r2_analysis-crop.pdf}
+  \includegraphics[width=0.48\textwidth]{fisher_r2_best_analysis-crop.pdf}
 %\end{figure}
 %\begin{subfigure}[b]{0.48\textwidth}
 %\bebin{subfigure}
 %\centering
-  \includegraphics[width=0.48\textwidth]{fisher_addlog_analysis-crop.pdf}
+  \includegraphics[width=0.48\textwidth]{fisher_best_analysis-crop.pdf}
 %\end{subfigure}
 %  \includegraphics[width=0.48\textwidth]{fisher_tr-crop.pdf}
 %  \includegraphics[width=0.48\textwidth]{fisher_trr2-crop.pdf}
 \centering
-   \caption{(a) Cumulative information in the power spectra as a function of wavenumber. The blue 
-line correspond to the non-linear density field by simulation; the red line with squares correspond 
-to the the reconstructed deformation potential; the dark line corresponds to linear density 
-field; the cycles correspond to number of $k$ modes up to that wave bin. (b) Cumulative information 
-given by setting the cross-correlation to be unity.}
+   \caption{(a) Cumulative Fisher information per $\mathrm{Mpc}^3/h^3$ in the power spectra 
+as a function of wavenumber. The blue line correspond to the non-linear density field by 
+simulation; the red line with squares correspond to the the reconstructed deformation 
+potential; the dark line corresponds to linear density field; the cycles correspond to number 
+of $k$ modes up to that wave bin. Dotted lines correspond to saturated value of 
+non-linear Fisher information, 4 times and 40 times of it. (b) Cumulative Fisher information 
+per $\mathrm{Mpc}^3/h^3$ given by setting the cross-correlation to be unity.}
   \label{fig:fisherinfo}
 
 \end{figure*}
