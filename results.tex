@@ -1,8 +1,40 @@
 \begin{section}{Conclusion and Discussion}
  \label{sec:conclusion}
-    We use the code "CubeP3M" to generate 137 independent dark matter density fields, then give the reconstructed deformation potentials which are pure divergent using APM method. We analyze the power spectra of both the density fields and the deformation potentials, after which we give the cross correlation matrix. We find that the power spectra are highly correlated on small scales, since these scales are in non-linear regime. But after reconstruction, the strongly correlated regime shinks from $k\sim0.1$ to $k\sim0.6$. We also calculate the cumulative information, and find that the plateau of the reconstructed information curve in the tranlinear regime rises by a factor of 30.  
+    We use the code "CubeP3M" to generate 136 independent dark matter density fields, 
+then give the reconstructed deformation potentials which are pure divergent using MM 
+algorithm. We analyze the power spectra of both the non-linear density fields and 
+reconstructed density fields, after which we give the cross correlation matrix. We find that the power 
+spectra are highly correlated on small scales, since these scales are in non-linear 
+regime. But after reconstruction, the strongly correlated regime shinks from $k\sim0.2$ 
+to $k\sim0.6$. We also calculate the cumulative information, and find that the plateau 
+of the reconstructed information curve keeps matching the Gausisan information curve until 
+$k \sim 0.3$ and reach a plateau at $k \sim 0.8$, rising by a factor of 40 compared to the 
+non-linear information curve.
 
-   The new reconstruction method successfully recovers the lost linear information on the mildly non-linear scale, at least twice better than previous methods \cite{bib:Mark2006,bib:Mark2009,bib:Zhang2011,bib:Yu2012,bib:Mark2014} and pushes the non-linear scale to a smaller scale in our case. The result in dark matter density fields gives a strong motivation to adapt APM method in halo fields, neutrino fields, etc, so that we have access to know more clearly about the physics in smaller scale. Some efforts were made to improve cosmology measurements to BAO scale (e.g. \cite{bib:Daniel2007,bib:Martin2015}). APM gives the reconstructed displacement given on hte Lagrangian coordinate instead of the final Eulerian coordiante. It's successful try of BAO reconstruction in 1-D cosmology \cite{bib:Zhu2016} provided an intuitive view of the algorithm to develop the BAO reconstruction in 3-D and thus push forward the BAO research.
+   We argue that the reconstructed Fisher information will still increasing to a greater magnitude in smaller scale 
+since the cross correlation of the reconstructed and linear power spectrum increases 
+in a higher resolution analysis cite(bib:ZhuH2016).
 
-   APM method effectively decomposes the irrotational part and the curl part of the displacement field of particles, which would be meaningful to be compared with the decomposition of displacement field given by N-body simulation \cite{bib:Yu2016}. 
+   The new reconstruction method successfully recovers the lost linear information on 
+the mildly non-linear scale, better than previous methods 
+\cite{bib:Mark2006,bib:Mark2009,bib:Zhang2011,bib:Yu2012,bib:Mark2014} and pushes the 
+non-linear scale to a smaller scale in our case. The result in dark matter density fields 
+gives a strong motivation to adapt MM reconstruction in halo fields, neutrino fields, etc, so that 
+we have access to know more clearly about the physics in smaller scale. Some efforts were 
+made to improve cosmology measurements to BAO scale (e.g. \cite{bib:Daniel2007,bib:Martin2015}). 
+MM reconstruction gives the reconstructed displacement given on the Lagrangian coordinates transfromed from the 
+Eulerian coordiantes. It's successful try on BAO reconstruction in 1-D 
+\cite{bib:Zhu2016} and 3-D cite(bib:ZhuH2016) cosmology provided an intuitive view of the algorithm 
+to push forward the BAO research.
+
+   MM reconstruction effectively decomposes the irrotational part and the curl part of the displacement 
+field of particles. The decomposition is not clean, in other words, the difference between the reconstructed 
+displacement and the real displacement in N-body simulation includes part of irrotational displacement as well. 
+On the other hand, the reconstructed displacement might be greatly different from real displacement in N-body 
+simulation, since it's sensitive to the late stage shell-crossing and non-linear process so that the original 
+position of some spectific particles can be replaced by each other. It's meaningful to compare the irrotational 
+displacement field through MM reocnstruction and that from E-mode displacement reconstruction \cite{bib:Yu2016} 
+which decomposes cleanly the irrotational and curl part of the real displacement in N-body simulation. 
+Since MM reconstruction only needs the density field input and gives a latge recovering of lost information, 
+it's expected to have a good effect on reconstructing the matter density field from obsurvation.
 \end{section}

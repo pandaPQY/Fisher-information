@@ -1,0 +1,188 @@
+\begin{thebibliography}{20}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2006)}]{bib:Rimes2006}
+\bibinfo{author}{\bibfnamefont{C.~D.} \bibnamefont{{Rimes}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}}, in
+  \emph{\bibinfo{booktitle}{American Astronomical Society Meeting Abstracts
+  \#207}} (\bibinfo{year}{2006}), vol. \bibinfo{volume}{207} of
+  \emph{\bibinfo{series}{American Astronomical Society Meeting Abstracts}}, p.
+  \bibinfo{pages}{206.01}.
+
+\bibitem[{\citenamefont{{Weinberg}}(1992)}]{bib:Weinberg1992}
+\bibinfo{author}{\bibfnamefont{D.~H.} \bibnamefont{{Weinberg}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{254}},
+  \bibinfo{pages}{315} (\bibinfo{year}{1992}).
+
+\bibitem[{\citenamefont{{Neyrinck} et~al.}(2009)\citenamefont{{Neyrinck},
+  {Szapudi}, and {Szalay}}}]{bib:Mark2009}
+\bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{{Neyrinck}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Szapudi}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
+  \bibnamefont{{Szalay}}}, \bibinfo{journal}{\apjl}
+  \textbf{\bibinfo{volume}{698}}, \bibinfo{pages}{L90} (\bibinfo{year}{2009}),
+  \eprint{0903.4693}.
+
+\bibitem[{\citenamefont{{Zhang} et~al.}(2011)\citenamefont{{Zhang}, {Yu},
+  {Harnois-D{\'e}raps}, {MacDonald}, and {Pen}}}]{bib:Zhang2011}
+\bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
+  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{MacDonald}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{728}}, \bibinfo{eid}{35}
+  (\bibinfo{year}{2011}), \eprint{1008.3506}.
+
+\bibitem[{\citenamefont{{Yu} et~al.}(2012)\citenamefont{{Yu},
+  {Harnois-D{\'e}raps}, {Zhang}, and {Pen}}}]{bib:Yu2012}
+\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
+  \bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{421}},
+  \bibinfo{pages}{832} (\bibinfo{year}{2012}), \eprint{1012.0444}.
+
+\bibitem[{\citenamefont{{Harnois-D{\'e}raps}
+  et~al.}(2013{\natexlab{a}})\citenamefont{{Harnois-D{\'e}raps}, {Yu}, {Zhang},
+  and {Pen}}}]{bib:HarnoisD2013}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
+  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{436}},
+  \bibinfo{pages}{759} (\bibinfo{year}{2013}{\natexlab{a}}),
+  \eprint{1205.4989}.
+
+\bibitem[{\citenamefont{{Zel'dovich}}(1970)}]{bib:Zel1970}
+\bibinfo{author}{\bibfnamefont{Y.~B.} \bibnamefont{{Zel'dovich}}},
+  \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{84}
+  (\bibinfo{year}{1970}).
+
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016)\citenamefont{{Zhu}, {Pen}, and
+  {Chen}}}]{bib:Zhu2016}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
+  \eprint{1609.07041}.
+
+\bibitem[{\citenamefont{{Yu} et~al.}(2016)\citenamefont{{Yu}, {Pen}, and
+  {Zhu}}}]{bib:Yu2016}
+\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
+  \eprint{1610.07112}.
+
+\bibitem[{\citenamefont{{Pen}}(1995)}]{bib:Pen1995}
+\bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\apjs} \textbf{\bibinfo{volume}{100}}, \bibinfo{pages}{269}
+  (\bibinfo{year}{1995}).
+
+\bibitem[{\citenamefont{{Pen}}(1998)}]{bib:Pen1998}
+\bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{journal}{\apjs} \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{19}
+  (\bibinfo{year}{1998}), \eprint{astro-ph/9704258}.
+
+\bibitem[{\citenamefont{{Harnois-D{\'e}raps}
+  et~al.}(2013{\natexlab{b}})\citenamefont{{Harnois-D{\'e}raps}, {Pen},
+  {Iliev}, {Merz}, {Emberson}, and {Desjacques}}}]{bib:Harnois2013}
+\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{author}{\bibfnamefont{I.~T.} \bibnamefont{{Iliev}}},
+  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{{Merz}}},
+  \bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{{Emberson}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Desjacques}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{436}},
+  \bibinfo{pages}{540} (\bibinfo{year}{2013}{\natexlab{b}}),
+  \eprint{1208.5098}.
+
+\bibitem[{\citenamefont{{Lewis} et~al.}(2000)\citenamefont{{Lewis},
+  {Challinor}, and {Lasenby}}}]{bib:Lewis2000}
+\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lewis}}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Challinor}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lasenby}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{538}}, \bibinfo{pages}{473}
+  (\bibinfo{year}{2000}), \eprint{astro-ph/9911177}.
+
+\bibitem[{\citenamefont{{Tegmark} et~al.}(1997)\citenamefont{{Tegmark},
+  {Taylor}, and {Heavens}}}]{bib:Tegmark1997}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Tegmark}}},
+  \bibinfo{author}{\bibfnamefont{A.~N.} \bibnamefont{{Taylor}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~F.}
+  \bibnamefont{{Heavens}}}, \bibinfo{journal}{\apj}
+  \textbf{\bibinfo{volume}{480}}, \bibinfo{pages}{22} (\bibinfo{year}{1997}),
+  \eprint{astro-ph/9603021}.
+
+\bibitem[{\citenamefont{{Akitsu} et~al.}(2016)\citenamefont{{Akitsu}, {Takada},
+  and {Li}}}]{bib:Kazuyuki2016}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Akitsu}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Takada}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Li}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
+  \eprint{1611.04723}.
+
+\bibitem[{\citenamefont{{Takahashi} et~al.}(2009)\citenamefont{{Takahashi},
+  {Yoshida}, {Takada}, {Matsubara}, {Sugiyama}, {Kayo}, {Nishizawa},
+  {Nishimichi}, {Saito}, and {Taruya}}}]{bib:Takahashi2009}
+\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Takahashi}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Yoshida}}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Takada}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Matsubara}}},
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Sugiyama}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Kayo}}},
+  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{{Nishizawa}}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Nishimichi}}},
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Saito}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Taruya}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{700}}, \bibinfo{pages}{479}
+  (\bibinfo{year}{2009}), \eprint{0902.0371}.
+
+\bibitem[{\citenamefont{{Neyrinck} et~al.}(2006)\citenamefont{{Neyrinck},
+  {Szapudi}, and {Rimes}}}]{bib:Mark2006}
+\bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{{Neyrinck}}},
+  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Szapudi}}},
+  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{C.~D.}
+  \bibnamefont{{Rimes}}}, \bibinfo{journal}{\mnras}
+  \textbf{\bibinfo{volume}{370}}, \bibinfo{pages}{L66} (\bibinfo{year}{2006}),
+  \eprint{astro-ph/0604282}.
+
+\bibitem[{\citenamefont{{Neyrinck}}(2014)}]{bib:Mark2014}
+\bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{{Neyrinck}}}, in
+  \emph{\bibinfo{booktitle}{Statistical Challenges in 21st Century Cosmology}},
+  edited by \bibinfo{editor}{\bibfnamefont{A.}~\bibnamefont{{Heavens}}},
+  \bibinfo{editor}{\bibfnamefont{J.-L.} \bibnamefont{{Starck}}},
+  \bibnamefont{and}
+  \bibinfo{editor}{\bibfnamefont{A.}~\bibnamefont{{Krone-Martins}}}
+  (\bibinfo{year}{2014}), vol. \bibinfo{volume}{306} of
+  \emph{\bibinfo{series}{IAU Symposium}}, pp. \bibinfo{pages}{251--254},
+  \eprint{1407.4815}.
+
+\bibitem[{\citenamefont{{Eisenstein} et~al.}(2007)\citenamefont{{Eisenstein},
+  {Seo}, {Sirko}, and {Spergel}}}]{bib:Daniel2007}
+\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
+  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
+  (\bibinfo{year}{2007}), \eprint{astro-ph/0604362}.
+
+\bibitem[{\citenamefont{{White}}(2015)}]{bib:Martin2015}
+\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{White}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{450}},
+  \bibinfo{pages}{3822} (\bibinfo{year}{2015}), \eprint{1504.03677}.
+
+\end{thebibliography}

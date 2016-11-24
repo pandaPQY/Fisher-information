@@ -15,43 +15,46 @@ spectrum in its dimensionless form, defined as
 \end{align}
     The power spectra of the mass distributions are calculated using the "Nearest Grid Point" 
 (NGP) mass assignment scheme, which calculates the position of each particle based on which 
-grid point it is nearest. In Fig. \ref{fig:cross-correlation} we plot the mean cross correlation 
+grid point it is nearest. In Fig. \ref{fig:cross-correlation-power}(a) we plot the mean cross correlation 
 function, $r=P_{\delta \delta_L}/\sqrt{P_\delta P_{\delta_L}}$ of non-linear power spectrum and 
 linear power spectrum, reconstructed power spectrum and 
-linear power spectrum respectively. One can see that after reconstruction, the cross correlation improves 
-greatly. The wave number where cross correlation drops to a half increase from $k\sim 0.2$ to $k \sim 0.6$.
- In Fig. \ref{fig:powerspectrum} we plot the linear power spectrum which is the transfer function, and mean 
+linear power spectrum respectively. One can see that after reconstruction, the damping scale of cross correlation
+shrinks greatly. The wave number where cross correlation drops to a half increase from $k\sim 0.2$ to $k \sim 0.6$.
+ In Fig. \ref{fig:cross-correlation-power}(b) we plot the linear power spectrum which is the transfer function, and mean 
 power spectrum (with error bars) of 136 non-linear density fields and reconstruced density fields simply 
 given by $\delta_r=\bm{k}\cdot\bm{k}\xi$. The reconstructed power spectrum drops at non-linear scale ($k \gtrsim 0.3$) 
 since the reconstructed density fields are totally irrotational. The result is similar to that of 
 E-mode displacement reconstruction described in \cite{bib:Yu2016}, in which the reconstructed power spectrum 
 drops, but in a different scale and a different speed.
-\begin{figure}[t!]
+\begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
 \centering
-\includegraphics[width=0.48\textwidth]{cross-correlation_analysis-crop.pdf}
-%\includegraphics[width=0.5\textwidth]{power_nberror-crop.pdf}
-\caption{Cross correlation function $r(\delta,\delta_L)$ (blue line) and $r(\delta_r,\delta_L)$ (red dash line).}
-\label{fig:cross-correlation}
-\end{figure}
-%\begin{subfigure}[b]{0.48\textwidth}
-\\begin{figure}[t!]
-\centering
+\includegraphics[width=0.46\textwidth]{cross_correlaion_analysis-crop.pdf} 
 \includegraphics[width=0.48\textwidth]{power_analysis-crop.pdf}
-%\end{center}
-%\begin{flushright}
-%\includegraphics[width=0.48\textwidth]{correlation_goodunit-crop.pdf}
-%\end{flushright}
-\caption{Linear power spectrum given by transfer function (black line), mean power spectrum with error bar of 
+%\includegraphics[width=0.5\textwidth]{power_nberror-crop.pdf}
+\caption{(a) Cross correlation function $r(\delta,\delta_L)$ (blue line) and $r(\delta_r,\delta_L)$ (red dash line). 
+(b) Linear power spectrum given by transfer function (black line), mean power spectrum with error bar of
 136 non-linear density fields (blue line) and reconstruced density fields (red dash line)}
-\label{fig:powerspectrum}
-%\end{sufigure}
-\end{figure}
+\label{fig:cross-correlation-power}
+\end{figure*}
+%\begin{subfigure}[b]{0.48\textwidth}
+%\begin{figure}[t!]
+%\centering
+%\includegraphics[width=0.48\textwidth]{power_analysis-crop.pdf} 
+%%\end{center}
+%%\begin{flushright}
+%%\includegraphics[width=0.48\textwidth]{correlation_goodunit-crop.pdf}
+%%\end{flushright}
+%\caption{Linear power spectrum given by transfer function (black line), mean power spectrum with error bar of 
+%136 non-linear density fields (blue line) and reconstruced density fields (red dash line)}
+%\label{fig:powerspectrum}
+%%\end{sufigure}
+%\end{figure*}
 
    Mathamatically, Fisher information \cite{bib:Tegmark1997} $I$ in the log of amplitude $A$ of the initial 
 matter power spectrum is difined as 
 \begin{align}
-   I_A \equiv - \langle \frac{\partial ^2 \mathrm{ln \Largr}}{\partial A ^2} \rangle,
+   I_A \equiv -\left\langle \frac{\partial ^2 \mathrm{ln \Largr}}{\partial A ^2}\right\rangle,
 \label{eq:fisherdefine}
 \end{align}
    in which $\Largr$ denotes the likelihood. For Gaussian fluctuations, the likelihood depends on
@@ -112,8 +115,8 @@ It's reliable to define samely as (\ref{eq:fisherformulaused}) for non-linear de
 since the Fisher matrix is approximately the same as that of linear density fields in linear scale. 
 The covariance matrix is defined as 
 \begin{align}
-    \mathrm{Cov}\left(k,k'\right)\equiv \frac{1}{N-1}\sum_{i=1}^{N}\left[ P_i \left( k \right) - 
-\langle P \left( k \right) \rangle \right]\left[ P_j \left( k' \right) - \langle P \left( k' \right)\rangle \right],
+    \mathrm{Cov}\left(k,k'\right)\equiv \frac{\sum_{i=1}^{N}\left[ P_i \left( k \right) - 
+\langle P \left( k \right) \rangle \right]\left[ P_j \left( k' \right) - \langle P \left( k' \right)\rangle \right]}{N-1},
 \end{align}
 where angle brackets mean the expected values, and $N$ is the total number of simulations.
     The  correlation matrix, normalized version of the covariance matrix,
@@ -163,8 +166,8 @@ We find that MM reconstruction gives more thatn 10 times more information than l
 In some papers, the cross-correlation $r^2$ terms are set to be unity in (\ref{eq:fisherformulaused}), which 
 apparantly increases the non-linear information. We also plot those in Fig. \ref{fig:fisherinfo}(b) 
 for better comparison. But we find that in this case, the MM reconstructed and logarithmic mapping information in the scale 
-$k \sim 0.2 - k \sim 0.5$ is higher than the linear one, which is not expected. 
-\begin{figure*}[t!]
+$k \sim 0.2 - 0.5$ is higher than the linear one, which is not expected. 
+\begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
 %\centering
   \includegraphics[width=0.48\textwidth]{fisher_addlog_r2_analysis-crop.pdf}
@@ -172,7 +175,7 @@ $k \sim 0.2 - k \sim 0.5$ is higher than the linear one, which is not expected.
 %\begin{subfigure}[b]{0.48\textwidth}
 %\bebin{subfigure}
 %\centering
-  \includegraphics[width=0.48\textwidth]{fisher_addlog-crop.pdf}
+  \includegraphics[width=0.48\textwidth]{fisher_addlog_analysis-crop.pdf}
 %\end{subfigure}
 %  \includegraphics[width=0.48\textwidth]{fisher_tr-crop.pdf}
 %  \includegraphics[width=0.48\textwidth]{fisher_trr2-crop.pdf}
