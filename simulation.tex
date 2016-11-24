@@ -1,26 +1,25 @@
 \begin{section}{N-body Simulation of Dark Matter Density Fields}
   \label{sec:simulation}
-    We run 136 simulations with a box size of 300 $h^{-1}$Mpc, resolution of $1024^3$ cells and $512^3$ particles, using the cosmological simulation code CubeP3M\cite{bib:Harnois2013}. The initial condition is given by reading the transfer function computed by CAMB\cite{bib:Lewis2000} and then evolving the power linearly to $z=100$. Then Zel'dovich approximation is used to calculate the displacement field and velocity field, which are assigned to the particles. The cosmological parameters used are $\Omega_M=0.32$, $\Omega_{\Lambda}=0.679$, $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$. And we use different seeds to produce the initial conditions for different simulations so that those simulations are indipendent to each other. Then the initial densities are evolved up to $z=0$.
+    We run 136 simulations with a box size of 300 $h^{-1}$Mpc, 
+resolution of $1024^3$ cells and $512^3$ particles, using the cosmological 
+simulation code CubeP3M\cite{bib:Harnois2013}. The initial condition is 
+given by reading the transfer function computed by CAMB \cite{bib:Lewis2000} 
+and then evolving the power linearly to $z=100$. Then Zel'dovich approximation 
+is used to calculate the displacement field and velocity field, which are 
+assigned to the particles. The cosmological parameters used are $\Omega_M=0.32$, 
+$\Omega_{\Lambda}=0.679$, $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.Then the 
+initial densities are evolved up to $z=0$. Different seeds are used to produce 
+the initial conditions for different simulations so that those simulations are 
+indipendent to each other.
 \begin{figure*}[t!]
 \centering
-% \includegraphics[width=0.8\textwidth]{simulationlog-crop.pdf}
- \includegraphics[width=0.9\textwidth]{reconstruction-crop.pdf}
-%\begin{tabular}{cc}
-% \begin{minipage}[t]{0.48\textwidth}
-%  \centering
-%  \includegraphics[width=12cm]{simulation.eps}
-%  \label{fig:simulation}
-% \end{minipage}\\
-% \begin{minipage}[t]{0.48\textwidth}
-% \centering
-%  \includegraphics[width=7cm]{reconstruction.eps}
-%  \label{fig:reconstruction}
-% \end{minipage}
-%\end{tabular}
+ \includegraphics[width=0.9\textwidth]{sar-crop.pdf}
  \label{fig:simandrec}
    \caption{
-%(a) Map of a randomly selected $\mathrm{log}(\delta +1)$ field from 136 N-body simulations, with a 300 $h^{-1}$Mpc width box and $1024^3$ pixels. It's one layer of the whole box field, and the magnitude is the average of number of particles per cell.(b) 
-Map of a randomly selected layer of a randomly selected density field from 136 N-body simulations, with a 300 $h^{-1}$Mpc width box and $1024^3$ pixels. The magnitude is the average of number of particles per cell. And the deformed grids of the selected density field.}
+2D projection of one
+layer of the deformed grids of one out of 136 N-body simulations, and the density field 
+on the selected deformed grids, with the magnitude as the number of particles per cell. 
+The simulations hace 300 $h^{-1}$Mpc width box and $1024^3$ pixels.}
 \end{figure*}
 
 \end{section}

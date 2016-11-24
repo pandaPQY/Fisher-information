@@ -1,12 +1,20 @@
 \begin{section}{Reconstruction Algorithm}
   \label{sec:reconstruction}
-    We use the algorithm and numerical method called Adaptive Particle-mesh (APM), discribed in \cite{bib:Pen1995,bib:Pen1998}. to reconstruct the density field. The basic idea is to build a PM scheme on a curvilinear coordinate system, in which the number of the particles per grid cell is set approximately constant. 
-    Consider a numerical grid of curvilinear coordinates $\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$. In order to determine the physical position of each grid point, one needs to specify the Euclidean coordinate $\bm{x}(\bm{\xi},t)$ as a function of grid position. In the Euclidean coordinate, the flat metric is Kronecker delta function $\delta_{ij}$, while the curvilinear metric is given by
+   The basic idea of MM algorithm is to build a PM scheme on a curvilinear coordinate system, 
+in which the number of the particles per grid cell is set approximately constant. 
+    Consider a numerical grid of curvilinear coordinates 
+$\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$. In order to determine the physical position 
+of each grid point, one needs to specify the Euclidean coordinate $\bm{x}(\bm{\xi},t)$ 
+as a function of grid position. In the Euclidean coordinate, the flat metric is Kronecker 
+delta function $\delta_{ij}$, while the curvilinear metric is given by
 \begin{align}
     g_{\mu\nu}=\frac{\partial x^i}{\partial \xi ^\mu} \frac{\partial x^j}{\partial \xi ^\nu}\delta_{ij}.
 \end{align}
-    We use the convention that Latin indices denote Cartesian coordinate, while Greek indices denote the curvilinear grid coordinate.
-    In principle, there are many different methods to connect the Cartesian coordiante and curvilinear coordinate of each grid cell. In APM method, the connetction is described by an irrotational deformation,
+    We use the convention that Latin indices denote Cartesian coordinate, 
+while Greek indices denote the curvilinear grid coordinate.
+    In principle, there are many different methods to connect the Cartesian 
+coordiante and curvilinear coordinate of each grid cell. In APM method, the 
+connection is described by an irrotational deformation,
 \begin{align}
     x^i=\xi ^\mu \delta ^i _\mu + \Delta x^i,
 \end{align}
@@ -15,24 +23,30 @@ where
  \label{eq:disp}
     \Delta x^i=\frac{\partial \phi}{\partial \xi ^ \nu}\delta ^i _\nu .
 \end{align}
-    This choice of the deformation can minimize mesh distortion and twisting. $\phi$ is called the deformation potential, and $\Delta x^i$ the lattice displacement. The deformation potential can be given in terms of the continuity equation in curvilinear coordinate,
+    This choice of the deformation can minimize mesh distortion and twisting. $\phi$ is called 
+the deformation potential, and $\Delta x^i$ the lattice displacement. The deformation potential 
+can be given in terms of the continuity equation in curvilinear coordinate,
 \begin{align}
  \label{eq:continue_eq}
-    \frac{\partial \sqrt{g} \rho }{\partial t}+\partial_\mu \left[\rho \sqrt{g} e^\mu _i \left(v^i - \Delta \dot{x}^i \right) \right] =0
+    \frac{\partial (\sqrt{g} \rho) }{\partial t}+\partial_\mu \left[\rho \sqrt{g} e^\mu _i \left(v^i - \Delta \dot{x}^i \right) \right] =0
 \end{align}
-where $\sqrt{g} \equiv (\partial x^i / \partial \xi ^ \alpha)$ is the volume element and $e^i _\mu = \partial \xi ^\mu / \partial x^i$ is the triad. $\Delta \dot{x}=\delta ^{i\nu}\partial _\nu dot{\phi}$ is chosen such that the first term in equation \ref{eq:continue_eq} is zero, resulting in a constant mass per volume element. And the velocity field divergence is replaced by the deviation density field $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be zero. Then the deformation potential is described in the elliptic equation,
+where $\sqrt{g} \equiv (\partial x^i / \partial \xi ^ \alpha)$ is the volume element 
+and thus $\sqrt{g} \rho)$ represents the particle mass in the volume element under the curvilinear 
+coordinate system. $e^i _\mu = \partial \xi ^\mu / \partial x^i$ is the triad. 
+$\Delta \dot{x}^i=\delta ^{i\nu}\partial _\nu \dot{\phi}$ is chosen such that the first 
+term in equation (\ref{eq:continue_eq}) is zero, resulting in a constant mass per volume 
+element. And the velocity field divergence is replaced by the deviation density field 
+$\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be zero. Then the 
+deformation potential is described in the elliptic equation,
 \begin{align}
  \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}\partial_\nu \Delta \phi)=\Delta \rho
 \end{align}
-The equation \ref{eq:li_elip} can be solved using multigrid algorithm described in Ref. .... Then the displacement is given by the gradiant of the deformation potential as in \ref{eq:disp}. One layer of the deformed grids and the original density field of that layer is given in Fig. \ref{fig:simandrec}. As expeted, there's no grid crossing after reconstruction.
-%\begin{figure}[htbp]
-% \begin{center}
-%  \includegraphics[width=0.5\textwidth]{reconstruction.eps}
-%   \caption{The density field and the deformed grids of a random selected layer of a random selected density field from 139 simulation.}
-%  \label{fig:reconstruction}
-% \end{center}
-%\end{figure}
+The equation (\ref{eq:li_elip}) can be solved using multigrid algorithm described in Ref. 
+\cite{bib:Pen1995,bib:Pen1998} Then the displacement is given by the gradiant of the deformation 
+potential as in (\ref{eq:disp}). A 2D projection of one layer of the deformed grids and the 
+original density field on the selected deformed grids are given in Fig. \ref{fig:simandrec}. 
+As expeted, there's no grid crossing after reconstruction.
 %
 \end{section}
 
