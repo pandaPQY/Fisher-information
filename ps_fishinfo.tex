@@ -60,7 +60,7 @@ matter power spectrum is defined as
 \label{eq:fisherdefine}
 \end{align}
    in which $\Largr$ denotes the likelihood. For Gaussian fluctuations, the likelihood depends on
-parameters only through the power spectrum $P(k)$, and the information $I$ in A defined by (\ref{eq:fisherdefine})
+parameters only through the power spectrum $P(k)$, and the information $I$ in A defined by Eq. \ref{eq:fisherdefine}
 can be written as \cite{bib:Rimes2006}
 \begin{align}
     I_A = - \left\langle \sum_{k,k'} \frac{\partial \mathrm{ln} P(k)}{\partial \mathrm{ln} A} 
@@ -70,7 +70,7 @@ can be written as \cite{bib:Rimes2006}
 \end{align}
 in which the angle bracket denotes the average over all the power spectra.
 
-  The definition \ref{eq:fisherdefineforgaussian} can be written in a simpler form in two aspects, one 
+  The definition Eq. \ref{eq:fisherdefineforgaussian} can be written in a simpler form in two aspects, one 
 of which is the first and the third partial dericative terms. 
 For any density field $\delta$, we can conveniently decompose it into linear and non-linear components
 \begin{align}
@@ -101,8 +101,8 @@ we find
 \end{align}
 where $\mathcal{D}(k) \equiv b^2 (k)$ is the non-linear damping factor, and $P_n$ is the mode-coupling term.
 
-   With the help of (\ref{eq:bofk}) and (\ref{eq:powerdecompose}), we can replace the partial derivatives 
-$\partial \mathrm{ln} p(k) / \partial \mathrm{ln} A$ in (\ref{eq:fisherdefineforgaussian}) with 
+   With the help of Eq. \ref{eq:bofk} and Eq. \ref{eq:powerdecompose}, we can replace the partial derivatives 
+$\partial \mathrm{ln} p(k) / \partial \mathrm{ln} A$ in Eq. \ref{eq:fisherdefineforgaussian} with 
 \begin{align}
    \frac{A}{P(k)}\frac{\partial P(k)}{\partial A}=frac{P_{\delta \delta_L}^2(k)}{P_\delta P_{\delta_L}}
 \end{align}
@@ -110,7 +110,7 @@ which is just the square of the
 cross correlation function $r ^2 (k)$, of $\delta$ and $\delta_L$. 
 
 The second partial derivative terms in 
-(\ref{eq:fisherdefineforgaussian}), the Hessian of the vector $\mathrm{ln} P(k)$, has the expectation 
+Eq. \ref{eq:fisherdefineforgaussian}, the Hessian of the vector $\mathrm{ln} P(k)$, has the expectation 
 value of the Fisher matrix with respect to the log powers. For linear density fields, the Fisher matrix is 
 approximately equal to the inverse of the covariance matrix of power spectrum estimates, which should be diagonal, 
 with diagonal elements equal to the number of modes in each wavenumber bin (when considering $\bm{k}$ and $-\bm{k}$ 
@@ -124,7 +124,7 @@ where $\mathrm{C_{norm}}$ is the normalized covariance matrix with size per dime
     \mathrm{C_{norm}} \left( k,k' \right)=\frac{\mathrm{Cov}(k,k')}{\langle P(k)\rangle\langle P(k)\rangle},
 \end{align}
 and $r$ is the mean cross correlation of a given density field with linear one as a function of $k$ up to $k_n$. 
-It's reliable to define (\ref{eq:fisherformulaused}) for non-linear density fields as well, 
+It's reliable to define Eq. \ref{eq:fisherformulaused} for non-linear density fields as well, 
 since the Fisher matrix is approximately the same as that of linear density fields on linear scales. 
 The covariance matrix is defined as 
 \begin{align}
@@ -181,7 +181,7 @@ It indicates that the MM reconstructed method can strongly recover the lost info
 within this scale. We compare the Fisher information given by the MM reconstruction method with 
 the logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate their strength. 
 We find that the MM reconstruction gives more than 10 times more information than logarithmic mapping. 
-In some papers, the cross-correlation $r^2$ terms are set to be unity in (\ref{eq:fisherformulaused}), which 
+In some papers, the cross-correlation $r^2$ terms are set to be unity in Eq. \ref{eq:fisherformulaused}, which 
 apparantly increases the non-linear information. We also plot those in Fig. \ref{fig:fisherinfo}(b) 
 for better comparison. But we find that in this case, the MM reconstructed and logarithmic mapping information in the scale 
 $k \simeq$ 0.2 - 0.5 $h/\mathrm{Mpc}$ is higher than the linear one, which is not expected. 

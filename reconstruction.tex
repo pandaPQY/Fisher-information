@@ -34,7 +34,7 @@ where $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume element
 and thus $\sqrt{g} \rho$ represents the particle mass in the volume element under the curvilinear 
 coordinate system. The triad is given by $e^i_\mu = \partial x^i / \partial \xi ^ \alpha$. 
 $\Delta \dot{x}^i=\delta ^{i\nu}\partial _\nu \dot{\phi}$ is chosen such that the first 
-term in equation (\ref{eq:continue_eq}) is zero, resulting in a constant mass per volume 
+term in Eq. \ref{eq:continue_eq} is zero, resulting in a constant mass per volume 
 element. The velocity field divergence is replaced by the deviation density field 
 $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be zero. Then the 
 deformation potential is described via the elliptic equation,
@@ -42,9 +42,9 @@ deformation potential is described via the elliptic equation,
  \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}\partial_\nu \Delta \phi)=\Delta \rho
 \end{align}
-The equation (\ref{eq:li_elip}) can be solved using multigrid algorithm described in Ref. 
+The Eq. \ref{eq:li_elip} can be solved using multigrid algorithm described in Ref. 
 \cite{bib:Pen1995,bib:Pen1998} The displacement is then given by the gradiant of the deformation 
-potential as in (\ref{eq:disp}). We run the MM reconstruction code on 136 non-linear density field from simulation 
+potential as in Eq. \ref{eq:disp}. We run the MM reconstruction code on 136 non-linear density field from simulation 
 in a resolution of ng$=128$ per dimension. The multigrid algorithm is iterated for 1000 times and it rms 
 decreases from roughly 4.5 to roughly 0.2. 
 A 2-D projection of one layer of the deformed grids and the 
