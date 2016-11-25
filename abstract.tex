@@ -1,18 +1,29 @@
 \begin{abstract}
-A new reconstruction method using \textit{Moving-mesh} (MM) algorithm from \textit{ Adaptive Particle-mesh} (APM) 
-algorithm originally aiming at improving the resolution of N-body simulation is 
-recently introduced into comology matter field, which is expected to give a 
-better reconstruction from non-linear density fields to linear ones in many 
-cases. We are motivated to adapt this method to test the Fisher information 
-difference, checking the effect of the reconstruction method. We reconstruct 
-136 non-linear density fields given by independent N-body simulations, in 
-order to recover some of the information lost in the non-linear regime of 
-large-scale structure. Through analyzing the power spectra of both density 
-fields from simulations and deformation potentials from reconstructions, we 
-find that after reconstruction, the non-linear regime of correlation matrix 
-shrinks to $k\simeq 0.6$. We also find that the cumulative Fisher information 
-per $\mathrm{Mpc}^3/h^3$ keeps growing as the linear information until $k\simeq 0.3$. 
-The saturated value of Fisher cumulative information per $\mathrm{Mpc}^3/h^3$ increase 
-from $I \simeq 2.5 \times 10^{-5}/(\mathrm{Mpc}^3/h^3)$ to $I \simeq 10^{-3}/(\mathrm{Mpc}^3/h^3)$ 
-at $k \simeq 1$. At least 40 times more information is given through the reconstruction.
+%A new reconstruction method using \textit{Moving-mesh} (MM) algorithm from \textit{ Adaptive Particle-mesh} (APM) 
+%algorithm originally aiming at improving the resolution of N-body simulation is 
+%recently introduced into comology matter field, which is expected to give a 
+%better reconstruction from non-linear density fields to linear ones in many 
+%cases. We are motivated to adapt this method to test the Fisher information 
+%difference, checking the effect of the reconstruction method. We reconstruct 
+%136 non-linear density fields given by independent N-body simulations, in 
+%order to recover some of the information lost in the non-linear regime of 
+%large-scale structure. Through analyzing the power spectra of both density 
+%fields from simulations and deformation potentials from reconstructions, we 
+%find that after reconstruction, the non-linear regime of correlation matrix 
+%shrinks to $k\simeq 0.6$. We also find that the cumulative Fisher information 
+%per $\mathrm{Mpc}^3/h^3$ keeps growing as the linear information until $k\simeq 0.3$. 
+%The saturated value of Fisher cumulative information per $\mathrm{Mpc}^3/h^3$ increase 
+%from $I \simeq 2.5 \times 10^{-5}/(\mathrm{Mpc}^3/h^3)$ to $I \simeq 10^{-3}/(\mathrm{Mpc}^3/h^3)$ 
+%at $k \simeq 1$. At least 40 times more information is given through the reconstruction.
+Reconstruction techniques are commonly used in cosmology to reduce complicated non-linear 
+behaviour to a more tractable linearized system.  We study the Moving-Mesh algorithm which 
+is expected to perform better than many alternatives as it is based in Lagrangian space.  
+To quantify the algorithm's ability to reconstruct linear modes, we study the Fisher information 
+present in 136 N-body simulations before and after reconstruction.  We find that the non-linear 
+scale is pushed to $k\simeq$0.3 $h/\mathrm{Mpc}$ after reconstruction as modes between $0.2\lesssim k/(h/Mpc) \lesssim 0.6$ 
+become less strongly correlated.  We furthermore find that the translinear plateau of the cumulative 
+Fisher information is increased by a factor of $\sim 40$ after reconstruction, from 
+$I \simeq 2.5 \times 10^{-5} /(\mathrm{Mpc}^3/h^3)$ to $I \simeq 10^{-3}/(\mathrm{Mpc}^3/h^3)$ at $k \simeq$1 $h/\mathrm{Mpc}$. 
+We expect this technique to be beneficial to problems such as baryonic acoustic oscillations and cosmic neutrinos 
+that rely on an accurate disentangling of non-linear evolution from underlying linear effects.
 \end{abstract}

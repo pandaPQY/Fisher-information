@@ -1,10 +1,10 @@
 \begin{section}{Introduction}\label{sec:introduction}  
 
-Power spectrum is widely used in modern cosmology to measure the matter
+The power spectrum is widely used in modern cosmology to measure the matter
 fluctuations. In the early universe, initial Gaussian density fields
 can be completely described by the power spectrum, or the two-point
 statistics. However, gravitational instability and nonlinear large scale
-structure (LSS) formation drive the matter distribution highly
+structure (LSS) formation make the matter distribution highly
 non-Gaussian, and the galaxy distribution also follows this non-Gaussian
 distribution. In these cases one needs to compute higher statistics
 which are computationally more expensive and more difficult to
@@ -13,16 +13,16 @@ is usually used to quantify the amount of independent information
 that is contained in the power spectrum estimation.
 
 Rimes and Hamilton \citep{bib:Rimes2006} first studied the Fisher
-information as a function of scale contained in the matter power
+information contained in the matter power
 spectrum given by $N$-body simulations, and find that there is a
 plateau on trans-linear scales $(k \simeq 0.2-0.8\ h/{\rm Mpc})$,
 which shows that on these scales, there is a strong coupling of
-Fourier modes and thus the power spectrum on smaller scales, gives little
+Fourier modes. Thus the power spectrum on smaller scales, gives little
 additional independent information.
 %\tcb{Apart from numerical trend, Fisher information was also estimated in data from observation. For example, Lee and Pen \cite{bib:Lee2008} measured the information content in the galaxy angular power spectrum with the help of the Rimes-hamilton technique, and also found that the information saturation. }
 
 There are many approaches to recover the lost information in the
-power spectrum of matter density field, by reversing the final
+power spectrum of the matter density field, by transforming the final
 density field into a more Gaussian, early stage density field.
 For example, Gaussianization transforms are commonly used
 \cite{bib:Weinberg1992,bib:Mark2009} to make the logarithmic
@@ -34,10 +34,10 @@ or their combinations may have different abilities to recover
 the Fisher information, by means of reducing the mode coupling
 and variances in the auto power spectrum of Gaussianized
 density fields, they do not necessarily improve the cross correlation
-(propagator in their context) between the initial density
+ between the initial density
 field and the final density field, and thus result in a smearing
 out of the baryonic acoustic oscillations (BAO) peak in the two-point
-correlation function. If one concerns about mapping
+correlation function. If one is concerned about mapping
 the initial conditions to final conditions (e.g. measurement of 
 BAO) these methods are unable to
 extract valid information from initial conditions, at least in
@@ -45,17 +45,17 @@ the cross power spectrum between initial and final conditions.
 
 Reconstruction techniques (including the one described in 
 \cite{bib:HarnoisD2013}) are able to increase the Fisher information
-while also improve the cross correlation to the initial conditions
-and sharpen the BAO peak. It is based on the coupling of linear
+while also improving the cross correlation with the initial conditions
+and sharpening the BAO peak. It is based on the coupling of linear
 density field $\delta_L(\bs{q},t_0)$ to the displacement field
-$\bs\Psi(\bs{q})$, first derived by \cite{bib:Zel1970}, and
-the displacement field is estimated by a smoothed final density field.
+$\bs\Psi(\bs{q})$ (first derived by \cite{bib:Zel1970}), which
+is estimated by a smoothed final density field.
 \cite{bib:Zhu2016} shows a new method in the estimation of displacement
 field in 1-dimensional (1D), according to which the 1D linear density
-field is reconstructed in Lagrangian space and successfully improve
+field is reconstructed in Lagrangian space and successfully improves 
 the BAO measurement. In 3D cases, it is nontrivial to estimate
 the displacement field, but \cite{bib:Yu2016} show that the displacement
-field given by $N$-body simulations can be used to recover the $\delta_L$.
+field given by $N$-body simulations can be used to recover $\delta_L$.
 
 In this paper we generalize the displacement field estimation method
 from 1D \citep{bib:Zhu2016} to 3D, reconstruct $\delta_L$ and study
@@ -74,6 +74,6 @@ the \textit{Adaptive Particle-mesh} (APM) simulation algorithm \citep{bib:Pen199
   In Section \ref{sec:simulation}, we present the main steps of the N-body simulation code that was used to simulate the dark matter density fields.
   In Section \ref{sec:reconstruction}, we briefly describe the reconstruction algorithm.
   In Section \ref{sec:fisherinfo}, we calculate and compare the power spectra, correlation matrix and Fisher information given by simulation and reconstruction.
-  Conclusion and discussion are presented in Section \ref{sec:conclusion}
+  The conclusion and discussion are presented in Section \ref{sec:conclusion}
 
 \end{section}

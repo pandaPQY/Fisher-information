@@ -2,45 +2,45 @@ This is BibTeX, Version 0.99c (Web2C 7.5.6)
 The top-level auxiliary file: paper.aux
 The style file: apsrev.bst
 Database file #1: myreference.bib
-Reallocated wiz_functions (elt_size=4) to 6000 items from 47334834572216.
-You've used 20 entries,
+Reallocated wiz_functions (elt_size=4) to 6000 items from 47266115095480.
+You've used 21 entries,
             3411 wiz_defined-function locations,
-            1305 strings with 13723 characters,
-and the built_in function-call counts, 14633 in all, are:
-= -- 802
-> -- 516
-< -- 76
-+ -- 426
-- -- 127
-* -- 2045
-:= -- 1554
-add.period$ -- 20
-call.type$ -- 20
-change.case$ -- 80
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 1350
-empty$ -- 1227
-format.name$ -- 308
-if$ -- 2741
+            1310 strings with 13852 characters,
+and the built_in function-call counts, 15408 in all, are:
+= -- 838
+> -- 557
+< -- 81
++ -- 462
+- -- 137
+* -- 2152
+:= -- 1633
+add.period$ -- 21
+call.type$ -- 21
+change.case$ -- 84
+chr.to.int$ -- 20
+cite$ -- 21
+duplicate$ -- 1421
+empty$ -- 1287
+format.name$ -- 331
+if$ -- 2880
 int.to.chr$ -- 2
-int.to.str$ -- 21
-missing$ -- 207
-newline$ -- 75
-num.names$ -- 61
-pop$ -- 364
+int.to.str$ -- 22
+missing$ -- 216
+newline$ -- 78
+num.names$ -- 64
+pop$ -- 391
 preamble$ -- 1
-purify$ -- 80
+purify$ -- 84
 quote$ -- 0
-skip$ -- 524
+skip$ -- 552
 stack$ -- 0
-substring$ -- 394
-swap$ -- 1097
-text.length$ -- 69
+substring$ -- 405
+swap$ -- 1150
+text.length$ -- 74
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 126
 warning$ -- 0
-while$ -- 58
+while$ -- 60
 width$ -- 0
-write$ -- 229
+write$ -- 237
