@@ -1,7 +1,7 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.8.11)  24 NOV 2016 18:25
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.8.11)  24 NOV 2016 23:10
 entering extended mode
  %&-line parsing enabled.
-**paper
+**paper.tex
 (./paper.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
@@ -361,11 +361,11 @@ Underfull \hbox (badness 1796) in paragraph at lines 46--59
 File: sar_best_analysis-crop.pdf Graphic file (type pdf)
 
 <use sar_best_analysis-crop.pdf>) (./reconstruction.tex) (./ps_fishinfo.tex
-<cross_correlation_best_analysis-crop.pdf, id=101, 511.9125pt x 422.57875pt>
+<cross_correlation_best_analysis-crop.pdf, id=101, 511.9125pt x 416.55624pt>
 File: cross_correlation_best_analysis-crop.pdf Graphic file (type pdf)
 
 <use cross_correlation_best_analysis-crop.pdf>
-<power_best_analysis-crop.pdf, id=102, 533.995pt x 427.5975pt>
+<power_best_analysis-crop.pdf, id=102, 533.995pt x 420.57124pt>
 File: power_best_analysis-crop.pdf Graphic file (type pdf)
 
 <use power_best_analysis-crop.pdf> [2] [3 <./sar_best_analysis-crop.pdf>]
@@ -374,49 +374,54 @@ File: power_best_analysis-crop.pdf Graphic file (type pdf)
 File: corrmat_hot-crop.pdf Graphic file (type pdf)
 
 <use corrmat_hot-crop.pdf>
-<fisher_r2_best_analysis-crop.pdf, id=293, 534.99875pt x 520.94624pt>
+<fisher_r2_best_analysis-crop.pdf, id=293, 534.99875pt x 505.89pt>
 File: fisher_r2_best_analysis-crop.pdf Graphic file (type pdf)
 
 <use fisher_r2_best_analysis-crop.pdf>
-<fisher_best_analysis-crop.pdf, id=294, 534.99875pt x 520.94624pt>
+<fisher_best_analysis-crop.pdf, id=294, 534.99875pt x 505.89pt>
 File: fisher_best_analysis-crop.pdf Graphic file (type pdf)
 
-<use fisher_best_analysis-crop.pdf>) (./results.tex) (./acknowledgements.tex)
-[5 <./corrmat_hot-crop.pdf>] (./paper.bbl) [6 <./fisher_r2_best_analysis-crop.p
-df> <./fisher_best_analysis-crop.pdf>]
+<use fisher_best_analysis-crop.pdf>) (./results.tex) [5 <./corrmat_hot-crop.pdf
+>] (./acknowledgements.tex) (./paper.bbl [6 <./fisher_r2_best_analysis-crop.pdf
+> <./fisher_best_analysis-crop.pdf>]) [7]
 
 Class revtex4 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
-(./paper.aux) ) 
+(./paper.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
+ ) 
 Here is how much of TeX's memory you used:
- 5800 strings out of 256216
- 76950 string characters out of 1917072
+ 5802 strings out of 256216
+ 76967 string characters out of 1917072
  247901 words of memory out of 1500000
- 8901 multiletter control sequences out of 10000+200000
+ 8900 multiletter control sequences out of 10000+200000
  17174 words of font info for 63 fonts, out of 1200000 for 2000
  648 hyphenation exceptions out of 8191
- 35i,11n,38p,1280b,382s stack positions out of 5000i,500n,6000p,200000b,15000s
-</usr/share/texmf/fonts/type1/bluesky/ams/cmbsy7.pfb></usr/share
-/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/
-cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/te
-xmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
-cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf
-/fonts/type1/bluesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi
-7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/share/texmf/font
-s/type1/bluesky/cm/cmmib10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.p
-fb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/ty
-pe1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr
-/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/type1/blue
-sky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb></usr/shar
-e/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/
-cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/tex
-mf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
-mti7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti9.pfb></usr/share/texmf/f
-onts/type1/bluesky/ams/msam10.pfb>
-Output written on paper.pdf (6 pages, 1727405 bytes).
+ 35i,11n,38p,1284b,477s stack positions out of 5000i,500n,6000p,200000b,15000s
+</usr/share/texmf/fonts/type1/bluesky/ams/cmbsy7.pfb></usr/share/texmf/fonts/
+type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb
+></usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmex10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></
+usr/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/
+bluesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/s
+hare/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmmib10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/shar
+e/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf/fonts/type1/bluesky/c
+m/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/
+fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10
+.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb></usr/share/texmf/fonts
+/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type
+1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmti9.pfb></usr/share/texmf/fonts/type1/bl
+uesky/ams/msam10.pfb>
+Output written on paper.pdf (7 pages, 1730078 bytes).
 PDF statistics:
- 2814 PDF objects out of 2984 (max. 8388607)
- 56 named destinations out of 1000 (max. 131072)
+ 2822 PDF objects out of 2984 (max. 8388607)
+ 59 named destinations out of 1000 (max. 131072)
  103 words of extra memory for PDF output out of 10000 (max. 10000000)
 
