@@ -25,20 +25,20 @@ we plot $\mathcal{D}_\delta^{1/4}$ ($\Sigma =$ 11.3 $\mathrm{Mpc}/h$) and $\math
 ($\Sigma = $ 3.9 $\mathrm{Mpc}/h$) over $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. 
 We also plot the $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. We also plot $\mathcal{D}(k)^{1/4}$ 
 that match cross correlation function after $E$-mode displacement 
-reconstruction ($\mathrm{ng}=512$, box size=400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), 
+reconstruction ($\mathrm{ng}=512$, box size $=$ 400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), 
 which is the result in \cite{bib:Yu2016} and 
-MM reconstruction in a higer resolution ($\mathrm{ng}=512$, box size=600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$), 
+MM reconstruction in a higer resolution ($\mathrm{ng}=512$, box size $=$ 600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$), 
 which is the result in \cite{bib:ZhuH2016}. We find that with higher resolution, which is more precise, 
 the reconstruction gives a cross correlation damping at smaller scale. 
 And it's expected that the $E$-mode displacement reconstruction gives a reconstructed power spectrum more correlated 
 with the initial one, since it decomposes completely the irrotational and curl components of the real displacement 
-field in N-body simulation, while the difference between the reconstructed displacement through MM reconstruction 
+field in $N$-body simulation, while the difference between the reconstructed displacement through MM reconstruction 
 and the real displacement still has an irrotational component.
  In Fig.\ref{fig:cross-correlation-power}(b) we plot the linear power spectrum which is the transfer function, and mean 
 power spectrum (with error bars) of 136 non-linear density fields and reconstruced density fields simply 
-given by $\delta_R=\bm{k}\cdot\bm{k}\xi$. The reconstructed power spectrum drops at non-linear scale ($k \gtrsim$ 0.3 $h/\mathrm{Mpc}$) 
+given by $\delta_R(k)=\bm{k}\cdot\bm{k}\phi(k)$. The reconstructed power spectrum drops at non-linear scale ($k \gtrsim$ 0.3 $h/\mathrm{Mpc}$) 
 since the reconstructed density fields are totally irrotational. The result is similar to that of 
-E-mode displacement reconstruction described in \cite{bib:Yu2016}, in which the reconstructed power spectrum 
+$E$-mode displacement reconstruction described in \cite{bib:Yu2016}, in which the reconstructed power spectrum 
 drops, but in a different scale and at a different speed.
 \begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
@@ -77,8 +77,8 @@ For any density field $\delta$, we can conveniently decompose it into linear and
     \delta (k) = b (k) \delta _L (k) + n (k),
 \label{eq:decompose}
 \end{align}
-in which $\delta_L$ denotes the linear density field. $b (k)$ is the bias and $n (k)$ is defined  
-such that the correlation $\langle \delta_l (k) n (k) \rangle$ is zero. If we correlate  
+in which $\delta_L$ denotes the linear density field.$b (k)$ is the bias and $n (k)$ is defined  
+such that the correlation $\langle \delta_L (k) n (k) \rangle$ is zero. If we correlate  
 $\delta$ and $\delta_L$,
 \begin{align}
    \langle \delta (k) \delta_L (k) \rangle = b (k) \langle \delta_L (k) \delta_L (k) \rangle,
@@ -104,7 +104,7 @@ where $\mathcal{D}(k) \equiv b^2 (k)$ is the non-linear damping factor, and $P_n
    With the help of Eq.\ref{eq:bofk} and Eq.\ref{eq:powerdecompose}, we can replace the partial derivatives 
 $\partial \mathrm{ln} p(k) / \partial \mathrm{ln} A$ in Eq.\ref{eq:fisherdefineforgaussian} with 
 \begin{align}
-   \frac{A}{P(k)}\frac{\partial P(k)}{\partial A}=frac{P_{\delta \delta_L}^2(k)}{P_\delta P_{\delta_L}}
+   \frac{A}{P(k)}\frac{\partial P(k)}{\partial A}=\frac{P_{\delta \delta_L}^2(k)}{P_\delta P_{\delta_L}}
 \end{align}
 which is just the square of the 
 cross correlation function $r ^2 (k)$, of $\delta$ and $\delta_L$. 
@@ -128,7 +128,7 @@ It's reliable to define Eq.\ref{eq:fisherformulaused} for non-linear density fie
 since the Fisher matrix is approximately the same as that of linear density fields on linear scales. 
 The covariance matrix is defined as 
 \begin{align}
-    \mathrm{Cov}\left(k,k'\right)\equiv \frac{\sum_{i=1}^{N}\left[ P_i \left( k \right) - 
+    \mathrm{Cov}\left(k,k'\right)\equiv \frac{\sum_{i,j=1}^{N}\left[ P_i \left( k \right) - 
 \langle P \left( k \right) \rangle \right]\left[ P_j \left( k' \right) - \langle P \left( k' \right)\rangle \right]}{N-1},
 \end{align}
 where angle brackets mean the expected values, and $N$ is the total number of simulations.
@@ -165,7 +165,7 @@ Both the matrix are symmetric and have unity diagonal elements.}
 %\end{align}
 
   Cumulative Fisher information is proportional to the volume. We plot the 
-cumulative Fisher information per $\mathrm{Mpc}^3/h$ of the non-linear, linear and reconstructed power specta in 
+cumulative Fisher information per $\mathrm{Mpc}^3/h^3$ of the non-linear, linear and reconstructed power specta in 
 Fig.\ref{fig:fisherinfo}(a). The Fisher information of the non-linear power spectra drops 
 from the linear one at $k \simeq$ 0.05 $h/\mathrm{Mpc}$, and has a flat plateau in the translinear regime, 
 $k\simeq$ 0.3 $h/\mathrm{Mpc}$, with 
@@ -181,7 +181,7 @@ It indicates that the MM reconstructed method can strongly recover the lost info
 within this scale. We compare the Fisher information given by the MM reconstruction method with 
 the logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate their strength. 
 We find that the MM reconstruction gives more than 10 times more information than logarithmic mapping. 
-In some papers, the cross-correlation $r^2$ terms are set to be unity in Eq.\ref{eq:fisherformulaused}, which 
+In some papers, the cross correlation $r^2$ terms are set to be unity in Eq.\ref{eq:fisherformulaused}, which 
 apparantly increases the non-linear information. We also plot those in Fig.\ref{fig:fisherinfo}(b) 
 for better comparison. But we find that in this case, the MM reconstructed and logarithmic mapping information in the scale 
 $k \simeq$ 0.2 - 0.5 $h/\mathrm{Mpc}$ is higher than the linear one, which is not expected. 
@@ -204,7 +204,7 @@ the red line with squares corresponds to the the reconstructed deformation
 potential; the dark line corresponds to the linear density field; the circles correspond to number 
 of $k$ modes up to that wave bin. Dotted lines correspond to saturated value of 
 non-linear Fisher information, 4 times and 40 times of it. (b) Cumulative Fisher information 
-per $\mathrm{Mpc}^3/h^3$ given by setting the cross-correlation to be unity.}
+per $\mathrm{Mpc}^3/h^3$ given by setting the cross correlation to be unity.}
   \label{fig:fisherinfo}
 
 \end{figure*}
