@@ -46,7 +46,7 @@ drops, but in a different scale and at a different speed.
 \includegraphics[width=0.455\textwidth]{cross_correlation_best_analysis-crop.pdf} 
 \includegraphics[width=0.48\textwidth]{power_best_analysis-crop.pdf}
 %\includegraphics[width=0.5\textwidth]{power_nberror-crop.pdf}
-\caption{(a) The cross correlation function (solid lines) $r(\delta,\delta_L)$ (blue) and $r(\delta_R,\delta_L)$ (red), 
+\caption{(a) The cross correlation function (solid lines) $r_{\delta\delta_L}$ (blue) and $r_{\delta_R\delta_L}$ (red), 
 and BAO damping models (dash lines). 
 (b) The dimensionless power spectrum computed via linear theory (black), the mean value of 136 $N$-body simulations
 with $1\sigma$ error bars (blue), and reconstruction of the simulations (red).}
@@ -77,7 +77,7 @@ For any density field $\delta$, we can conveniently decompose it into linear and
     \delta (k) = b (k) \delta _L (k) + n (k),
 \label{eq:decompose}
 \end{align}
-in which $\delta_L$ denotes the linear density field.$b (k)$ is the bias and $n (k)$ is defined  
+in which $\delta_L$ denotes the linear density field. $b (k)$ is the bias and $n (k)$ is defined  
 such that the correlation $\langle \delta_L (k) n (k) \rangle$ is zero. If we correlate  
 $\delta$ and $\delta_L$,
 \begin{align}
@@ -104,7 +104,7 @@ where $\mathcal{D}(k) \equiv b^2 (k)$ is the non-linear damping factor, and $P_n
    With the help of Eq.\ref{eq:bofk} and Eq.\ref{eq:powerdecompose}, we can replace the partial derivatives 
 $\partial \mathrm{ln} p(k) / \partial \mathrm{ln} A$ in Eq.\ref{eq:fisherdefineforgaussian} with 
 \begin{align}
-   \frac{A}{P(k)}\frac{\partial P(k)}{\partial A}=\frac{P_{\delta \delta_L}^2(k)}{P_\delta P_{\delta_L}}
+   \frac{A}{P(k)}\frac{\partial P(k)}{\partial A}=\frac{P_{\delta \delta_L}^2(k)}{P_\delta(k) P_{\delta_L}(k)}
 \end{align}
 which is just the square of the 
 cross correlation function $r ^2 (k)$, of $\delta$ and $\delta_L$. 
@@ -121,7 +121,7 @@ as the same mode). Thus we can write down a simpler matrix product form of cumul
 \end{align}
 where $\mathrm{C_{norm}}$ is the normalized covariance matrix with size per dimension up to $k_n$, defined as
 \begin{align}
-    \mathrm{C_{norm}} \left( k,k' \right)=\frac{\mathrm{Cov}(k,k')}{\langle P(k)\rangle\langle P(k)\rangle},
+    \mathrm{C_{norm}} \left( k,k' \right)=\frac{\mathrm{Cov}(k,k')}{\langle P(k)\rangle\langle P(k')\rangle},
 \end{align}
 and $r$ is the mean cross correlation of a given density field with linear one as a function of $k$ up to $k_n$. 
 It's reliable to define Eq.\ref{eq:fisherformulaused} for non-linear density fields as well, 
@@ -144,10 +144,10 @@ The off-diagonal elements are produced by
 strong mode coupling in non-linear scale, and the super-survey tidal effect which is small on 
 linear scales but dominates in the weakly non-linear regime \cite{bib:Kazuyuki2016}.
 The correlation matrix for the non-linear power spectra has few negative elements,
-($\mathrm{Corr} \simeq -0.1$), which are produced by the unbiased error and thus 
+($\mathrm{Corr} \gtrsim -0.1$), which are produced by the unbiased error and thus 
  will vanish with more simulations \cite{bib:Takahashi2009}.
  For the reconstructed correlation matrix, however, the linear regime expand up to $k \simeq$ 0.6 $h/\mathrm{Mpc}$, 
-but the number and magnitude of negative off-diagonal elements increases ($\mathrm{Corr} \simeq -0.8$). 
+but the number and magnitude of negative off-diagonal elements increases ($\mathrm{Corr} \gtrsim -0.8$). 
 
 \begin{figure}
  \centering
