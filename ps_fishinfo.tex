@@ -17,24 +17,24 @@ spectrum in its dimensionless form, defined as
 function, $r=P_{\delta \delta_L}/\sqrt{P_\delta P_{\delta_L}}$ of the nonlinear and the 
 linear power spectrum, and the reconstructed and 
 linear power spectrum respectively. The wave number where the cross correlation drops to a half increases 
-from $k\simeq$ 0.2 $h/\mathrm{Mpc}$ to $k \simeq$ 0.6 $h/\mathrm{Mpc}$. 
-To qualify the improvement of cross correlation in the 
-power spectrum, we compute the damping factors $\mathcal{D}(k)=r^4$ fitting the Gaussian BAO damping models 
+from $k\simeq$ 0.2 $h/\mathrm{Mpc}$ to $k \simeq$ 0.6 $h/\mathrm{Mpc}$ after the reconstruction. 
+To qualify the improvement of cross correlation better, 
+we compute the damping factors $\mathcal{D}(k)=r^4$ fitting the Gaussian BAO damping models 
 $\mathcal{D}(k)=\mathrm{exp}(-k^2 \Sigma^2/2)$. In Fig.\ref{fig:cross-correlation-power}(a) 
 we plot $\mathcal{D}_\delta^{1/4}$ ($\Sigma =$ 11.3 $\mathrm{Mpc}/h$) and $\mathcal{D}_{\delta_R}^{1/4}$ 
 ($\Sigma = $ 3.9 $\mathrm{Mpc}/h$) over $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. 
 We also plot $\mathcal{D}(k)^{1/4}$ 
 that match cross correlation function after $E$-mode displacement 
-reconstruction result in \cite{bib:Yu2016} ($\mathrm{ng}=512$, box size $=$ 400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), and 
-MM reconstruction result in a higer resolution in \cite{bib:ZhuH2016} ($\mathrm{ng}=512$, 
-box size $=$ 600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$), 
-which is the result in \cite{bib:ZhuH2016}. We find that in higher resolution, 
+reconstruction in \cite{bib:Yu2016} ($\mathrm{ng}=512$, box size $=$ 400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), and 
+MM reconstruction in a higer resolution in \cite{bib:ZhuH2016} ($\mathrm{ng}=512$, 
+box size $=$ 600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$). 
+We find that in higher resolution, 
 the reconstruction gives a cross correlation damping at smaller scale. 
 And it's expected that the $E$-mode displacement reconstruction gives a reconstructed power spectrum more correlated 
-with the initial one, since it completely picks out the irrotational components of the real displacement 
+with the initial one, since it completely picks out the irrotational component of the real displacement 
 field in $N$-body simulation, while through MM reconstruction, the difference between the reconstructed displacement 
 and the real displacement still contains an irrotational component, which is also correlated with the linear power spectrum.
- In Fig.\ref{fig:cross-correlation-power}(b) we plot the linear power spectrum which is the transfer function, and mean 
+ In Fig.\ref{fig:cross-correlation-power}(b) we plot the linear power spectrum, and mean 
 power spectrum (with error bars) of 136 nonlinear density fields and reconstruced density fields simply 
 given by $\delta_R=\nabla^2\phi$. The reconstructed power spectrum drops at nonlinear scale ($k \gtrsim$ 0.3 $h/\mathrm{Mpc}$) 
 since the reconstructed density fields are totally irrotational. The result is similar to that of 
@@ -60,7 +60,7 @@ matter power spectrum is defined as
 \label{eq:fisherdefine}
 \end{align}
    in which $\Largr$ denotes the likelihood. For Gaussian fluctuations, the likelihood depends on
-parameters only through the power spectrum $P(k)$, and the information $I$ in A defined by Eq.\ref{eq:fisherdefine}
+parameters only through the power spectrum $P(k)$, so the information $I$ in A defined by Eq.\ref{eq:fisherdefine}
 can be written as \cite{bib:Rimes2006}
 \begin{align}
     I_A = - \left\langle \sum_{k,k'} \frac{\partial \mathrm{ln} P(k)}{\partial \mathrm{ln} A} 
@@ -113,7 +113,7 @@ The second partial derivative terms in
 Eq.\ref{eq:fisherdefineforgaussian}, the Hessian of the vector $\mathrm{ln} P(k)$, has the expectation 
 value of the Fisher matrix with respect to the log powers. For linear density fields, the Fisher matrix is 
 approximately equal to the inverse of the covariance matrix of power spectrum estimates, which should be diagonal, 
-with diagonal elements equal to the number of modes in each wavenumber bin (when considering $\bm{k}$ and $-\bm{k}$ 
+with diagonal elements equal to number of modes in each wavenumber bin (when considering $\bm{k}$ and $-\bm{k}$ 
 as the same mode). Thus we can write down a simpler matrix product form of cumulative Fisher information, 
 \begin{align}
     I_A \left( < k_n\right) = r^2(k)^{\mathrm{T}} \left[ \mathrm{C^{-1}_{norm}} ( k,k' )\right] r^2(k') ,
@@ -139,15 +139,15 @@ where angle brackets mean the expected values, and $N$ is the total number of si
 which represents the correlation between different $k$ modes. 
 The corelation matrices for nonlinear and reconstructed power spectra 
 are shown in Fig.\ref{fig:corrall}. For the nonlinear power spectra, the
-correlation matrix in the linear regime, $k \lesssim$ 0.2 $h/\mathrm{Mpc}$, is almost diagonal. 
+correlation matrix in the linear regime, $k \lesssim$ 0.07 $h/\mathrm{Mpc}$, is almost diagonal. 
 The off-diagonal elements are produced by 
 strong mode coupling in nonlinear scale, and the super-survey tidal effect which is small on 
 linear scales but dominates in the weakly nonlinear regime \cite{bib:Kazuyuki2016}.
 The correlation matrix for the nonlinear power spectra has few negative elements
 ($\mathrm{Corr} \gtrsim -0.1$), which are produced by the unbiased error and thus 
  will vanish with more simulations \cite{bib:Takahashi2009}.
- For the reconstructed correlation matrix, however, the linear regime expand up to $k \simeq$ 0.6 $h/\mathrm{Mpc}$, 
-but the number and magnitude of negative off-diagonal elements increases ($\mathrm{Corr} \gtrsim -0.8$). 
+ For the reconstructed correlation matrix, however, the linear regime expands up to $k \simeq$ 0.3 $h/\mathrm{Mpc}$, 
+but number and magnitude of negative off-diagonal elements increases ($\mathrm{Corr} \gtrsim -0.8$). 
 
 \begin{figure}
  \centering
@@ -179,11 +179,11 @@ the linear information until $k\simeq$ 0.3 $h/\mathrm{Mpc}$, and reaches its pla
 value of $I \simeq  10^{-3}/(\mathrm{Mpc}^3/h^3)$, up by a factor of  40. 
 It indicates that the MM reconstructed method can strongly recover the lost information 
 within this scale. We compare the Fisher information given by the MM reconstruction method with 
-the logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate their strength. 
+the logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate its strength. 
 We find that the MM reconstruction gives more than 10 times more information than logarithmic mapping. 
 In some papers, the cross correlation $r^2$ terms are set to be unity in Eq.\ref{eq:fisherformulaused}, which 
 apparantly increases the nonlinear information. We also plot those in Fig.\ref{fig:fisherinfo}(b) 
-for better comparison. In this case, the nonlinear information drops from the linear one beginning at the same scale, 
+for better comparison. We find that, in this case, the nonlinear information drops from the linear one beginning at the same scale, 
 $k\simeq$ 0.3 $h/\mathrm{Mpc}$, but reaches the saturated value, $I \simeq 4 \times 10^{-5}/(\mathrm{Mpc}^3/h^3)$, at translinear 
 scale, $k \simeq $ 0.2 $-$ 0.8 $h/\mathrm{Mpc}$. However, the MM reconstructed and logarithmic mapping information 
 is higher than the linear one in the scale 
@@ -207,7 +207,8 @@ the red line with squares corresponds to the the reconstructed density fields;
 the dark line corresponds to the linear density fields; the circles correspond to number 
 of $k$ modes up to that wave bin. Dotted lines correspond to saturated value of 
 nonlinear Fisher information, 4 times and 40 times of it, respectively. (b) Cumulative Fisher information 
-per volume given by setting the cross correlation to be unity.}
+per volume given by setting the cross correlation to be unity. The black, blue and cyan lines match the results in 
+\cite{bib:Rimes2006,bib:Mark2009}.}
   \label{fig:fisherinfo}
 
 \end{figure*}
