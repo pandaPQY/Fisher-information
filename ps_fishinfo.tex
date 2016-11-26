@@ -7,14 +7,14 @@
 \left( 2\pi \right) ^3 P \left( \bm{k} \right) \hat{\delta} \left( \bm{k}-\bm{k'} \right),
 \end{align}
 where $\delta \left( \bm{k} \right)$ is the density fluctuation in wave space, while 
-$\hat{\delta}$ is the delta funciton. Of equal interest is $\Delta ^2_k$, the power 
+$\hat{\delta}$ is the delta funciton. Of equal interest is $\Delta ^2(k)$, the power 
 spectrum in its dimensionless form, defined as
 \begin{align}
-    \Delta ^2(k) \equiv \frac{k^3 P \left( k \right)}{2\pi ^2}
+    \Delta ^2(k) \equiv \frac{k^3 P \left( k \right)}{2\pi ^2}.
 \end{align}
-    The power spectra of the mass distributions are calculated using the \enquote{Nearest Grid Point} 
+    The power spectra of the mass distributions are calculated using the \enquote{\textit{Nearest Grid Point}} 
 (NGP) mass assignment scheme. In Fig.\ref{fig:cross-correlation-power}(a) we plot the mean cross correlation 
-function, $r=P_{\delta \delta_L}/\sqrt{P_\delta P_{\delta_L}}$ of the non-linear and the 
+function, $r=P_{\delta \delta_L}/\sqrt{P_\delta P_{\delta_L}}$ of the nonlinear and the 
 linear power spectrum, and the reconstructed and 
 linear power spectrum respectively. The wave number where the cross correlation drops to a half increases 
 from $k\simeq$ 0.2 $h/\mathrm{Mpc}$ to $k \simeq$ 0.6 $h/\mathrm{Mpc}$. 
@@ -23,20 +23,20 @@ power spectrum, we compute the damping factors $\mathcal{D}(k)=r^4$ fitting the 
 $\mathcal{D}(k)=\mathrm{exp}(-k^2 \Sigma^2/2)$. In Fig.\ref{fig:cross-correlation-power}(a) 
 we plot $\mathcal{D}_\delta^{1/4}$ ($\Sigma =$ 11.3 $\mathrm{Mpc}/h$) and $\mathcal{D}_{\delta_R}^{1/4}$ 
 ($\Sigma = $ 3.9 $\mathrm{Mpc}/h$) over $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. 
-We also plot the $r_{\delta\delta_L}$ and $r_{\delta_R\delta_L}$. We also plot $\mathcal{D}(k)^{1/4}$ 
+We also plot $\mathcal{D}(k)^{1/4}$ 
 that match cross correlation function after $E$-mode displacement 
-reconstruction ($\mathrm{ng}=512$, box size $=$ 400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), 
-which is the result in \cite{bib:Yu2016} and 
-MM reconstruction in a higer resolution ($\mathrm{ng}=512$, box size $=$ 600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$), 
-which is the result in \cite{bib:ZhuH2016}. We find that with higher resolution, which is more precise, 
+reconstruction result in \cite{bib:Yu2016} ($\mathrm{ng}=512$, box size $=$ 400 $\mathrm{Mpc}/h$, $\Sigma =$ 1.3 $\mathrm{Mpc}/h$), and 
+MM reconstruction result in a higer resolution in \cite{bib:ZhuH2016} ($\mathrm{ng}=512$, 
+box size $=$ 600 $\mathrm{Mpc}/h$, $\Sigma =$ 2.6 $\mathrm{Mpc}/h$), 
+which is the result in \cite{bib:ZhuH2016}. We find that in higher resolution, 
 the reconstruction gives a cross correlation damping at smaller scale. 
 And it's expected that the $E$-mode displacement reconstruction gives a reconstructed power spectrum more correlated 
-with the initial one, since it decomposes completely the irrotational and curl components of the real displacement 
-field in $N$-body simulation, while the difference between the reconstructed displacement through MM reconstruction 
-and the real displacement still has an irrotational component.
+with the initial one, since it completely picks out the irrotational components of the real displacement 
+field in $N$-body simulation, while through MM reconstruction, the difference between the reconstructed displacement 
+and the real displacement still contains an irrotational component, which is also correlated with the linear power spectrum.
  In Fig.\ref{fig:cross-correlation-power}(b) we plot the linear power spectrum which is the transfer function, and mean 
-power spectrum (with error bars) of 136 non-linear density fields and reconstruced density fields simply 
-given by $\delta_R(k)=\bm{k}\cdot\bm{k}\phi(k)$. The reconstructed power spectrum drops at non-linear scale ($k \gtrsim$ 0.3 $h/\mathrm{Mpc}$) 
+power spectrum (with error bars) of 136 nonlinear density fields and reconstruced density fields simply 
+given by $\delta_R=\Delta^2\phi$. The reconstructed power spectrum drops at nonlinear scale ($k \gtrsim$ 0.3 $h/\mathrm{Mpc}$) 
 since the reconstructed density fields are totally irrotational. The result is similar to that of 
 $E$-mode displacement reconstruction described in \cite{bib:Yu2016}, in which the reconstructed power spectrum 
 drops, but in a different scale and at a different speed.
@@ -72,7 +72,7 @@ in which the angle bracket denotes the average over all the power spectra.
 
   The definition Eq.\ref{eq:fisherdefineforgaussian} can be written in a simpler form in two aspects, one 
 of which is the first and the third partial dericative terms. 
-For any density field $\delta$, we can conveniently decompose it into linear and non-linear components
+For any density field $\delta$, we can conveniently decompose it into linear and nonlinear components
 \begin{align}
     \delta (k) = b (k) \delta _L (k) + n (k),
 \label{eq:decompose}
@@ -89,7 +89,7 @@ $\delta$ and $\delta_L$,
     b (k) = \frac{P _{\delta \delta_L}(k)}{P_{\delta_L}(k)}.
 \label{eq:bofk}
 \end{align}
-Non-linear evolution drives $b (k)$ to drop from unity, and generates the non-linear term $n (k)$. 
+Non-linear evolution drives $b (k)$ to drop from unity, and generates the nonlinear term $n (k)$. 
 Correlating $\delta$ and itself, 
 \begin{align}
   \langle \delta (k) \delta (k) \rangle = b^2 (k) \langle \delta_L (k) \delta_L (k) \rangle + \langle n(k)n(k) \rangle,
@@ -99,7 +99,7 @@ we find
    P_\delta (k) = \mathcal{D} (k) P_{\delta_L} (k) + P_n (k),
 \label{eq:powerdecompose}
 \end{align}
-where $\mathcal{D}(k) \equiv b^2 (k)$ is the non-linear damping factor, and $P_n$ is the mode-coupling term.
+where $\mathcal{D}(k) \equiv b^2 (k)$ is the nonlinear damping factor, and $P_n$ is the mode coupling term.
 
    With the help of Eq.\ref{eq:bofk} and Eq.\ref{eq:powerdecompose}, we can replace the partial derivatives 
 $\partial \mathrm{ln} p(k) / \partial \mathrm{ln} A$ in Eq.\ref{eq:fisherdefineforgaussian} with 
@@ -124,7 +124,7 @@ where $\mathrm{C_{norm}}$ is the normalized covariance matrix with size per dime
     \mathrm{C_{norm}} \left( k,k' \right)=\frac{\mathrm{Cov}(k,k')}{\langle P(k)\rangle\langle P(k')\rangle},
 \end{align}
 and $r$ is the mean cross correlation of a given density field with linear one as a function of $k$ up to $k_n$. 
-It's reliable to define Eq.\ref{eq:fisherformulaused} for non-linear density fields as well, 
+It's reliable to define Eq.\ref{eq:fisherformulaused} for nonlinear density fields as well, 
 since the Fisher matrix is approximately the same as that of linear density fields on linear scales. 
 The covariance matrix is defined as 
 \begin{align}
@@ -137,13 +137,13 @@ where angle brackets mean the expected values, and $N$ is the total number of si
     \mathrm{Corr}\left(k,k'\right)=\frac{\mathrm{Cov}\left(k,k'\right)}{\sqrt{\mathrm{Cov}\left(k,k\right)\mathrm{Cov}\left(k',k'\right)}},
 \end{align}
 which represents the correlation between different $k$ modes. 
-The corelation matrices for non-linear and reconstructed power spectra 
-are shown in Fig.\ref{fig:corrall}. For the non-linear power spectra, the
+The corelation matrices for nonlinear and reconstructed power spectra 
+are shown in Fig.\ref{fig:corrall}. For the nonlinear power spectra, the
 correlation matrix in the linear regime, $k \lesssim$ 0.2 $h/\mathrm{Mpc}$, is almost diagonal. 
 The off-diagonal elements are produced by 
-strong mode coupling in non-linear scale, and the super-survey tidal effect which is small on 
-linear scales but dominates in the weakly non-linear regime \cite{bib:Kazuyuki2016}.
-The correlation matrix for the non-linear power spectra has few negative elements,
+strong mode coupling in nonlinear scale, and the super-survey tidal effect which is small on 
+linear scales but dominates in the weakly nonlinear regime \cite{bib:Kazuyuki2016}.
+The correlation matrix for the nonlinear power spectra has few negative elements
 ($\mathrm{Corr} \gtrsim -0.1$), which are produced by the unbiased error and thus 
  will vanish with more simulations \cite{bib:Takahashi2009}.
  For the reconstructed correlation matrix, however, the linear regime expand up to $k \simeq$ 0.6 $h/\mathrm{Mpc}$, 
@@ -153,7 +153,7 @@ but the number and magnitude of negative off-diagonal elements increases ($\math
  \centering
   \includegraphics[width=0.48\textwidth]{corrmat_hot_2-crop.pdf}
 %  \includegraphics[width=0.48\textwidth]{corr_cut-crop.pdf}
-  \caption{Correlation coefficient matrix as found from 136 non-linear power spectra 
+  \caption{Correlation coefficient matrix as found from 136 nonlinear power spectra 
 (the upper-left elements) and the reconstructed power spectra (the lower-right off-diagonal elements). 
 Both the matrix are symmetric and have unity diagonal elements.}
     \label{fig:corrall}
@@ -165,26 +165,27 @@ Both the matrix are symmetric and have unity diagonal elements.}
 %\end{align}
 
   Cumulative Fisher information is proportional to the volume. We plot the 
-cumulative Fisher information per $\mathrm{Mpc}^3/h^3$ of the non-linear, linear and reconstructed power specta in 
-Fig.\ref{fig:fisherinfo}(a). The Fisher information of the non-linear power spectra drops 
+cumulative Fisher information per volume of the nonlinear, linear and reconstructed power specta in 
+Fig.\ref{fig:fisherinfo}(a). The Fisher information of the nonlinear power spectra drops 
 from the linear one at $k \simeq$ 0.05 $h/\mathrm{Mpc}$, and has a flat plateau in the translinear regime, 
 $k\simeq$ 0.3 $h/\mathrm{Mpc}$, with 
 a saturated value of $I \simeq 2.5 \times 10^{-5}/(\mathrm{Mpc}^3/h^3)$. It 
-indicates that there's nearly no independent information in the translinear regime of the power 
-spectrum.
+indicates that there is nearly no independent information of the power
+spectrum in the translinear regime.
 % At $k\sim0.8$, the information increase slightly aggain. 
 But the information curve of 
-the reconstructed power spectra keeps incresing roughly the same as 
-the linear information until $k\simeq$ 0.3 $h/\mathrm{Mpc}$, and reaches it's plateau at $k\simeq$ 0.8 $h/\mathrm{Mpc}$ with the 
+the reconstructed power spectra keeps increasing roughly the same as 
+the linear information until $k\simeq$ 0.3 $h/\mathrm{Mpc}$, and reaches its plateau at $k\simeq$ 0.8 $h/\mathrm{Mpc}$ with the 
 value of $I \simeq  10^{-3}/(\mathrm{Mpc}^3/h^3)$, up by a factor of  40. 
 It indicates that the MM reconstructed method can strongly recover the lost information 
 within this scale. We compare the Fisher information given by the MM reconstruction method with 
 the logarithmic density mapping method \cite{bib:Mark2009} as an example to illustrate their strength. 
 We find that the MM reconstruction gives more than 10 times more information than logarithmic mapping. 
 In some papers, the cross correlation $r^2$ terms are set to be unity in Eq.\ref{eq:fisherformulaused}, which 
-apparantly increases the non-linear information. We also plot those in Fig.\ref{fig:fisherinfo}(b) 
-for better comparison. But we find that in this case, the MM reconstructed and logarithmic mapping information in the scale 
-$k \simeq$ 0.2 - 0.5 $h/\mathrm{Mpc}$ is higher than the linear one, which is not expected. 
+apparantly increases the nonlinear information. We also plot those in Fig.\ref{fig:fisherinfo}(b) 
+for better comparison. But we find that in this case, the MM reconstructed and logarithmic mapping information 
+is higher than the linear one in the scale 
+$k \simeq$ 0.2 - 0.5 $h/\mathrm{Mpc}$, which is not expected. 
 \begin{figure*}
 %\begin{subfigure}[b]{0.48\textwidth}
 %\centering
@@ -198,13 +199,13 @@ $k \simeq$ 0.2 - 0.5 $h/\mathrm{Mpc}$ is higher than the linear one, which is no
 %  \includegraphics[width=0.48\textwidth]{fisher_tr-crop.pdf}
 %  \includegraphics[width=0.48\textwidth]{fisher_trr2-crop.pdf}
 \centering
-   \caption{(a) Cumulative Fisher information per $\mathrm{Mpc}^3/h^3$ in the power spectra 
-as a function of wavenumber. The blue line correspond to the non-linear density field; 
-the red line with squares corresponds to the the reconstructed deformation 
-potential; the dark line corresponds to the linear density field; the circles correspond to number 
+   \caption{(a) Cumulative Fisher information per volume in the power spectra 
+as a function of wavenumber. The blue line corresponds to the nonlinear density fields; 
+the red line with squares corresponds to the the reconstructed density fields; 
+the dark line corresponds to the linear density fields; the circles correspond to number 
 of $k$ modes up to that wave bin. Dotted lines correspond to saturated value of 
-non-linear Fisher information, 4 times and 40 times of it. (b) Cumulative Fisher information 
-per $\mathrm{Mpc}^3/h^3$ given by setting the cross correlation to be unity.}
+nonlinear Fisher information, 4 times and 40 times of it, respectively. (b) Cumulative Fisher information 
+per volume given by setting the cross correlation to be unity.}
   \label{fig:fisherinfo}
 
 \end{figure*}
