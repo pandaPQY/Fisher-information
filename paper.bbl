@@ -69,12 +69,12 @@
   \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{84}
   (\bibinfo{year}{1970}).
 
-\bibitem[{\citenamefont{{Zhu} et~al.}(2016)\citenamefont{{Zhu}, {Pen}, and
-  {Chen}}}]{bib:Zhu2016}
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{a}})\citenamefont{{Zhu},
+  {Pen}, and {Chen}}}]{bib:Zhu2016}
 \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
   \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}{\natexlab{a}}),
   \eprint{1609.07041}.
 
 \bibitem[{\citenamefont{{Yu} et~al.}(2016)\citenamefont{{Yu}, {Pen}, and
@@ -118,14 +118,14 @@
   \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{538}}, \bibinfo{pages}{473}
   (\bibinfo{year}{2000}), \eprint{astro-ph/9911177}.
 
-\bibitem[{\citenamefont{{Zhu} et~al.}(in prep.)\citenamefont{{Zhu}, {Yu},
-  {Pen}, {Chen}, and {Yu}}}]{bib:ZhuH2016}
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{b}})\citenamefont{{Zhu},
+  {Yu}, {Pen}, {Chen}, and {Yu}}}]{bib:ZhuH2016}
 \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
   \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
   \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
   \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}} (\bibinfo{year}{in
-  prep.}).
+  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}}
+  (\bibinfo{year}{2016}{\natexlab{b}}), \eprint{1611.09638}.
 
 \bibitem[{\citenamefont{{Tegmark} et~al.}(1997)\citenamefont{{Tegmark},
   {Taylor}, and {Heavens}}}]{bib:Tegmark1997}
