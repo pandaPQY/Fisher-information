@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{20}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -12,13 +12,11 @@
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2006)}]{bib:Rimes2006}
+\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2005)}]{bib:Rimes2006}
 \bibinfo{author}{\bibfnamefont{C.~D.} \bibnamefont{{Rimes}}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}}, in
-  \emph{\bibinfo{booktitle}{American Astronomical Society Meeting Abstracts
-  \#207}} (\bibinfo{year}{2006}), vol. \bibinfo{volume}{207} of
-  \emph{\bibinfo{series}{American Astronomical Society Meeting Abstracts}}, p.
-  \bibinfo{pages}{206.01}.
+  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{360}},
+  \bibinfo{pages}{L82} (\bibinfo{year}{2005}), \eprint{astro-ph/0502081}.
 
 \bibitem[{\citenamefont{{Weinberg}}(1992)}]{bib:Weinberg1992}
 \bibinfo{author}{\bibfnamefont{D.~H.} \bibnamefont{{Weinberg}}},
@@ -95,6 +93,15 @@
   \bibinfo{journal}{\apjs} \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{19}
   (\bibinfo{year}{1998}), \eprint{astro-ph/9704258}.
 
+\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{b}})\citenamefont{{Zhu},
+  {Yu}, {Pen}, {Chen}, and {Yu}}}]{bib:ZhuH2016}
+\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
+  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}}
+  (\bibinfo{year}{2016}{\natexlab{b}}), \eprint{1611.09638}.
+
 \bibitem[{\citenamefont{{Harnois-D{\'e}raps}
   et~al.}(2013{\natexlab{b}})\citenamefont{{Harnois-D{\'e}raps}, {Pen},
   {Iliev}, {Merz}, {Emberson}, and {Desjacques}}}]{bib:Harnois2013}
@@ -117,15 +124,6 @@
   \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lasenby}}},
   \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{538}}, \bibinfo{pages}{473}
   (\bibinfo{year}{2000}), \eprint{astro-ph/9911177}.
-
-\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{b}})\citenamefont{{Zhu},
-  {Yu}, {Pen}, {Chen}, and {Yu}}}]{bib:ZhuH2016}
-\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}}
-  (\bibinfo{year}{2016}{\natexlab{b}}), \eprint{1611.09638}.
 
 \bibitem[{\citenamefont{{Tegmark} et~al.}(1997)\citenamefont{{Tegmark},
   {Taylor}, and {Heavens}}}]{bib:Tegmark1997}
@@ -168,17 +166,6 @@
   \bibnamefont{{Rimes}}}, \bibinfo{journal}{\mnras}
   \textbf{\bibinfo{volume}{370}}, \bibinfo{pages}{L66} (\bibinfo{year}{2006}),
   \eprint{astro-ph/0604282}.
-
-\bibitem[{\citenamefont{{Neyrinck}}(2014)}]{bib:Mark2014}
-\bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{{Neyrinck}}}, in
-  \emph{\bibinfo{booktitle}{Statistical Challenges in 21st Century Cosmology}},
-  edited by \bibinfo{editor}{\bibfnamefont{A.}~\bibnamefont{{Heavens}}},
-  \bibinfo{editor}{\bibfnamefont{J.-L.} \bibnamefont{{Starck}}},
-  \bibnamefont{and}
-  \bibinfo{editor}{\bibfnamefont{A.}~\bibnamefont{{Krone-Martins}}}
-  (\bibinfo{year}{2014}), vol. \bibinfo{volume}{306} of
-  \emph{\bibinfo{series}{IAU Symposium}}, pp. \bibinfo{pages}{251--254},
-  \eprint{1407.4815}.
 
 \bibitem[{\citenamefont{{Eisenstein} et~al.}(2007)\citenamefont{{Eisenstein},
   {Seo}, {Sirko}, and {Spergel}}}]{bib:Daniel2007}

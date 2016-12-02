@@ -19,7 +19,6 @@ plateau on translinear scales $(k \simeq 0.2-0.8\ h/{\rm Mpc})$,
 which shows that on these scales, there is a strong coupling of
 Fourier modes. Thus the power spectrum on smaller scales, gives little
 additional independent information.
-%\tcb{Apart from numerical trend, Fisher information was also estimated in data from observation. For example, Lee and Pen \cite{bib:Lee2008} measured the information content in the galaxy angular power spectrum with the help of the Rimes-hamilton technique, and also found that the information saturation. }
 
 There are many approaches to recover the lost information in the
 power spectrum of the matter density field, by transforming the final
@@ -63,17 +62,13 @@ the Fisher information recovery in $\delta_L$. Here, the displacement field
 estimation is done by a \textit{Moving-mesh} (MM) algorithm, which is based on
 the \textit{Adaptive Particle-mesh} (APM) simulation algorithm \citep{bib:Pen1995,bib:Pen1998}.
 
-
-
-%\tcr{Neyrinck, Szapudi and Rimes \cite{bib:Mark2006} argued that more information could be extracted on nonlinear scales if the masses of the largest haloes in a survey are known. Neyrinck, Szapudi and Szalay \cite{bib:Mark2009} found that nonlinearities in the dark-matter power spectrum are dramatically smaller if the density field first undergoes a logarithmic mapping, yielding 10 times more cumulative signal-to-noise at $z = 0$. Zhang et al. \cite{bib:Zhang2011} suggested that using Wavelet Wiener filter to seperate Gaussian and non-Gaussian structure in wavelet space is possible to increase the Fisher information by a factor of three before reaching the translinear plateau. Similar steps was also done in the angular power spectrum of weak lensing \cite{bib:Yu2012} and the result showed that there's three times more information compared to that of logarithmic mapping. Later, Neyrinck \cite{bib:Mark2014} applied Gaussianizing transformation method to cosmology and found that it can greatly multiply the Fisher information. Simpson, Heavens and Heymans utilized Clipping \cite{bib:Fergus2013} technique on the matter density field and found it increased the number of useful Fourior modes by more than two orders of magnitude.}
-
-
-% \tcb{ Pen \cite{bib:Pen1995,bib:Pen1998} introduced new N-bosy algorithm call Adapted Particle-mesh (APM), which scaled linearly with the number of particles for the computational effort per time step, aiming at offering higher resolution. This method can be used to reconstruct the matter density field and is hopeful for tracing a nonlinear density field back to it's linear part\cite{bib:Zhu2016}.}
-
-  This paper is organized as follows. 
-  In Section \ref{sec:simulation}, we present the main steps of the N-body simulation code that are used to simulate the dark matter density fields.
-  In Section \ref{sec:reconstruction}, we briefly describe the reconstruction algorithm.
-  In Section \ref{sec:fisherinfo}, we calculate and compare the power spectra, correlation matrix and Fisher information given by simulation and reconstruction.
-  The discussion and conclusion are presented in Section \ref{sec:conclusion}
+This paper is organized as follows. 
+In Section \ref{sec:reconstruction}, we briefly describe the reconstruction algorithm.
+In Section \ref{sec:simulation}, we present the main steps of the $N$-body 
+simulation code that are used to simulate the dark matter density fields, 
+and the result of running the reconstruction code.
+In Section \ref{sec:fisherinfo}, we calculate and compare the power spectra, 
+correlation matrix and Fisher information given by simulation and reconstruction.
+The discussion and conclusion are presented in Section \ref{sec:conclusion}
 
 \end{section}
