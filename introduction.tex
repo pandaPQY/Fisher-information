@@ -29,40 +29,42 @@ distribution more Gaussian. Nonlinear Wiener filters are used
 in wavelet space to Gaussianize the fields and can also improve
 the Fisher information \cite{bib:Zhang2011,bib:Yu2012,bib:HarnoisD2013}.
 It is shown in \cite{bib:HarnoisD2013} that, although these methods
-or their combinations may have different abilities to recover
+or their combinations have different abilities to recover
 the Fisher information, by means of reducing the mode coupling
 and variances in the auto power spectrum of Gaussianized
 density fields, they do not necessarily improve the cross correlation
  between the initial density
 field and the final density field, and thus result in a smearing
 out of the baryonic acoustic oscillations (BAO) peak in the two-point
-correlation function. If one is concerned about mapping
+correlation function. If one concerns about mapping
 the initial conditions to final conditions (e.g. measurement of 
 BAO) these methods are unable to
 extract valid information from initial conditions, at least in
-the cross power spectrum between initial and final conditions.
+the power spectrum.
 
-Reconstruction techniques (including the one described in 
-\cite{bib:HarnoisD2013}) are able to increase the Fisher information
-while also improving the cross correlation with the initial conditions
-and sharpening the BAO peak. It is based on the coupling of linear
-density field $\delta_L(\bs{q},t_0)$ to the displacement field
-$\bs\Psi(\bs{q})$ (first derived by \cite{bib:Zel1970}), which
-is estimated by a smoothed final density field.
-\cite{bib:Zhu2016} shows a new method in the estimation of displacement
-field in 1-dimensional (1D), according to which the 1D linear density
-field is reconstructed in Lagrangian space and successfully improves 
-the BAO measurement. In 3D cases, it is nontrivial to estimate
-the displacement field, but \cite{bib:Yu2016} shows that the displacement
-field given by $N$-body simulations can be used to recover $\delta_L$.
+In the linear Lagrangian perturbation theory (LPT), the
+negative divergence of the the displacement field
+$-\nabla_q\cdot\bs\Psi(\bs q)$ respect to Lagrangian coordinates
+$\bs q$ gives the estimated linear density field
+\citep{bib:Zel1970} and highly
+correlates with $\delta_L$ \citep{2013MNRAS.428..141N,2014PhRvD..89h3515C,bib:Yu2016}. Lagrangian space reconstruction of 
+$\delta_L$ can be done if one can estimate the unobservable 
+$\bs\Psi(\bs{q})$. The moving-mesh (MM) algorithm, originally 
+applied in the adapted particle mesh (APM) $N$-body algorithm
+\citep{bib:Pen1995} and moving mesh hydrodynamics (MMH) algorithm
+\citep{bib:Pen1998} can be applied to estimate $\bs\Psi(\bs{q})$
+for any given density field \citep{bib:ZhuH2016}. This algorithm
+simplifies to a reordering of mass elements in 1-dimensional (1D)
+case \citep{bib:Zhu2016}. It is shown that, even the nonlinear
+shell-crossing and  vorticity part of $\bs\Psi(\bs{q})$ cannot be
+recovered, these terms are subdominant and one can still recover
+the information on BAO scales \citep{bib:ZhuH2016}.
 
-In this paper we generalize the displacement field estimation method
-from 1D \citep{bib:Zhu2016} to 3D, reconstruct $\delta_L$ and study
-the Fisher information recovery in $\delta_L$. Here, the displacement field
-estimation is done by a \textit{Moving-mesh} (MM) algorithm, which is based on
-the \textit{Adaptive Particle-mesh} (APM) simulation algorithm \citep{bib:Pen1995,bib:Pen1998}.
 
-This paper is organized as follows. 
+In this paper, we \tcb{[anything new you are doing on high resolution
+simulations, new density assignment methods etc.]} and study
+the Fisher information recovery in $\delta_L$. The rest of
+this paper is organized as follows. 
 In Section \ref{sec:reconstruction}, we briefly describe the reconstruction algorithm.
 In Section \ref{sec:simulation}, we present the main steps of the $N$-body 
 simulation code that are used to simulate the dark matter density fields, 
