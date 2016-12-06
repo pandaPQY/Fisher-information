@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -11,12 +11,6 @@
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \providecommand{\bibinfo}[2]{#2}
 \providecommand{\eprint}[2][]{\url{#2}}
-
-\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2005)}]{bib:Rimes2006}
-\bibinfo{author}{\bibfnamefont{C.~D.} \bibnamefont{{Rimes}}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{360}},
-  \bibinfo{pages}{L82} (\bibinfo{year}{2005}), \eprint{astro-ph/0502081}.
 
 \bibitem[{\citenamefont{{Weinberg}}(1992)}]{bib:Weinberg1992}
 \bibinfo{author}{\bibfnamefont{D.~H.} \bibnamefont{{Weinberg}}},
@@ -62,6 +56,12 @@
   \bibinfo{pages}{759} (\bibinfo{year}{2013}{\natexlab{a}}),
   \eprint{1205.4989}.
 
+\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2005)}]{bib:Rimes2006}
+\bibinfo{author}{\bibfnamefont{C.~D.} \bibnamefont{{Rimes}}} \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}},
+  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{360}},
+  \bibinfo{pages}{L82} (\bibinfo{year}{2005}), \eprint{astro-ph/0502081}.
+
 \bibitem[{\citenamefont{{Zel'dovich}}(1970)}]{bib:Zel1970}
 \bibinfo{author}{\bibfnamefont{Y.~B.} \bibnamefont{{Zel'dovich}}},
   \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{84}
@@ -74,14 +74,6 @@
   \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
   \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}{\natexlab{a}}),
   \eprint{1609.07041}.
-
-\bibitem[{\citenamefont{{Yu} et~al.}(2016)\citenamefont{{Yu}, {Pen}, and
-  {Zhu}}}]{bib:Yu2016}
-\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
-  \eprint{1610.07112}.
 
 \bibitem[{\citenamefont{{Pen}}(1995)}]{bib:Pen1995}
 \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
@@ -166,19 +158,5 @@
   \bibnamefont{{Rimes}}}, \bibinfo{journal}{\mnras}
   \textbf{\bibinfo{volume}{370}}, \bibinfo{pages}{L66} (\bibinfo{year}{2006}),
   \eprint{astro-ph/0604282}.
-
-\bibitem[{\citenamefont{{Eisenstein} et~al.}(2007)\citenamefont{{Eisenstein},
-  {Seo}, {Sirko}, and {Spergel}}}]{bib:Daniel2007}
-\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
-  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
-  (\bibinfo{year}{2007}), \eprint{astro-ph/0604362}.
-
-\bibitem[{\citenamefont{{White}}(2015)}]{bib:Martin2015}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{White}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{450}},
-  \bibinfo{pages}{3822} (\bibinfo{year}{2015}), \eprint{1504.03677}.
 
 \end{thebibliography}
