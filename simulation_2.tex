@@ -31,30 +31,30 @@
  
  The cross power spectrum, $P_{ij}(k)$, is defined as
  \begin{align}
-   \langle \delta_i \left( \bm{k} \right) \delta_j \left( \bm{k'}\right) \rangle =
-   \left( 2\pi \right) ^3 P_{ij} \left( k \right) \delta_D \left( \bm{k}-\bm{k'} \right),
+   \langle \delta_i(\bm{k})\delta_j(\bm{k'}) \rangle =
+   (2\pi)^3 P_{ij}(k) \delta_D(\bm{k}-\bm{k'}),
  \end{align}
  where $\delta_{i}$ and $\delta_j$ are density contrasts and
  $\delta_D$ is the Dirac delta funciton. We typically consider instead
  the dimensionless power spectrum, $\Delta_{ij}^2(k)$, defined as
  \begin{align}
-   \Delta_{ij}^2(k) \equiv \frac{k^3 P_{ij} \left( k \right)}{2\pi ^2}.
+   \Delta_{ij}^2(k) \equiv \frac{k^3 P_{ij}(k)}{2\pi ^2}.
  \end{align}
- In the left panel of Fig. \ref{fig:cp}, we show the matter auto power spectrum
- ($i=j$) of linear theory density fields ($\delta_L$), from the
- simulation results ($\delta_S$) and after reconstruction
+ In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
+ spectrum ($i=j$) of linear theory density fields ($\delta_L$), from
+ the simulation results ($\delta_S$) and after reconstruction
  ($\delta_R=-\nabla^2\phi$).  For the simulation and reconstruction
  results, we use the average value of all 136 simulations and show
  $1\sigma$ variances as error bars.  To determine the correlation
  between fields, we compute the cross correlation coefficient
- $r_{ij}(k) = P_{ij}/\sqrt{P_{ii}P_{jj}}$.  In the right panel of Fig. \ref{fig:cp}(b),
- we show $r_{SL}$ and $r_{RL}$.  We see that the reconstructed field
- is much more highly correlated with the linear field than the
- simulation field is.  Specifically, we find that the scale at which
- $r(k)=1/2$ drops from $k\simeq $0.2 h/Mpc to $0.6 $h/Mpc.  In
- comparison with the results of \citet{bib:ZhuH2016}, we find the
- correlation coefficient falls off at slightly lower wavenumbers which
- we attribute to using lower resolution simulations.
+ $r_{ij}(k) = P_{ij}/\sqrt{P_{ii}P_{jj}}$.  In the right panel of
+ Fig.~\ref{fig:cp}, we show $r_{SL}$ and $r_{RL}$.  We see that the
+ reconstructed field is much more highly correlated with the linear
+ field than the simulation field is.  Specifically, we find that the
+ scale at which $r(k)=1/2$ drops from $k\simeq 0.2$ h/Mpc to
+ $0.6$ h/Mpc.  In comparison with the results of \citet{bib:ZhuH2016},
+ we find the correlation coefficient falls off at slightly lower
+ wavenumbers which we attribute to using lower resolution simulations.
 
   \begin{figure*}
     \centering
@@ -64,8 +64,8 @@
       linear theory (black), the mean value of 136 $N$-body
       simulations with $1\sigma$ error bars (blue), and reconstruction
       of the simulations (red).  {\it Right.} The cross correlation
-      function (solid lines) $r_{\delta\delta_L}$ (blue) and
-      $r_{\delta_R\delta_L}$ (red), and BAO damping models (dash
+      function (solid lines) $r_{SL}$ (blue) and
+      $r_{RL}$ (red), and BAO damping models (dash
       lines).}
     \label{fig:cp}
   \end{figure*}

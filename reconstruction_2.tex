@@ -2,10 +2,10 @@
   \label{sec:reconstruction}
   In this section, we briefly review the MM algorithm; for a more
   complete description we refer the reader to \cite{bib:Zhu2016}.  The
-  general idea is to relate a particles Eulerian coordinates, $x^i$ to
+  general principle is to relate a particles Eulerian coordinates, $x^i$ to
   a curvilinear system, $\xi^\mu$, in which the number of particles
   per grid cell is approximately constant.  These coordinates are
-  related via the so-called deformation which we assume to be a pure
+  related via the so-called deformation, which we assume to be a pure
   gradient:
   \begin{align}
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
@@ -24,8 +24,9 @@
   element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$.  We note that
   the assumption of constant mass per volume allowed us to set
   $\partial(\sqrt{g}\rho)/\partial t = 0$ in the computation.
-  Eq. \ref{eq:li_elip} can be solved through the use of the multigrid
+  Eq.~\ref{eq:li_elip} can be solved through the use of the multigrid
   algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
+  The displacement field is then given by...
 
 \end{section}
 
