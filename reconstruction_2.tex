@@ -1,73 +1,100 @@
 \begin{section}{Reconstruction Algorithm}
   \label{sec:reconstruction}
-  
-  \tcb{Detailed description of MM algorithm can be found in
-    \cite{bib:ZhuH2016}. Here we quickly review it for completeness.}
-  The aim of the reconstruction is to estimate the Lagrangian
-  position, or the displacement, of particles from their final
-  position only.  Due to the highly nonlinear process at the late
-  stage, it is hard to fully discrible the displacement field from the
-  final condition.  However, since the result in \cite{bib:Yu2016}
-  showed that the $E$-mode displacement field has a strong correlation
-  with the linear density field on large scale ($r > 0.5$ when
-  $k \lesssim 2 h/\mathrm{Mpc}$), estimating the $E$-mode displacement
-  is expected to recover a large amount of information.  It can be
-  done by applying \textit{Moving-Mesh} (MM) algorithm discribed in
-  \cite{bib:ZhuH2016}, which is originated from \textit{Adapting
-    Particle-Mesh} (APM) algorithm \cite{bib:Pen1995,bib:Pen1998}.
-
-  The basic idea is to build a Particle-Mesh scheme on a curvilinear
-  coordinate system, $\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$, in
-  which number of particles per grid cell is set approximately
-  constant.  The displacement of particles in each grid cell is then
-  approximately discribed by the deformation of the curvilinear grid
-  on the Eulidean coordinate $\bm{x}(\bm{\xi},t)$.  Assuming that the
-  deformation is a pure gradient, the physicsl position of particles
-  on Eular coordinate is given as
+  In this section, we briefly review the MM algorithm; for a more
+  complete description we refer the reader to \cite{bib:Zhu2016}.  The
+  general idea is to relate a particles Eulerian coordinates, $x^i$ to
+  a curvilinear system, $\xi^\mu$, in which the number of particles
+  per grid cell is approximately constant.  These coordinates are
+  related via the so-called deformation which we assume to be a pure
+  gradient:
   \begin{align}
-    x^i=\xi ^\mu \delta ^i _\mu + \Delta x^i,
+    x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
+    \xi^\mu}\delta^{i\mu}
   \end{align}
-  where
-  \begin{align}
-    \label{eq:disp}
-    \Delta x^i=\frac{\partial \phi}{\partial \xi ^ \nu}\delta ^{i \nu} .
-  \end{align}
-  We use the convention the same as in \cite{bib:Pen1995}, Latin
-  indices denoting Cartesian coordinate, while Greek indices denoting
-  the curvilinear grid coordinate.  $\phi$ is called the deformation
-  potential, and $\Delta x^i$ the lattice displacement.  The
-  coordinate transfromation matrix
-  $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is guarantee to be
-  positive definite so that the volume element
-  $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is always
-  positive.  This choice of the deformation can minimize the
-  cell-crossing.
-
-  To solve the deformation potential $\phi$, consider the continuity
-  equation in curvilinear coordiante,
-  \begin{align}
-    \label{eq:continue_eq}
-    \frac{\partial (\sqrt{g} \rho) }{\partial t}+
-    \partial_\mu \left[\rho \sqrt{g} e^\mu _i \left(v^i - 
-    \Delta \dot{x}^i \right) \right] =0
-  \end{align}
-  $\Delta \dot{x}^i=\delta ^{i\nu}\partial _\nu \dot{\phi}$ is chosen
-  such that the first term in Eq.\ref{eq:continue_eq} is zero,
-  resulting in a constant mass per volume element.  The velocity field
-  divergence is replaced by the deviation density field
-  $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be
-  zero.  Then the deformation potential is described via the elliptic
-  equation,
+  and $\phi$ is called the deformation potential.  We can solve for
+  the potential via the continuity equation:
   \begin{align}
     \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
-    \partial_\nu \Delta \phi)=\Delta \rho.
+    \partial_\nu \dot{\phi})=\Delta \rho.
   \end{align}
-  The Eq.\ref{eq:li_elip} can be solved using multigrid algorithm
-  described in \cite{bib:Pen1995,bib:Pen1998} (see also
-  \cite{bib:ZhuH2016} for brief discription).  The deformation
-  $\Delta x^i$ is closer to the displacement of particles when higher
-  resolution is used to decribed the density field so that less
-  particles are contained in each grid cell.
+  where $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is the
+  coordinate transformation matrix,
+  $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
+  element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$.  We note that
+  the assumption of constant mass per volume allowed us to set
+  $\partial(\sqrt{g}\rho)/\partial t = 0$ in the computation.
+  Eq. \ref{eq:li_elip} can be solved through the use of the multigrid
+  algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
+
 \end{section}
 
+% \tcb{Detailed description of MM algorithm can be found in
+% \cite{bib:ZhuH2016}. Here we quickly review it for completeness.}
+% The aim of the reconstruction is to estimate the Lagrangian
+% position, or the displacement, of particles from their final
+% position only.  Due to the highly nonlinear process at the late
+% stage, it is hard to fully discrible the displacement field from the
+% final condition.  However, since the result in \cite{bib:Yu2016}
+% showed that the $E$-mode displacement field has a strong correlation
+% with the linear density field on large scale ($r > 0.5$ when
+% $k \lesssim 2 h/\mathrm{Mpc}$), estimating the $E$-mode displacement
+% is expected to recover a large amount of information.  It can be
+% done by applying \textit{Moving-Mesh} (MM) algorithm discribed in
+% \cite{bib:ZhuH2016}, which is originated from \textit{Adapting
+% Particle-Mesh} (APM) algorithm \cite{bib:Pen1995,bib:Pen1998}.
+
+% The basic idea is to build a Particle-Mesh scheme on a curvilinear
+% coordinate system, $\bm{\xi}=\left(\xi_1,\xi_2,\xi_3\right)$, in
+% which number of particles per grid cell is set approximately
+% constant.  The displacement of particles in each grid cell is then
+% approximately discribed by the deformation of the curvilinear grid
+% on the Eulidean coordinate $\bm{x}(\bm{\xi},t)$.  Assuming that the
+% deformation is a pure gradient, the physicsl position of particles
+% on Eular coordinate is given as
+% \begin{align}
+%   x^i=\xi ^\mu \delta ^i _\mu + \Delta x^i,
+% \end{align}
+% where
+% \begin{align}
+%   \label{eq:disp}
+%   \Delta x^i=\frac{\partial \phi}{\partial \xi ^ \nu}\delta ^{i \nu}
+%     %   .
+%  \end{align}
+%  We use the convention the same as in \cite{bib:Pen1995}, Latin
+%  indices denoting Cartesian coordinate, while Greek indices denoting
+%  the curvilinear grid coordinate.  $\phi$ is called the deformation
+%  potential, and $\Delta x^i$ the lattice displacement.  The
+%  coordinate transfromation matrix
+%  $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is guarantee to be
+%  positive definite so that the volume element
+%  $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is always
+%  positive.  This choice of the deformation can minimize the
+%  cell-crossing.
+
+%  To solve the deformation potential $\phi$, consider the continuity
+%  equation in curvilinear coordiante,
+%  \begin{align}
+%    \label{eq:continue_eq}
+%    \frac{\partial (\sqrt{g} \rho) }{\partial t}+
+%    \partial_\mu \left[\rho \sqrt{g} e^\mu _i \left(v^i -
+%        \Delta \dot{x}^i \right) \right] =0
+%  \end{align}
+%  $\Delta \dot{x}^i=\delta ^{i\nu}\partial _\nu \dot{\phi}$ is chosen
+%  such that the first term in Eq.\ref{eq:continue_eq} is zero,
+%  resulting in a constant mass per volume element.  The velocity
+%  field divergence is replaced by the deviation density field
+%  $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$, which ideally should be
+%  zero.  Then the deformation potential is described via the elliptic
+%  equation,
+%  \begin{align}
+%    \label{eq:li_elip}
+%    \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
+%    \partial_\nu \Delta \phi)=\Delta \rho.
+%  \end{align}
+%  The Eq.\ref{eq:li_elip} can be solved using multigrid algorithm
+%  described in \cite{bib:Pen1995,bib:Pen1998} (see also
+%  \cite{bib:ZhuH2016} for brief discription).  The deformation
+%  $\Delta x^i$ is closer to the displacement of particles when higher
+%  resolution is used to decribed the density field so that less
+%  particles are contained in each grid cell.
