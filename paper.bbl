@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -62,6 +62,15 @@
   \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{360}},
   \bibinfo{pages}{L82} (\bibinfo{year}{2005}), \eprint{astro-ph/0502081}.
 
+\bibitem[{\citenamefont{{Eisenstein} et~al.}(2007)\citenamefont{{Eisenstein},
+  {Seo}, {Sirko}, and {Spergel}}}]{bib:Eisenstein2007}
+\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
+  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
+  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
+  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
+  (\bibinfo{year}{2007}), \eprint{astro-ph/0604362}.
+
 \bibitem[{\citenamefont{{Zel'dovich}}(1970)}]{bib:Zel1970}
 \bibinfo{author}{\bibfnamefont{Y.~B.} \bibnamefont{{Zel'dovich}}},
   \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{84}
@@ -116,6 +125,14 @@
   \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lasenby}}},
   \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{538}}, \bibinfo{pages}{473}
   (\bibinfo{year}{2000}), \eprint{astro-ph/9911177}.
+
+\bibitem[{\citenamefont{{Yu} et~al.}(2016)\citenamefont{{Yu}, {Pen}, and
+  {Zhu}}}]{bib:Yu2016}
+\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
+  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
+  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
+  \eprint{1610.07112}.
 
 \bibitem[{\citenamefont{{Tegmark} et~al.}(1997)\citenamefont{{Tegmark},
   {Taylor}, and {Heavens}}}]{bib:Tegmark1997}

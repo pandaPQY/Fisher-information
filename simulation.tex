@@ -1,25 +1,89 @@
-\begin{section}{N-body Simulation of Dark Matter Density Fields}
+\begin{section}{Implementation and Power Spectra}
   \label{sec:simulation}
-  We use the \textsc{CUBEP$^3$M} \cite{bib:Harnois2013} to run 136
-  simulations with a box size of 300 $h^{-1}$Mpc, afine resolution of
-  $1024^3$ cells and $512^3$ totally particles.  The initial
-  conditions are computed using the transfer function given by CAMB
-  \cite{bib:Lewis2000} and then propogating the power linearly back to
-  $z=100$ with a growth factor.  The Zel'dovich approximation is used
-  to calculate the displacement and velocity fields, which are
-  assigned to the particles.  The cosmological parameters used are
-  $\Omega_M=0.32$, $\Omega_{\Lambda}=0.679$, $h=0.67$,
-  $\sigma_8=0.83$, and $n_s=0.96$.  Different seeds are used to
-  produce the initial conditions for different simulations so that
-  they are independent to each other.
-  \begin{figure*}[t!]
+  We use the \textsc{CUBEP$^3$M} code \cite{bib:Harnois2013} to run
+  140 simulations with a box size of 600 Mpc/h and $512^3$ particles.
+  The initial conditions are computed using the transfer function
+  given by CAMB \cite{bib:Lewis2000} and then propagating the power
+  back to $z=100$ with a linear growth factor.  The Zel'dovich
+  approximation is used to calculate the displacement and velocity
+  fields of the particles.  For these simulations, we use cosmological
+  parameters $\Omega_M=0.321$, $\Omega_{\Lambda}=1.0-\Omega_m$,
+  $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.  Different random seeds
+  are used to produce the initial conditions for different simulations
+  so that they are independent of each other.
+
+  \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{fig1.pdf}
-    \caption{ The 2-D projection of the deformed grid of a sample
-      $N$-body simulations is shown as curved white lines. The
-      $\delta+1$ field on the deformed grid is shown underneath.}
- \label{fig:simandrec}
-\end{figure*}
+    \includegraphics[width=0.45\textwidth]{fig1.pdf}
+    \caption{ The 2-D projection of one layer of the deformed grid of a sample
+      $N$-body simulation is shown as curved white lines.  The
+      density fluctuation on the grid, $\delta\rho/\bar{\rho}$, is shown
+      underneath.}
+    \label{fig:simandrec}
+ \end{figure}
+
+  We use Voronoi tessellation method to estimate the density
+  contrast $\delta_S=\delta\rho/\rho-1$ from the particles, and then
+  apply the MM reconstruction to these fields with a resolution of
+  $512^3$ cells.  The reconstruction code solves the dispacement potentials 
+  iteratively until the root mean square (rms) of the results drop (from $\sim 7.5$) 
+  to 0.20. For different simulation samples, different time steps are taken to get 
+  the results of the same rms. We finally pick 130 simulation samples to do the remaining calculation, 
+  each among which gives a final rms of 0.20
+  through running the reconstruction code for no more than 2000 time steps. 
+  A 2-D projection of one layer of the deformed grids and the
+  original density field on the grids are given in Fig.~\ref{fig:simandrec}.  As
+  expected, there is no grid crossing after reconstruction.
+ 
+ The cross power spectrum, $P_{ab}(k)$, is defined as
+ \begin{align}
+   \langle \delta_a(\bm{k})\delta_b(\bm{k'}) \rangle =
+   (2\pi)^3 P_{ab}(k) \delta_{3D}(\bm{k}-\bm{k'}),
+ \end{align}
+ where $\delta_{a}$ and $\delta_{b}$ are any density contrasts and
+ $\delta_{3D}$ is the three-dimensional Dirac delta funciton. We typically consider instead
+ the dimensionless power spectrum, $\Delta_{ab}^2(k)$, defined as
+ \begin{align}
+   \Delta_{ab}^2(k) \equiv \frac{k^3 P_{ab}(k)}{2\pi ^2}.
+ \end{align}
+ In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
+ spectrum ($a=b$) of linear theory density fields ($\delta_L$), from
+ the simulation results ($\delta_S$) and after reconstruction
+ ($\delta_R=-\nabla^2\phi$).  For the simulation
+ results, we use the average value of all 130 simulations and show
+ $1\sigma$ variances as error bars.  To determine the correlation
+ between fields, we compute the cross correlation coefficient
+ $r_{ab}(k) = P_{ab}/\sqrt{P_{aa}P_{bb}}$.  In the right panel of
+ Fig.~\ref{fig:cp}, we show $r_{SL}$ and $r_{RL}$.  We see that the
+ reconstructed field is much more highly correlated with the linear
+ field than the simulation field is.  For comparison, we also plot the 
+ correlation coefficient of $\delta_E$ 
+ and $\delta_L$ as the result in \cite{bib:Yu2016}, 
+ where $\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$ is the 
+ negative divergence of the real non-linear displacement from simulaiton. 
+ Ideally, MM algorithm aims at getting the cross correlation $r_{RL}$ approaching to $r_{EL}$. 
+ Even though $r_{RL}$ is off the $r_{EL}$ curve in non-linear regime due to the fact that MM reconstruction 
+ cannot recover the cell-crossing and vorticity on these scales, we find that on the scale $k\simeq 0.05$ 
+ h/Mpc to $0.3$ h/Mpc, linear modes were recovered successfully.
+ Specifically, the scale at which $r(k)=1/2$ drops from $k\simeq 0.2$ h/Mpc to
+ $0.8$ h/Mpc after reconstruction.  In comparison with the results of \citet{bib:ZhuH2016},
+ we find the correlation coefficient falls off at slightly lower
+ wavenumbers, which we attribute to using less particles to run the simulations.
+
+  \begin{figure*}
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig2a.pdf}
+    \includegraphics[width=0.49\textwidth]{fig2b.pdf}
+    \caption{{\it Left.} The dimensionless power spectrum computed via
+      linear theory (black), the mean value of 130 $N$-body
+      simulations with $1\sigma$ error bars (blue), and reconstruction
+      of the simulations (red).  {\it Right.} The cross correlation
+      function $r_{SL}$ (blue) and
+      $r_{RL}$ (red), and $r_{EL}$ (dash
+      lines).}
+    \label{fig:cp}
+  \end{figure*}
+
 
 \end{section}
 

@@ -1,8 +1,10 @@
 \begin{section}{Reconstruction Algorithm}
   \label{sec:reconstruction}
   In this section, we briefly review the MM algorithm; for a more
-  complete description we refer the reader to \cite{bib:Zhu2016}.  The
-  general principle is to relate a particles Eulerian coordinates, $x^i$ to
+  complete description we refer the reader to \cite{bib:ZhuH2016}.  
+  The aim of the MM algorithm is to estimate the displacement of particles in 
+  Lagrangian coordiantes from their final Eulerian position only. The
+  general principle is to relate a particle's Eulerian coordinates, $x^i$ to
   a curvilinear system, $\xi^\mu$, in which the number of particles
   per grid cell is approximately constant.  These coordinates are
   related via the so-called deformation, which we assume to be a pure
@@ -11,22 +13,31 @@
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
     \xi^\mu}\delta^{i\mu}
   \end{align}
-  and $\phi$ is called the deformation potential.  We can solve for
-  the potential via the continuity equation:
+  and $\phi$ is called the deformation potential.  Numerially, we 
+  can solve iteratively for
+  the deformation potential via the diffusion equation, 
   \begin{align}
     \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
-    \partial_\nu \dot{\phi})=\Delta \rho.
+    \partial_\nu \dot{\phi})=\Delta \rho,
   \end{align}
   where $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is the
   coordinate transformation matrix,
   $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
-  element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$.  We note that
-  the assumption of constant mass per volume allowed us to set
-  $\partial(\sqrt{g}\rho)/\partial t = 0$ in the computation.
+  element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$. Detailed discription 
+  of the analytical formulation were presented in \cite{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved through the use of the multigrid
   algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
-  The displacement field is then given by...
+  The displacement field is then given by
+  \begin{align}
+   \label{eq:disp}
+   \bs{\Psi}(\bs{\xi})=\nabla \phi(\bs{\xi}),
+  \end{align}
+  and the reconstructed density field is given by
+  \begin{align}
+   \label{eq:delta}
+   \delta_R(\bs{\xi})=- \nabla \cdot \bs{\Psi}(\bs{\xi}) = \nabla^2 \phi(\bs{\xi}). 
+  \end{align}
 
 \end{section}
 
