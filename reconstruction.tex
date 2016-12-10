@@ -12,8 +12,7 @@
     \rho \sqrt{g}=\mathrm{const.},
   \end{align}
   where $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
-  element, and $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is the
-  coordinate transformation matrix. 
+  element of the coordinate transformation matrix $e^i_\mu = \partial x^i / \partial \xi ^ \mu$. 
   These coordinates are
   related via the so-called deformation, which we assume to be a pure
   gradient:
@@ -21,17 +20,16 @@
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
     \xi^\mu}\delta^{i\mu},
   \end{align}
-  and $\phi$ is called the deformation potential.  The physical picture is moving the girds 
-  based on $\phi$ to adapt Eq. \ref{eq:const}.  Numerially, we 
-  can iteratively solve for
+  and $\phi$ is called the deformation potential which is chosen to enforce Eq. \ref{eq:const}.  
+  Numerially, we can iteratively solve for
   the deformation potential via the diffusion equation, 
   \begin{align}
     \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
     \partial_\nu \dot{\phi})=\Delta \rho,
   \end{align}
-  where $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$ is the density difference after and 
-  before the grids are moved. A detailed discription 
+  where $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$ is the difference in density 
+  due to displacing the grids. A detailed discription 
   of the analytical formulation can be found in \cite{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved through the use of the multigrid
   algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
