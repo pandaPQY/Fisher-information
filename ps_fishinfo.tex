@@ -3,7 +3,7 @@
   Mathamatically, the Fisher information $I$ of the initial scale
   invariant matter power spectrum, $A$, is defined as
   \begin{align}
-    I_A \equiv -\left\langle \frac{\partial ^2 \mathrm{ln \Largr}}{\partial A ^2}\right\rangle,
+    I_A \equiv -\left\langle \frac{\partial ^2 \mathrm{ln \Largr}}{\partial  \mathrm{ln} A ^2}\right\rangle,
     \label{eq:fisherdefine}
   \end{align}
   in which $\Largr$ denotes the likelihood \cite{bib:Tegmark1997}.  
@@ -53,9 +53,12 @@
     \label{eq:powerdecompose}
   \end{align}
   With the help of Eq.~\ref{eq:bofk} and Eq.~\ref{eq:powerdecompose},
-  we can replace the partial derivatives
-  $\partial \mathrm{ln} P(k) / \partial \mathrm{ln} A$ in
-  Eq.~\ref{eq:fisherdef2} with $r^2_{aL}$.
+  we get
+  \begin{align}
+    \frac{\partial \mathrm{ln} P(k) }{ \partial \mathrm{ln} A}=
+    \frac{P_{LL}(k)}{P_{aa}(k)}b^2(k)=r^2_{aL}(k).
+  \end{align}
+
   The second step we can make is to simplify
   $\partial ^2 \mathrm{ln \Largr}/\partial \mathrm{ln} P(k) \partial
   \mathrm{ln} P(k')$
