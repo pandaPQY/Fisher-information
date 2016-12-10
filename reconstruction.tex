@@ -14,7 +14,7 @@
     \xi^\mu}\delta^{i\mu}
   \end{align}
   and $\phi$ is called the deformation potential.  Numerially, we 
-  can solve iteratively for
+  can iteratively solve for
   the deformation potential via the diffusion equation, 
   \begin{align}
     \label{eq:li_elip}
@@ -24,8 +24,8 @@
   where $e^i_\mu = \partial x^i / \partial \xi ^ \mu$ is the
   coordinate transformation matrix,
   $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
-  element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$. Detailed discription 
-  of the analytical formulation were presented in \cite{bib:Pen1995,bib:Pen1998}.
+  element and $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$. A detailed discription 
+  of the analytical formulation can be found in \cite{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved through the use of the multigrid
   algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
   The displacement field is then given by
@@ -36,7 +36,7 @@
   and the reconstructed density field is given by
   \begin{align}
    \label{eq:delta}
-   \delta_R(\bs{\xi})=- \nabla \cdot \bs{\Psi}(\bs{\xi}) = \nabla^2 \phi(\bs{\xi}). 
+   \delta_R(\bs{\xi})=- \nabla \cdot \bs{\Psi}(\bs{\xi}) = - \nabla^2 \phi(\bs{\xi}). 
   \end{align}
 
 \end{section}

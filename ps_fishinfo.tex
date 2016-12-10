@@ -49,7 +49,7 @@
   \end{align}
   and find
   \begin{align}
-    P_{aa}^2 (k) = b^2(k) P_{LL} (k) + P_{nn} (k).
+    P_{aa}(k) = b^2(k) P_{LL}(k) + P_{nn}(k).
     \label{eq:powerdecompose}
   \end{align}
   With the help of Eq.~\ref{eq:bofk} and Eq.~\ref{eq:powerdecompose},
@@ -100,13 +100,13 @@
   are shown in the upper-left and lower-right sections of Fig.~\ref{fig:corrall}.
   By definition, the correlation matrix is symmetric with unit
   diagonal allowing us to overlay the two matrices.  For the
-  non-linear case, the correlation matrix is almost diagonal in linear
-  regime, $k \lesssim$ 0.07 $h/\mathrm{Mpc}$.  The off-diagonal
+  non-linear case, the correlation matrix is almost diagonal in the linear
+  regime, $k \lesssim 0.07$ h/Mpc.  The off-diagonal
   elements are produced by strong mode coupling on non-linear scales
   and the super-survey tidal effect which is small on linear scales
   but dominates in the weakly non-linear regime
   \cite{bib:Kazuyuki2016}.  The correlation matrix for the non-linear
-  power spectra has few negative elements
+  power spectra has a few negative elements
   ($\mathrm{Corr} \gtrsim -0.18$), which should vanish with more
   simulations \cite{bib:Takahashi2009}.  For the reconstructed
   correlation matrix, the linear regime expands up to $k \simeq 0.3$
@@ -116,15 +116,15 @@
   \begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{fig3.pdf}
-    \caption{The correlation matrix as found from 130 non-linear power
-      spectra (the upper-left elements) and the reconstructed power
+    \caption{The correlation matrix from 130 non-linear power
+      spectra (the upper-left elements) and reconstructed power
       spectra (the lower-right off-diagonal elements).}
     \label{fig:corrall}
   \end{figure}
 
-  Cumulative Fisher information is proportional to the volume. 
+  The cumulative Fisher information is proportional to the volume. 
   We plot the cumulative Fisher information per unit volume of the
-  non-linear, linear and reconstructed power spectra in the left panel of 
+  simulation, linear and reconstructed power spectra in the left panel of 
   Fig.~\ref{fig:fisherinfo}. The Fisher information of the linear 
   power spectra is equal to the number of $k$ modes within the shell in 
   wave space, $N_k$. We find that the Fisher information of the
@@ -138,27 +138,27 @@
   until $k\simeq 0.3$ h/Mpc, and reaches a value of 
   $I \simeq 1.3 \times 10^{-3}/\mathrm{(Mpc/h)}^3$ at $k \simeq 2.6$ h/Mpc, up by a
   factor of 50.  
-  It means that the MM reconstructed method can
+  This means that the MM reconstructed method can
   strongly recover the lost information within these scales.  
   We compare the Fisher information given by the MM reconstruction method
   with the logarithmic density mapping method \cite{bib:Mark2009} as
-  an example to illustrate its strength. We find that the MM
-  reconstruction gives more than 10 times more information than it.
-
-  Another way to efficiently quantify the information is to give the wavenumber $\kappa$ 
-  where the information of linear power spectra has the same magnitude of 
-  the given information. In the left panel of Fig.~\ref{fig:fisherinfo}, 
-  $\kappa$ is the horizontal coordinates of the intersections of horizonal 
-  dotted lines with the linear information curve. At $k \simeq 2.6$ h/Mpc, MM reconstruction 
-  push $\kappa$ from $0.15$ h/Mpc to $0.4$ h/Mpc, while the logarithmic density mapping method 
-  only pushes $\kappa$ to $0.19$ h/Mpc.
-
-  In some papers, the cross correlation $r^2$ terms are set
+  an example to illustrate its strength. We find that MM
+  reconstruction gives over 10 times more information than it.  In some papers, the cross correlation $r^2$ terms are set
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
   increases the information.  For comparison, we plot this case in the right panel of 
   Fig.~\ref{fig:fisherinfo}.  We see that the logarithmic density
   mapping information is much higher, but only because it is not well
   correlated with the initial conditions.
+
+  Another way to quantify the non-linear scale is via the plateau's linear equivalent scale.  That is, the wavenumber $\kappa$ for which the linear information is the same as the non-linear plateau value, which we take to be at $k \simeq 2.6$ h/Mpc.  We find that the MM reconstruction increases $\kappa$ from $0.15$ to $0.4$ h/Mpc whereas the logarithmic density mapping method only increases it to $0.19$ h/Mpc.
+
+%  Another way to efficiently quantify the information is to give the wavenumber $\kappa$ 
+%  where the information of linear power spectra has the same magnitude of 
+%  the given information. In the left panel of Fig.~\ref{fig:fisherinfo}, 
+%  $\kappa$ is the horizontal coordinates of the intersections of horizonal 
+%  dotted lines with the linear information curve. At $k \simeq 2.6$ h/Mpc, MM reconstruction 
+%  push $\kappa$ from $0.15$ h/Mpc to $0.4$ h/Mpc, while the logarithmic density mapping method 
+%  only pushes $\kappa$ to $0.19$ h/Mpc.
 
   \begin{figure*}
     \includegraphics[width=0.48\textwidth]{fig4a.pdf}
@@ -170,7 +170,7 @@
       to the the reconstructed density fields, the dark line
       corresponds to the linear density fields, the cyan line
       corresponds to the logarithmic density mapping, and the circles
-      are number of $k$ modes up to that wave bin.  Dotted horizonal lines correspond to value of 
+      are the cumulative number of $k$ modes.  Dotted horizonal lines indicate the value of the 
       Fisher information at $k \simeq 2.6$ h/Mpc.  {\it Right.} Same
       as the left panel except with $r\equiv 1$. The black, blue and cyan lines
       match the results in \cite{bib:Rimes2006,bib:Mark2009}.}

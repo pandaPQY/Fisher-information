@@ -17,23 +17,22 @@
     \includegraphics[width=0.45\textwidth]{fig1.pdf}
     \caption{ The 2-D projection of one layer of the deformed grid of a sample
       $N$-body simulation is shown as curved white lines.  The
-      density fluctuation on the grid, $\delta\rho/\bar{\rho}$, is shown
+      density $\rho/\bar{\rho}=1+\delta$ is shown
       underneath.}
     \label{fig:simandrec}
  \end{figure}
 
-  We use Voronoi tessellation method to estimate the density
-  contrast $\delta_S=\delta\rho/\rho-1$ from the particles, and then
-  apply the MM reconstruction to these fields with a resolution of
-  $512^3$ cells.  The reconstruction code solves the dispacement potentials 
-  iteratively until the root mean square (rms) of the results drop (from $\sim 7.5$) 
-  to 0.20. For different simulation samples, different time steps are taken to get 
-  the results of the same rms. We finally pick 130 simulation samples to do the remaining calculation, 
-  each among which gives a final rms of 0.20
-  through running the reconstruction code for no more than 2000 time steps. 
-  A 2-D projection of one layer of the deformed grids and the
-  original density field on the grids are given in Fig.~\ref{fig:simandrec}.  As
-  expected, there is no grid crossing after reconstruction.
+ We use the Voronoi tessellation method to estimate the density contrast
+ $\delta_S=\delta\rho/\rho-1$ from the particles, and then apply the
+ MM reconstruction to these fields with a resolution of $512^3$ cells.
+ The reconstruction code solves the dispacement potentials iteratively
+ until the root mean square (rms) of the results drop from $\sim 7.5$
+ to 0.20. For different simulation samples, a different number of
+ iterations are required to get the results of the same rms. In total,
+ 130 simulations converged to the target rms within 2000 iterations.  A 2-D projection
+ of one layer of the deformed grids and the original density field on
+ the grids are given in Fig.~\ref{fig:simandrec}.  As expected, there
+ is no grid crossing after reconstruction.
  
  The cross power spectrum, $P_{ab}(k)$, is defined as
  \begin{align}
@@ -41,7 +40,7 @@
    (2\pi)^3 P_{ab}(k) \delta_{3D}(\bm{k}-\bm{k'}),
  \end{align}
  where $\delta_{a}$ and $\delta_{b}$ are any density contrasts and
- $\delta_{3D}$ is the three-dimensional Dirac delta funciton. We typically consider instead
+ $\delta_{3D}$ is the three-dimensional Dirac delta function. We typically consider instead
  the dimensionless power spectrum, $\Delta_{ab}^2(k)$, defined as
  \begin{align}
    \Delta_{ab}^2(k) \equiv \frac{k^3 P_{ab}(k)}{2\pi ^2}.
@@ -51,24 +50,25 @@
  the simulation results ($\delta_S$) and after reconstruction
  ($\delta_R=-\nabla^2\phi$).  For the simulation
  results, we use the average value of all 130 simulations and show
- $1\sigma$ variances as error bars.  To determine the correlation
+ $1\sigma$ standard deviations as error bars.  
+
+ To determine the correlation
  between fields, we compute the cross correlation coefficient
  $r_{ab}(k) = P_{ab}/\sqrt{P_{aa}P_{bb}}$.  In the right panel of
  Fig.~\ref{fig:cp}, we show $r_{SL}$ and $r_{RL}$.  We see that the
  reconstructed field is much more highly correlated with the linear
  field than the simulation field is.  For comparison, we also plot the 
  correlation coefficient of $\delta_E$ 
- and $\delta_L$ as the result in \cite{bib:Yu2016}, 
+ and $\delta_L$ from \citet{bib:Yu2016}, 
  where $\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$ is the 
  negative divergence of the real non-linear displacement from simulaiton. 
- Ideally, MM algorithm aims at getting the cross correlation $r_{RL}$ approaching to $r_{EL}$. 
- Even though $r_{RL}$ is off the $r_{EL}$ curve in non-linear regime due to the fact that MM reconstruction 
- cannot recover the cell-crossing and vorticity on these scales, we find that on the scale $k\simeq 0.05$ 
- h/Mpc to $0.3$ h/Mpc, linear modes were recovered successfully.
- Specifically, the scale at which $r(k)=1/2$ drops from $k\simeq 0.2$ h/Mpc to
+ Ideally, the MM algorithm aims to get the cross correlation $r_{RL}$ close to $r_{EL}$. 
+ Even though $r_{RL}$ decreases from $r_{EL}$ in the non-linear regime, due to the fact that the MM reconstruction 
+ cannot recover the cell-crossing and vorticity present on these scales, we find that linear modes are recovered successfully on scales $k\simeq 0.05 - 0.3$ h/Mpc.
+ Specifically, the scale at which $r(k)=1/2$ increases from $k\simeq 0.2$ h/Mpc to
  $0.8$ h/Mpc after reconstruction.  In comparison with the results of \citet{bib:ZhuH2016},
  we find the correlation coefficient falls off at slightly lower
- wavenumbers, which we attribute to using less particles to run the simulations.
+ wavenumbers, which we attribute to using fewer particles per simulation.
 
   \begin{figure*}
     \centering
@@ -78,9 +78,9 @@
       linear theory (black), the mean value of 130 $N$-body
       simulations with $1\sigma$ error bars (blue), and reconstruction
       of the simulations (red).  {\it Right.} The cross correlation
-      function $r_{SL}$ (blue) and
-      $r_{RL}$ (red), and $r_{EL}$ (dash
-      lines).}
+      function between simulation and linear densities $r_{SL}$ (blue),
+      MM reconstructed and linear densities $r_{RL}$ (red), and E-mode reconstruction $r_{EL}$ (dashed
+      blue) from \citet{bib:Yu2016}.}
     \label{fig:cp}
   \end{figure*}
 
