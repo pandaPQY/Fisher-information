@@ -21,7 +21,7 @@
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
     \xi^\mu}\delta^{i\mu},
   \end{align}
-  and $\phi$ is called the {\it deformation potential} which is chosen to let Eq. \ref{eq:const} hold.  
+  and $\phi$ is called the {\it deformation potential} which is chosen to adapt Eq. \ref{eq:const}.  
   Numerically, we iteratively solve for
   the deformation potential via a diffusion equation, 
   \begin{align}
@@ -35,7 +35,7 @@
   particle mesh and moving mesh (MM) hydrodynamics algorithms \cite{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved by multi-grid
   algorithm\cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
-  Then the displacement field is then given by
+  Then the displacement field is given by
   \begin{align}
    \label{eq:disp}
    \bs{\Psi}(\bs{\xi})=\nabla \phi(\bs{\xi}),

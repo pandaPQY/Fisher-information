@@ -10,7 +10,7 @@
   In this paper, the word \enquote{information} and the symbol \enquote{$I$} both implicitly 
   mean cumulative Fisher information 
   of $A$. For Gaussian
-  fields, the likelihood depends on parameters only through
+  fields, the likelihood depends on parameters only through the
   power spectrum $P(k)$, so $I$ can be written as 
   \begin{align}
     I = - \left\langle \sum_{k,k'} \frac{\partial \mathrm{ln} P(k)}{\partial \mathrm{ln} A} 
@@ -21,47 +21,47 @@
   where the angle bracket averages over realizations
   \cite{bib:Rimes2006}.
   Eq.~\ref{eq:fisherdef2} can be written in a simpler
-  form by two steps.   
+  form in two aspects.   
   
   First, we simplify the derivative term
-  $\partial \mathrm{ln} P(k)/\partial\mathrm{ln} A$.  For a given density field $\delta_a$, we can
+  $\partial \mathrm{ln} P(k)/\partial\mathrm{ln} A$.  For a given density field $\delta_\alpha$, we can
   %conveniently decompose it into a linear and a nonlinear component
   conveniently decompose it into a correlated, linear component,
   and a uncorrelated, noise component
   \begin{align}
-    \delta_a(k) = b (k) \delta _L (k) + \delta_{n}(k),
+    \delta_\alpha(k) = \frac{\chi (k)}{b (k)} \delta _L (k) + \delta_{n}(k),
     \label{eq:decompose}
   \end{align}
-  where $\delta_L$ is the linear density field, $b(k)$ is the
+  where $\delta_L$ is the linear density field, $b(k)\equiv P_{\alpha\alpha}/P_{LL}$ is the
   bias and $\delta_{n}(k)$ is defined such that the correlation
-  $\langle \delta_L(k)\delta_{n}(k) \rangle=0$.  If we correlate
-  $\delta_a$ and $\delta_L$,
+  $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  If we correlate
+  $\delta_\alpha$ and $\delta_L$,
   \begin{align}
-    \langle \delta_a(k)\delta_L(k) \rangle = b(k) \langle \delta_L(k)\delta_L(k) \rangle,
+    \langle \delta_\alpha^\dagger(k)\delta_L(k) \rangle = \frac{\chi(k)}{b(k)} \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
     \label{eq:correlating}
   \end{align} 
-  we can solve for $b$ as
+  we can solve for $\chi$ as
   \begin{align}
-    b (k) = \frac{P _{aL}(k)}{P_{LL}(k)}.
+    \chi(k) = \frac{P _{\alpha L}(k)}{P_{LL}(k)}b(k).
     \label{eq:bofk}
   \end{align}
   %To find the nonlinear term, we correlate $\delta_a$ with itself,
   To find the nonlinear term, we square both sides of Eq.~\ref{eq:decompose}
-  and the cross term of the right hand side vanishes,
+  and the cross terms of the right hand side vanish,
   \begin{align}
-    \langle \delta_a(k) \delta_a(k) \rangle = 
-    b^2(k) \langle \delta_L(k) \delta_L(k) \rangle + \langle \delta_{n}(k)\delta_{n}(k) \rangle,
+    \langle \delta_\alpha^\dagger(k) \delta_\alpha(k) \rangle = 
+    \frac{\chi^2(k)}{b^2(k)} \langle \delta_L^\dagger(k) \delta_L(k) \rangle + \langle \delta_{n}^\dagger(k)\delta_{n}(k) \rangle,
   \end{align}
   and find
   \begin{align}
-    P_{aa}(k) = b^2(k) P_{LL}(k) + P_{nn}(k).
+    P_{\alpha\alpha}(k) = \frac{\chi^2(k)}{b^2(k)} P_{LL}(k) + P_{nn}(k).
     \label{eq:powerdecompose}
   \end{align}
   With the help of Eq.~\ref{eq:bofk} and Eq.~\ref{eq:powerdecompose},
   we get
   \begin{align}
     \frac{\partial \mathrm{ln} P(k) }{ \partial \mathrm{ln} A}=
-    \frac{P_{LL}(k)}{P_{aa}(k)}b^2(k)=r^2_{aL}(k).
+    \frac{P_{LL}(k)}{P_{\alpha\alpha}(k)}\frac{\chi^2(k)}{b^2(k)}=r^2_{\alpha L}(k).
   \end{align}
 
   Second, we simplify
@@ -73,7 +73,7 @@
   number of modes in each bin (when considering $\bs{k}$ and $-\bs{k}$ as the same mode).  
   We can extend this definition to
   non-Gaussian fields, by taking into account that the covariance
-  matrix is no longer diagonal \tcr{and invert it appropriately \cite{bib:Rimes2006}}.  Thus, we
+  matrix is no longer diagonal \cite{bib:Rimes2006}.  Thus, we
   write the Fisher information in terms of matrix multiplication:
   \begin{align}
     I \left( < k_n\right) = r^2(k)^{\mathrm{T}} \left[ \mathrm{C^{-1}_{norm}} 
@@ -113,12 +113,12 @@
   and the super-survey tidal effect which is small on linear scales
   but dominates in the weakly nonlinear regime
   \cite{bib:Kazuyuki2016}.  The correlation matrix for the non-linear
-  power spectra has negative elements
+  power spectra has a small amount of negative elements
   ($\mathrm{Corr} \gtrsim -0.18$), which should vanish with more
   simulations \cite{bib:Takahashi2009}.  For the reconstructed
   correlation matrix, the linear regime extend up to $k \simeq 0.3$
-  $h$/Mpc.  However, the intensity of negative off-diagonal effect
-  also increases ($\mathrm{Corr} \gtrsim -0.48$).
+  $h$/Mpc.  However, the number and magnitude of negative off-diagonal elements
+  also increases ($\mathrm{Corr} \gtrsim -0.49$).
 
   \begin{figure}
     \centering
@@ -146,41 +146,38 @@
   $I \simeq 1.3 \times 10^{-3}/({\rm Mpc}/h)^3$ at $k \simeq 2.7$ $h$/Mpc,
   increased by a factor of 50.
   We compare the Fisher information given by the MM reconstruction method
-  with the logarithmic density mapping method \cite{bib:Mark2009}.
+  with the logarithmic density mapping method \cite{bib:Mark2009} as
+  an example to illustrate its strength. We find that MM
+  reconstruction gives over 10 times more information than it.
   
-  %This means that the MM reconstructed method can
-  %strongly recover the lost information within these scales.  
-  %We find that MM
-  %reconstruction gives over 10 times more information than it.  
   To test the upper limit of information that the MM reconstruction can recover, 
-  we calculate the Fisher information given by $\delta_E$ \cite{bib:Yu2016} indicating
-  a factor of 150 boost of information on 
-  $k \simeq 2.7$ h/Mpc.
-  %It indicates that the MM reconstruction can give 3 times more 
-  %information than our case at most. 
+  we calculate the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
+  which represents the maximum possible information available via MM reconstruction procedures.
+  We find that $I_{\delta_E}$ could be as much as 3 times higher ($150 I_{\delta_S}$) than our estimation.
+  This gives strong motivation to continue to develop and optimize our 
+  reconstruction algorithms to achieve this theoretical target.
 
   In some previous works, the cross correlation $r^2$ terms are set
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
-  increases the information. To compare with their result, we plot this case in the right panel of 
+  increases the information. To compare with their results, we plot this case in the right panel of 
   Fig.~\ref{fig:fisherinfo}.  We see that, in this case, the information of the logarithmic density
   mapping is much higher than it is in the left panel.
   In the analysis of BAO or extracting other primordial cosmological
-  parameters, we should taking into account the correlation term $r^2$
+  parameters, we should take into account the correlation term $r^2$
   to propagate final fields back to initial conditions \citep{bib:HarnoisD2013}.
   This also answers the question of section 4
   ({\it Information about what?}) of \citet{bib:HarnoisD2013}.
 
-  Another way to quantify the nonlinear scale is via the plateau's linear equivalent scale,
+  Another way to quantify the nonlinear scale is via the plateau's linear equivalent scale, $k_{\rm LEq}$, on which 
   \begin{equation}
-      I_{\delta_L}(k_{\rm NL})=I_{\delta}(k\rightarrow\infty)
+      I_{\delta_L}(k_{\rm LEq})=I_{\delta_{\alpha}}(k\rightarrow\infty).
   \end{equation}
-  i.e.,
-  the scale on which linear information approaches the limit of nonlinear information
-  (where the horizontal dashed line crosses $I_{\delta_{L}}$).
-  Practically, we take $I_{\delta}(k\rightarrow\infty)$ to be
-  $I(k=2.7$ $h$/Mpc) where $k$ is large enough.  We find that
-  for $\delta_S$, $k_{\rm NL}\simeq 0.15$ $h$/Mpc.
-  The MM reconstruction increases $k_{\rm NL}$ from $0.15$ to $0.4$ $h$/Mpc,
+  In the left panel of Fig. \ref{fig:fisherinfo}, $k_{LEq}$ is the scale on which 
+  the horizontal dashed line crosses $I_{\delta_{L}}$ curve.
+  Practically, we take $I_{\delta_{\alpha}}(k\rightarrow\infty)$ to be
+  $I$ ($k=2.7$ $h$/Mpc) where $r$ goes down to zero already.  We find that
+  for $\delta_S$, $k_{\rm LEq}\simeq 0.15$ $h$/Mpc.
+  The MM reconstruction increases $k_{\rm LEq}$ to $0.4$ $h$/Mpc,
   whereas the logarithmic density mapping method only increases it to $0.19$ $h$/Mpc.
 
   \begin{figure*}
@@ -188,12 +185,12 @@
     \includegraphics[width=0.48\textwidth]{fig4b.pdf}
     \centering
     \caption{{\it Left.} The Fisher information (solid lines) per unit volume as
-      a function of scale.  The blue, red, black curves correspond the power spectra
+      a function of wave number.  The blue, red, black curves correspond the power spectra
       of $\delta_S$, $\delta_R$ and $\delta_L$ respectively,
       and the cyan curve
       corresponds to the logarithmic density mapping. The circles
       are the cumulative number of $k$ modes.  Dotted horizontal lines indicate the value of the 
-      Fisher information at $k \simeq 2.7$ h/Mpc.  {\it Right.} Same
+      Fisher information at $k \simeq 2.7$ $h$/Mpc.  {\it Right.} Same
       as the left panel except with $r\equiv 1$. The black, blue and cyan lines
       match the results in \cite{bib:Rimes2006,bib:Mark2009}.}
   \label{fig:fisherinfo}
