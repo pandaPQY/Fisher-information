@@ -1,75 +1,87 @@
 \begin{section}{Implementation and Power Spectra}
   \label{sec:simulation}
-  We use the \textsc{CUBEP$^3$M} code \cite{bib:Harnois2013} to run
-  140 simulations with a box size of 600 Mpc/h and $512^3$ particles.
+  We use \textsc{CUBEP$^3$M} \cite{bib:Harnois2013} to run
+  140 simulations with a box size of 600 Mpc/$h$ and $512^3$ particles.
+  For these simulations, we use cosmological
+  parameters $\Omega_m=0.321$, $\Omega_{\Lambda}=1.0-\Omega_m$,
+  $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.
   The initial conditions are computed using the transfer function
   given by CAMB \cite{bib:Lewis2000} and then propagating the power
   back to $z=100$ with a linear growth factor.  The Zel'dovich
   approximation is used to calculate the displacement and velocity
-  fields of the particles.  For these simulations, we use cosmological
-  parameters $\Omega_M=0.321$, $\Omega_{\Lambda}=1.0-\Omega_m$,
-  $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.  Different random seeds
-  are used to produce the initial conditions for different simulations
-  so that they are independent of each other.
+  fields of the particles.
+  %Different random seeds
+  %are used to produce the initial conditions for different simulations
+  %so that they are independent of each other.
 
   \begin{figure*}[t!]
     \centering
     \includegraphics[width=0.9\textwidth]{fig1.pdf}
-    \caption{ The 2-D projection of one layer of the deformed grid of a sample
-      $N$-body simulation is shown as curved white lines.  The
-      density $\rho/\bar{\rho}=1+\delta$ is shown
-      underneath. For clarity, the scale of the density field is cut to 
-      300 Mpc/h, and only every other grid is plotted.}
+    \caption{ Illustration of MM reconstruction.
+      Chosen from a random slice of a simulation, the deformed mesh and
+      density $\rho/\langle\rho\rangle=1+\delta$ are show.
+      For clarity, the scale of the density field is cut to 
+      300 Mpc/h.}
     \label{fig:simandrec}
  \end{figure*}
 
- We use the Voronoi tessellation method \cite{bib:Van1994} to estimate the density contrast
- $\delta_S=\delta\rho/\rho-1$ from the particles, and then apply the
- MM reconstruction to these fields with a resolution of $512^3$ cells.
- The reconstruction code solves the dispacement potentials iteratively
- until the root mean square (rms) of the results drop from $\sim 7.5$
+ We use the \tcr {Voronoi tessellation method \cite{bib:Van1994}} to estimate the density contrast
+ $\delta_S=\rho/\langle\rho\rangle-1$ ($S$ stands for ``simulation'') from particle distributions, and apply the
+ MM reconstruction to these fields with a $512^3$ grid.
+ The reconstruction code solves the displacement potentials iteratively
+ until the \tcr{root mean square (rms) of the results} drop from $\sim 7.5$
  to 0.20. For different simulation samples, a different number of
- iterations are required to get the results of the same rms. In total,
+ iterations are required to get the results of the same rms. A total of
  130 simulations converged to the target rms within 2000 iterations.  A 2-D projection
- of one layer of the deformed grids and the original density field on
- the grids are given in Fig.~\ref{fig:simandrec}.  As expected, there
- is no grid crossing after reconstruction, even in the 2-D projection.
+ of one slice of the deformed mesh and the original density field on
+ the mesh are shown in Fig.~\ref{fig:simandrec}. 
+ %As expected, there
+ %is no grid crossing after reconstruction, even in the 2-D projection.
+ As expected, the deformed mesh traces the structure very well. In addition,
+ because the estimated displacement field is without shell-crossing,
+ the deformed grids do not cross each other.
  
- The cross power spectrum, $P_{ab}(k)$, is defined as
+ We study the Fisher information in the matter power
+ spectrum. More generally,
+ the cross power spectrum $P_{ab}(k)$ ($a=b$ for auto power spectrum) is defined as
  \begin{align}
-   \langle \delta_a(\bm{k})\delta_b(\bm{k'}) \rangle =
+   \langle \delta_a^\dagger(\bm{k})\delta_b(\bm{k'}) \rangle =
    (2\pi)^3 P_{ab}(k) \delta_{3D}(\bm{k}-\bm{k'}),
  \end{align}
- where $\delta_{a}$ and $\delta_{b}$ are any density contrasts and
+ where $\delta_{a}$ and $\delta_{b}$ are any two fields and
  $\delta_{3D}$ is the three-dimensional Dirac delta function. We typically consider instead
  the dimensionless power spectrum, $\Delta_{ab}^2(k)$, defined as
  \begin{align}
    \Delta_{ab}^2(k) \equiv \frac{k^3 P_{ab}(k)}{2\pi ^2}.
  \end{align}
  In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
- spectrum ($a=b$) of linear theory density fields ($\delta_L$), from
- the simulation results ($\delta_S$) and after reconstruction
+ spectrum of linear theory density fields $\delta_L$, nonlinear density
+ fields ($\delta_S$) from simulations and reconstructed density fields
  ($\delta_R=-\nabla^2\phi$).  For the simulation
  results, we use the average value of all 130 simulations and show
  $1\sigma$ standard deviations as error bars.  
 
- To determine the correlation
+ To determine the cross-correlation
  between fields, we compute the cross correlation coefficient
  $r_{ab}(k) = P_{ab}/\sqrt{P_{aa}P_{bb}}$.  In the right panel of
- Fig.~\ref{fig:cp}, we show $r_{SL}$ and $r_{RL}$.  We see that the
- reconstructed field is much more highly correlated with the linear
- field than the simulation field is.  For comparison, we also plot the 
+ Fig.~\ref{fig:cp}, we show $r_{SL}$ and $r_{RL}$.  We see that, compared with $\delta_S$,
+ $\delta_R$ is much better correlated with $\delta_L$. In order to
+ compare the results from estimated and real displacement fields,
+ we also use the $E$-mode of real displacement field to get the recovered
+ density field \cite{bib:Yu2016} (here we refer it as $E$-mode recovered density
+ field $\delta_E$), and also plot the 
  correlation coefficient of $\delta_E$ 
- and $\delta_L$ from \citet{bib:Yu2016}, 
- where $\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$ is the 
- negative divergence of the real non-linear displacement from simulaiton. 
+ and $\delta_L$ from \citet{bib:Yu2016}. 
+ Here $\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$ is the 
+ negative divergence of the real nonlinear displacement from simulations. 
  Ideally, the MM algorithm aims to get the cross correlation $r_{RL}$ close to $r_{EL}$. 
  Even though $r_{RL}$ decreases from $r_{EL}$ in the non-linear regime, due to the fact that the MM reconstruction 
- cannot recover the cell-crossing and vorticity present on these scales, we find that linear modes are recovered successfully on scales $k\simeq 0.05 - 0.3$ h/Mpc.
- Specifically, the scale at which $r(k)=1/2$ increases from $k\simeq 0.2$ h/Mpc to
- $0.8$ h/Mpc after reconstruction.  In comparison with the results of \citet{bib:ZhuH2016},
+ cannot recover the shell-crossing present on these scales, we find that linear
+ modes are recovered successfully on scales $k\simeq 0.05 - 0.3$ $h$/Mpc.
+ Specifically, the scale where $r(k)=1/2$ increases from $k\simeq 0.2$ h/Mpc to
+ $0.8$ $h$/Mpc after reconstruction.  In comparison with the results of \citet{bib:ZhuH2016},
  we find the correlation coefficient falls off at slightly lower
- wavenumbers, which we attribute to using fewer particles per simulation.
+ wave numbers, which we attribute to using fewer particles per simulation.
 
   \begin{figure*}
     \centering
