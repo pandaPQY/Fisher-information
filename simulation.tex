@@ -12,17 +12,18 @@
   are used to produce the initial conditions for different simulations
   so that they are independent of each other.
 
-  \begin{figure}[h]
+  \begin{figure*}[t!]
     \centering
-    \includegraphics[width=0.45\textwidth]{fig1.pdf}
+    \includegraphics[width=0.9\textwidth]{fig1.pdf}
     \caption{ The 2-D projection of one layer of the deformed grid of a sample
       $N$-body simulation is shown as curved white lines.  The
       density $\rho/\bar{\rho}=1+\delta$ is shown
-      underneath.}
+      underneath. For clarity, the scale of the density field is cut to 
+      300 Mpc/h, and only every other grid is plotted.}
     \label{fig:simandrec}
- \end{figure}
+ \end{figure*}
 
- We use the Voronoi tessellation method to estimate the density contrast
+ We use the Voronoi tessellation method \cite{bib:Van1994} to estimate the density contrast
  $\delta_S=\delta\rho/\rho-1$ from the particles, and then apply the
  MM reconstruction to these fields with a resolution of $512^3$ cells.
  The reconstruction code solves the dispacement potentials iteratively
@@ -32,7 +33,7 @@
  130 simulations converged to the target rms within 2000 iterations.  A 2-D projection
  of one layer of the deformed grids and the original density field on
  the grids are given in Fig.~\ref{fig:simandrec}.  As expected, there
- is no grid crossing after reconstruction.
+ is no grid crossing after reconstruction, even in the 2-D projection.
  
  The cross power spectrum, $P_{ab}(k)$, is defined as
  \begin{align}
