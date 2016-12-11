@@ -1,63 +1,68 @@
 \begin{section}{Introduction}\label{sec:introduction}  
 
-  Two-point statistics provide a complete description of Gaussian
+  Two-point statistics provide complete descriptions of Gaussian
   density fields and can be computed efficiently even for large data
-  sets.  However, non-linear gravitational evolution leads to highly
+  sets.  However, nonlinear gravitational evolution leads to highly
   non-Gaussian matter distributions which require higher order
   statistics to fully characterize.  Such statistics are
-  computationally expensive and can be challenging to relate to
+  computationally expensive and can be challenging to map to
   cosmological parameters.  To mitigate these difficulties, it is
   common to transform the matter field in a way that hopefully reduces
   non-Gaussianity.  For example, Gaussianization transforms have been
   used to make the logarithmic distribution more Gaussian
-  \cite{bib:Weinberg1992,bib:Mark2009} and Wavelet Non-Linear Wiener
+  \cite{bib:Weinberg1992,bib:Mark2009} and wavelet nonlinear Wiener
   filters have been used to separate Gaussian and non-Gaussian
   components of the density field
   \cite{bib:Zhang2011,bib:Yu2012,bib:HarnoisD2013}.
+  {\it Reconstruction} techniques \citep{bib:Daniel2007} provide an more
+  effective way by converting matter distributions back to an
+  earlier stage \citep{bib:HarnoisD2013}.
 
-  The success of techniques can be quantified by computing the Fisher
-  information present in the power spectrum before and after
-  reconstruction.  \citet{bib:Rimes2006}
-  were the first to study the Fisher information in the non-linear
-  matter power spectrum calculated from N-body simulations.  They
-  found that the information has a plateau on translinear scales
-  ($k \simeq 0.2-0.8$ h/Mpc) due to strong coupling of Fourier
-  modes.  Qualitatively, this means that the power spectrum on these
-  scales gives little additional information.  
-  However, \citet{bib:HarnoisD2013} computed the Fisher information
-  for various Gaussianization methods (and combinations of methods)
-  and found that while mode coupling is reduced, there is not
+  The quality of these techniques can be quantified by computing the Fisher
+  information \citep{bib:Rimes2006} present in the power spectrum before and after
+  reconstruction/Gaussianization.
+  \citet{bib:Rimes2006} were the first to study the Fisher information in the nonlinear
+  matter power spectrum calculated from $N$-body simulations.  They
+  find that the cumulative information has a plateau on translinear scales
+  ($k \simeq 0.2-0.8$ $h$/Mpc) due to strong coupling between Fourier
+  modes.  Qualitatively, this means that the power spectra on these
+  scales give little additional information.  
+  \citet{bib:HarnoisD2013} compute the cumulative Fisher information
+  for various Gaussianization methods and their combinations
+  and find that while mode coupling is reduced, there is not
   necessarily an improvement in the cross correlation between the
-  initial Gaussian density field and the final non-linear one. 
+  initial density fields and the final nonlinear ones. 
 
   In studies of Baryon Acoustic Oscillations (BAO), density fields are
-  subjected to {\it reconstruction} which partially inverts non-linear
+  subjected to {\it reconstruction} which partially inverts nonlinear
   evolution by applying the negative Zel'Dovich displacement field \cite{bib:Eisenstein2007}.
   The linear density field is
   typically estimated via Lagrangian perturbation theory (LPT)
   using the linear Zel'Dovich displacement $-\nabla_q\cdot\bs\Psi(\bs q)$
   with respect to initial coordiantes $\bs{q}$ \cite{bib:Zel1970}.
-  Recently, \citet{bib:Zhu2016} described how to use the Moving-Mesh
+  \citet{bib:Zhu2016} describe a new reconstruction technique, which uses
+  the Moving-Mesh
   algorithm (MM), first described in \cite{bib:Pen1995,bib:Pen1998},
-  to efficiently estimate $\bs{\Psi}(\bs{q})$ from non-linear
-  density fields.  They further showed that even though shell-crossing
+  to effectively estimate $\bs{\Psi}(\bs{q})$ from nonlinear
+  density fields.  They further show that even though shell-crossing
   and vorticity are not recovered, linear density modes are still 
   recovered up to scales relevent to the BAO.
 
   In this paper, we compute the Fisher information recovered after
-  using this reconstruction scheme on 130 independent N-body
-  simulations.  The paper is organized as follows.  In \S
+  using this new reconstruction scheme on 130 independent $N$-body
+  simulations, and compared with other methods and unreconstructed
+  fields.  The paper is organized as follows.  In \S
   \ref{sec:reconstruction}, we briefly
   describe the computation of the displacement potential using MM
   algorithm. In \S \ref{sec:simulation}, we describe  
   the simulations, implementation of the reconstruction and compare 
   the power spectra and cross correlations before and after reconstruction.  
-  In \S \ref{sec:fisherinfo}, we futher compute the correlation matrix 
+  In \S \ref{sec:fisherinfo}, we further compute the correlation matrix 
   and Fisher information before and
   after reconstruction.  Finally, in \S \ref{sec:conclusion}, we summarize 
   our results and 
   discuss the effectiveness of the reconstruction and its potential
-  uses.
+  applications.
 
 
 \end{section}
