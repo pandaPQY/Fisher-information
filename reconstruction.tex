@@ -1,39 +1,41 @@
-\begin{section}{Reconstruction Algorithm}
+\begin{section}{Reconstruction Technique}
   \label{sec:reconstruction}
-  In this section, we briefly review the MM algorithm; for a more
+  Here we briefly review the MM algorithm used in the new reconstruction technique; for a more
   complete description we refer the reader to \cite{bib:ZhuH2016}.  
-  The aim of the MM algorithm is to estimate the displacement of particles in 
-  Lagrangian coordiantes from their final Eulerian position only. The
-  general principle is to relate a particle's Eulerian coordinates, $x^i$ to
-  a curvilinear system, $\xi^\mu$, in which the number of particles
-  per grid cell is approximately constant:
+  The aim of the MM algorithm is to estimate the displacement field of mass elements in 
+  Lagrangian coordinates from their final Eulerian position only, and from this
+  estimated displacement field one directly reconstructs the linear density field. The
+  general principle is to relate the Eulerian coordinates of a mass element, $x^i$ to
+  a curvilinear system, $\xi^\mu$, such that the mass
+  per grid cell is approximately constant
   \begin{align}
    \label{eq:const}
-    \rho \sqrt{g}=\mathrm{const.},
+    \rho \sqrt{g}=\mathrm{Const.},
   \end{align}
   where $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
   element of the coordinate transformation matrix $e^i_\mu = \partial x^i / \partial \xi ^ \mu$. 
   These coordinates are
-  related via the so-called deformation, which we assume to be a pure
+  related via a {\it deformation} field, which we assume to be a pure
   gradient:
   \begin{align}
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
     \xi^\mu}\delta^{i\mu},
   \end{align}
-  and $\phi$ is called the deformation potential which is chosen to enforce Eq. \ref{eq:const}.  
-  Numerially, we can iteratively solve for
-  the deformation potential via the diffusion equation, 
+  and $\phi$ is called the {\it deformation potential} which is chosen to let Eq. \ref{eq:const} hold.  
+  Numerically, we iteratively solve for
+  the deformation potential via a diffusion equation, 
   \begin{align}
     \label{eq:li_elip}
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
     \partial_\nu \dot{\phi})=\Delta \rho,
   \end{align}
   where $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$ is the difference in density 
-  due to displacing the grids. A detailed discription 
-  of the analytical formulation can be found in \cite{bib:Pen1995,bib:Pen1998}.
-  Eq.~\ref{eq:li_elip} can be solved through the use of the multigrid
-  algorithm described in \cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
-  The displacement field is then given by
+  due to displacing the grids. A detailed description 
+  of the analytical formulation can be found in the adaptive
+  particle mesh and moving mesh hydrodynamics algorithms \cite{bib:Pen1995,bib:Pen1998}.
+  Eq.~\ref{eq:li_elip} can be solved by multi-grid
+  algorithm\cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
+  Then the displacement field is then given by
   \begin{align}
    \label{eq:disp}
    \bs{\Psi}(\bs{\xi})=\nabla \phi(\bs{\xi}),
