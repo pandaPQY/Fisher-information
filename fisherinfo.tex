@@ -152,28 +152,9 @@
   we calculate the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
   which represents the maximum possible information available via MM reconstruction procedures.
   We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than MM reconstruction.
-  \tcr{This gives strong motivation to continue to develop and optimize our 
-  reconstruction algorithms to achieve this theoretical target.}
+  This gives motivation to continue to develop and optimize our 
+  reconstruction algorithms to achieve this theoretical target.
   
-  \tcb{Again, from our yesterday's Wechat telecon,
-  I don't see this motivation strong.\\
-  (i) 50 or 150 times more information is
-  quoted as the $k\rightarrow\infty$ case, which is in anyways unachievable.
-  Within our scales of interest (BAO)
-  $I_{\delta_R}(<k_{\rm BAO}) \simeq I_{\delta_E}(<k_{\rm BAO})$. Thus,
-  further optimizing the code does not improve the BAO accuracy. Furthermore,
-  the bottleneck is the number density Poisson noise and bias from surveys.
-  I hope Yu Yu give more comments here.\\
-  (ii) Even assume we optimized (i) and regardless of BAO, 150/5=3 times
-  more $I(<k)$ means lowering the error bar by factor of 1.7; whereas 50/1=50 times
-  more information means lowering the error bar by 7. The latter is of much more importance.\\
-  (iii) if you compare (ii) between MM and standard reconstruction (e.g. reconstruction
-  part in \cite{bib:HarnoisD2013}), then you can quantify how much better MM
-  is better than standard reconstruction in terms of Fisher information.\\
-  (iv) The next step/work by Xin et al. will give a direct answer to (iii)
-  in terms of the accuracy of BAO dilation scale.]
-  }
-
   In some previous works, the cross correlation $r^2$ terms are set
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
   increases the information. To compare with their results, we plot this case in the right panel of 
