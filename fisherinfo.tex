@@ -29,39 +29,40 @@
   conveniently decompose it into a correlated, linear component,
   and a uncorrelated, noise component
   \begin{align}
-    \delta_\alpha(k) = \frac{\chi (k)}{b (k)} \delta _L (k) + \delta_{n}(k),
+    \delta_{\alpha}(k) = r'(k) \delta_L (k) + \delta_{n}(k),
     \label{eq:decompose}
   \end{align}
-  where $\delta_L$ is the linear density field, $b(k)\equiv P_{\alpha\alpha}/P_{LL}$ is the
-  bias and $\delta_{n}(k)$ is defined such that the correlation
+  where $\delta_L$ is the linear density field, and $\delta_{n}(k)$ is defined such that the correlation
   $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  If we correlate
   $\delta_\alpha$ and $\delta_L$,
   \begin{align}
-    \langle \delta_\alpha^\dagger(k)\delta_L(k) \rangle = \frac{\chi(k)}{b(k)} \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
+    \langle \delta_\alpha^\dagger(k)\delta_L(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
     \label{eq:correlating}
   \end{align} 
-  we can solve for $\chi$ as
+  Remind the definition of cross correlation coefficient $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
+  and using the definition of bias $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
   \begin{align}
-    \chi(k) = \frac{P _{\alpha L}(k)}{P_{LL}(k)}b(k).
-    \label{eq:bofk}
-  \end{align}
+    r'(k) = \frac{P_{\alpha L}(k)}{P_{LL}(k)}=r_{\alpha L}(k) b(k).
+    \label{eq:bofk}                                              
+  \end{align}                                                    
   %To find the nonlinear term, we correlate $\delta_a$ with itself,
   To find the nonlinear term, we square both sides of Eq.~\ref{eq:decompose}
-  and the cross terms of the right hand side vanish,
-  \begin{align}
-    \langle \delta_\alpha^\dagger(k) \delta_\alpha(k) \rangle = 
-    \frac{\chi^2(k)}{b^2(k)} \langle \delta_L^\dagger(k) \delta_L(k) \rangle + \langle \delta_{n}^\dagger(k)\delta_{n}(k) \rangle,
-  \end{align}
-  and find
-  \begin{align}
-    P_{\alpha\alpha}(k) = \frac{\chi^2(k)}{b^2(k)} P_{LL}(k) + P_{nn}(k).
-    \label{eq:powerdecompose}
-  \end{align}
+  and the cross terms of the right hand side vanish,             
+  \begin{align}                                                  
+    \langle \delta_\alpha^\dagger(k) \delta_\alpha(k) \rangle =  
+    r_{\alpha L}^2(k)b^2(k) \langle \delta_L^\dagger(k) \delta_L(k) \rangle + 
+    \langle \delta_{n}^\dagger(k)\delta_{n}(k) \rangle,          
+  \end{align}                                                    
+  and find                                                       
+  \begin{align}                                                  
+    P_{\alpha\alpha}(k) = r_{\alpha L}^2(k)b^2(k)P_{LL}(k) + P_{nn}(k).
+    \label{eq:powerdecompose}                                    
+  \end{align}                                                    
   With the help of Eq.~\ref{eq:bofk} and Eq.~\ref{eq:powerdecompose},
-  we get
-  \begin{align}
+  we get                                                         
+  \begin{align}                                                  
     \frac{\partial \mathrm{ln} P(k) }{ \partial \mathrm{ln} A}=
-    \frac{P_{LL}(k)}{P_{\alpha\alpha}(k)}\frac{\chi^2(k)}{b^2(k)}=r^2_{\alpha L}(k).
+    r^2_{\alpha L}(k)b^2(k)\frac{P_{LL}(k)}{P_{\alpha\alpha}(k)}=r^2_{\alpha L}(k).
   \end{align}
 
   Second, we simplify
@@ -131,11 +132,11 @@
 
   The Fisher information is proportional to the volume. 
   We plot the Fisher information per unit volume of the power spectra of
-  $\delta_S$, $\delta_L$ and $\delta_R$ in the left panel of 
+  $\delta_N$, $\delta_L$ and $\delta_R$ in the left panel of 
   Fig.~\ref{fig:fisherinfo}. The Fisher information of the linear 
   power spectra is equal to the number of $k$ modes within the shell in 
   Fourier space, $N_k$. As expected, Fisher information of the
-  $\delta_S$ drops from $\delta_L$ on scale
+  $\delta_N$ drops from $\delta_L$ on scale
   $k \simeq 0.05$ $h$/Mpc, and has a flat plateau in the nonlinear
   regime, with a saturated value of
   $I \simeq 2.5 \times 10^{-5}/({\rm Mpc}/h)^3$, indicating
@@ -153,7 +154,7 @@
   To test the upper limit of information that the MM reconstruction can recover, 
   we calculate the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
   which represents the maximum possible information available via MM reconstruction procedures.
-  We find that $I_{\delta_E}$ could be as much as 3 times higher ($150 I_{\delta_S}$) than our estimation.
+  We find that $I_{\delta_E}$ could be as much as 3 times higher ($150 I_{\delta_N}$) than our estimation.
   This gives strong motivation to continue to develop and optimize our 
   reconstruction algorithms to achieve this theoretical target.
 
@@ -176,7 +177,7 @@
   the horizontal dashed line crosses $I_{\delta_{L}}$ curve.
   Practically, we take $I_{\delta_{\alpha}}(k\rightarrow\infty)$ to be
   $I$ ($k=2.7$ $h$/Mpc) where $r$ goes down to zero already.  We find that
-  for $\delta_S$, $k_{\rm LEq}\simeq 0.15$ $h$/Mpc.
+  for $\delta_N$, $k_{\rm LEq}\simeq 0.15$ $h$/Mpc.
   The MM reconstruction increases $k_{\rm LEq}$ to $0.4$ $h$/Mpc,
   whereas the logarithmic density mapping method only increases it to $0.19$ $h$/Mpc.
 
@@ -186,7 +187,7 @@
     \centering
     \caption{{\it Left.} The Fisher information (solid lines) per unit volume as
       a function of wave number.  The blue, red, black curves correspond the power spectra
-      of $\delta_S$, $\delta_R$ and $\delta_L$ respectively,
+      of $\delta_N$, $\delta_R$ and $\delta_L$ respectively,
       and the cyan curve
       corresponds to the logarithmic density mapping. The circles
       are the cumulative number of $k$ modes.  Dotted horizontal lines indicate the value of the 

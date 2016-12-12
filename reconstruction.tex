@@ -35,15 +35,15 @@
   particle mesh and moving mesh (MM) hydrodynamics algorithms \cite{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved by multi-grid
   algorithm\cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
-  Then the displacement field is given by
+  Then the estimated displacement field is given by
   \begin{align}
    \label{eq:disp}
-   \bs{\Psi}(\bs{\xi})=\nabla \phi(\bs{\xi}),
+   \bs{\tilde{\Psi}}(\bs{\xi})=\nabla \phi(\bs{\xi}),
   \end{align}
   and the reconstructed density field is given by
   \begin{align}
    \label{eq:delta}
-   \delta_R(\bs{\xi})=- \nabla \cdot \bs{\Psi}(\bs{\xi}) = - \nabla^2 \phi(\bs{\xi}). 
+   \delta_R(\bs{\xi})=- \nabla \cdot \bs{\tilde{\Psi}}(\bs{\xi}) = - \nabla^2 \phi(\bs{\xi}). 
   \end{align}
 
 \end{section}
