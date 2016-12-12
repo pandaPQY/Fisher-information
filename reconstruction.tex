@@ -7,13 +7,13 @@
   estimated displacement field one directly reconstructs the linear density field. The
   general principle is to relate the Eulerian coordinates of a mass element, $x^i$ to
   a curvilinear system, $\xi^\mu$, such that the mass
-  per grid cell is approximately constant
+  per grid cell is approximately constant,
   \begin{align}
    \label{eq:const}
     \rho \sqrt{g}=\mathrm{Const.},
   \end{align}
   where $\sqrt{g} \equiv \mathrm{det}\left| e^i_\mu\right|$ is the volume
-  element of the coordinate transformation matrix $e^i_\mu = \partial x^i / \partial \xi ^ \mu$. 
+  element and $e^i_\mu \equiv \partial x^i / \partial \xi ^ \mu$ is the coordinate transformation matrix. 
   These coordinates are
   related via a {\it deformation} field, which we assume to be a pure
   gradient:
@@ -21,7 +21,8 @@
     x^i = \xi^\mu \delta^i_\mu + \frac{\partial \phi}{\partial
     \xi^\mu}\delta^{i\mu},
   \end{align}
-  and $\phi$ is called the {\it deformation potential} which is chosen to adapt Eq. \ref{eq:const}.  
+  and $\phi$ is called the {\it deformation potential} which is chosen to satisfy Eq. \ref{eq:const}.  
+
   Numerically, we iteratively solve for
   the deformation potential via a diffusion equation, 
   \begin{align}
@@ -29,7 +30,7 @@
     \partial _\mu (\rho \sqrt{g} e^\mu _i \delta^{i\nu}
     \partial_\nu \dot{\phi})=\Delta \rho,
   \end{align}
-  where $\Delta \rho = \bar{\rho}-\rho \sqrt{g}$ is the difference in density 
+  where $\Delta \rho = \langle\rho\rangle-\rho \sqrt{g}$ is the difference in density 
   due to displacing the grids. A detailed description 
   of the analytical formulation can be found in the adaptive
   particle mesh and moving mesh (MM) hydrodynamics algorithms \cite{bib:Pen1995,bib:Pen1998}.

@@ -26,20 +26,20 @@
   Firstly, we simplify the derivative term
   $\partial \mathrm{ln} P(k)/\partial\mathrm{ln} A$.  For a given density field $\delta_\alpha$, we can
   conveniently decompose it into a correlated, linear component,
-  and a uncorrelated, noise component with respect to $\delta_L$
+  and an uncorrelated, noise component with respect to $\delta_L$, 
   \begin{align}
     \delta_{\alpha}(k) = r'(k) \delta_L (k) + \delta_{n}(k),
     \label{eq:decompose}
   \end{align}
-  where the noise term $\delta_{n}(k)$ is defined such that the correlation
+  where $\delta_{n}(k)$ is defined such that the correlation
   $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  To solve $r'$, we correlate
   both sides with $\delta_L$ and the uncorrelated noise term drops out,
   \begin{align}
-    \langle \delta_L^\dagger(k)\delta_\alpha(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
+    \langle \delta_L^\dagger(k)\delta_\alpha(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle.
     \label{eq:correlating}
   \end{align} 
-  and by the definitions of cross correlation coefficient $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
-  and bias $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
+  Using the definitions of cross correlation coefficient, $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
+  and bias, $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
   \begin{align}
     r'(k) = \frac{P_{\alpha L}(k)}{P_{LL}(k)}=r_{\alpha L}(k) b(k).
     \label{eq:bofk}                                              
@@ -86,8 +86,8 @@
   \end{align}
   is the normalized covariance matrix, and
   $r$ is the mean cross correlation of a given density field with
-  $\delta_L$ and the subscript $<k_n$ indicates the matrix is set to
-  zero for modes $k,k'>k_n$.  The elements of the covariance matrix are defined as
+  $\delta_L$ and the subscript $<k_n$ indicates the matrix elements are set to
+  zero for modes $k,k'>k_n$.  The covariance matrix is defined as
   \begin{align}
     \mathrm{Cov}\left(k,k'\right)\equiv \frac{\sum_{i,j=1}^{N}\left[ P_i \left( k \right) - 
     \langle P \left( k \right) \rangle \right]\left[ P_j \left( k' \right) - 
@@ -111,18 +111,18 @@
   elements are produced by strong mode coupling on nonlinear scales
   and the super-survey tidal effect which is small on linear scales
   but dominates in the weakly nonlinear regime
-  \cite{bib:Kazuyuki2016}.  The correlation matrix for the non-linear
+  \cite{bib:Kazuyuki2016}.  The correlation matrix for the nonlinear
   power spectra has a small amount of negative elements
   ($\mathrm{Corr} \gtrsim -0.18$), which should vanish with more
   simulations \cite{bib:Takahashi2009}.  For the reconstructed
-  correlation matrix, the linear regime extend up to $k \simeq 0.3$
+  correlation matrix, the linear regime extends up to $k \simeq 0.3$
   $h$/Mpc.  However, the number and magnitude of negative off-diagonal elements
   also increases ($\mathrm{Corr} \gtrsim -0.49$).
 
   \begin{figure}
     \centering
     \includegraphics[width=0.48\textwidth]{fig3.pdf}
-    \caption{The correlation matrix from 130 non-linear power
+    \caption{The correlation matrix from 130 nonlinear power
       spectra (the upper-left elements) and reconstructed power
       spectra (the lower-right off-diagonal elements).}
     \label{fig:corrall}
@@ -132,53 +132,51 @@
   We plot the Fisher information per unit volume of the power spectra of
   $\delta_N$, $\delta_L$ and $\delta_R$ in the left panel of 
   Fig.~\ref{fig:fisherinfo}. The Fisher information of the linear 
-  power spectra is equal to the number of $k$-modes, $N_k$. As expected, Fisher information of
-  $\delta_N$ drops from $\delta_L$ on scale
-  $k \simeq 0.05$ $h$/Mpc, and has a flat plateau in the nonlinear
-  regime, with a saturated value of
+  power spectra is equal to the cumulative number of $k$-modes, $N_k$. As expected, Fisher information of
+  $\delta_N$ decreases from that of $\delta_L$ on scale
+  $k \simeq 0.05$ $h$/Mpc, and has a flat plateau on small scales, 
+  with a saturated value of
   $I \simeq 2.5 \times 10^{-5}/({\rm Mpc}/h)^3$, indicating
   the absence of independent information in the nonlinear
-  regime.  In comparison, the information curve of $\delta_R$ power
+  regime.  In comparison, the information curve of the $\delta_R$ power
   spectra keeps increasing roughly the same as the linear information
   until $k\simeq 0.3$ $h$/Mpc, and reaches a value of 
   $I \simeq 1.3 \times 10^{-3}/({\rm Mpc}/h)^3$ at $k \simeq 2.7$ $h$/Mpc,
-  increased by a factor of 50.
-  We compare the Fisher information given by the MM reconstruction method
-  with the logarithmic density mapping method \cite{bib:Mark2009} as
-  an example to illustrate its strength. We find that MM
-  reconstruction gives over 10 times more information than it.
+  a factor of 50 times greater than $I_{\delta_N}$.
+  As an example to illustrate its strength, we compare the Fisher information given by the MM reconstruction method
+  with the logarithmic density mapping method \cite{bib:Mark2009}. We find that MM
+  reconstruction gives over 10 times more information.
   
   To test the upper limit of information that the MM reconstruction can recover, 
-  we calculate the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
+  we are currently computing the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
   which represents the maximum possible information available via MM reconstruction procedures.
   We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than MM reconstruction.
   This gives motivation to continue to develop and optimize our 
   reconstruction algorithms to achieve this theoretical target.
   
-  In some previous works, the cross correlation $r^2$ terms are set
+  In some previous works, the cross correlation $r^2$ terms have been set
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
-  increases the information. To compare with their results, we plot this case in the right panel of 
-  Fig.~\ref{fig:fisherinfo}.  We see that, in this case, the information of the logarithmic density
+  increases the information. To demonstrate this, we plot this case in the right panel of 
+  Fig.~\ref{fig:fisherinfo}.  We see that the information of the logarithmic density
   mapping is much higher than it is in the left panel.
   In the analysis of BAO or extracting other primordial cosmological
   parameters, we should take into account the correlation term $r^2$
-  to propagate final fields back to initial conditions \citep{bib:HarnoisD2013}.
-  This also answers the question of section 4
+  to propagate final fields back to the initial conditions \citep{bib:HarnoisD2013}.
+  This also eliminates the second increase of the information on small scales, which answers the question of section 4
   ({\it Information about what?}) of \citet{bib:HarnoisD2013}.
 
   Another way to quantify the nonlinear scale of $\delta_\alpha$
-  is via the information plateau's linear equivalent scale, $k_{\rm LEq}$, satisfying
+  is via the information plateau's linear equivalent scale, $k_{\rm p}$, satisfying
   \begin{equation}
-      I_{\delta_L}(k_{\rm LEq})=I_{\delta_{\alpha}}(k\rightarrow\infty).
+      I_{\delta_L}(k_{\rm p})=I_{\delta_{\alpha}}(k\rightarrow\infty).
   \end{equation}
-  \tcr{[I don't like the subscript LEq, very strange.]}
   In the left panel of Fig. \ref{fig:fisherinfo}, we can see that 
-  $k_{\rm LEq}$ is just the scale on which 
-  the horizontal dashed line crosses $I_{\delta_{L}}$ curve.
+  $k_{\rm p}$ is just the scale on which 
+  the horizontal dotted line crosses $I_{\delta_{L}}$ curve.
   Practically, we take $I_{\delta_{\alpha}}(k\rightarrow\infty)$ to be
   $I$ ($k=2.7$ $h$/Mpc) where $r$ goes down to zero already.  We find that
-  for $\delta_N$, $k_{\rm LEq}\simeq 0.15$ $h$/Mpc.
-  The MM reconstruction increases $k_{\rm LEq}$ to $0.4$ $h$/Mpc,
+  for $\delta_N$, $k_{\rm p}\simeq 0.15$ $h$/Mpc.
+  The MM reconstruction increases $k_{\rm p}$ to $0.4$ $h$/Mpc,
   whereas the logarithmic density mapping method only increases it to $0.19$ $h$/Mpc.
 
   \begin{figure*}
@@ -186,7 +184,7 @@
     \includegraphics[width=0.48\textwidth]{fig4b.pdf}
     \centering
     \caption{{\it Left.} The Fisher information (solid lines) per unit volume as
-      a function of wave number.  The blue, red, black curves correspond the power spectra
+      a function of wave number.  The blue, red, and black curves correspond to the power spectra
       of $\delta_N$, $\delta_R$ and $\delta_L$ respectively,
       and the cyan curve
       corresponds to the logarithmic density mapping. The circles

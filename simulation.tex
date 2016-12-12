@@ -20,12 +20,12 @@
       $N$-body simulation is shown as curved white lines.  The
       density $\rho/\langle\rho\rangle=1+\delta$ on the mesh is shown
       underneath. For clarity, the scale of the density field is cut to 
-      300 Mpc/$h$, and only every other grid is plotted.}
+      300 Mpc/$h$, and only every other grid line is plotted.}
     \label{fig:simandrec}
  \end{figure*}
 
  We use the Voronoi tessellation method \cite{bib:Van1994} to estimate the density contrast
- $\delta_N=\rho/\langle\rho\rangle-1$ ($N$ stands for nonlinear density from simulation) from particle distributions, and apply the
+ $\delta_N=\rho/\langle\rho\rangle-1$ ($N$ stands for nonlinear) from particle distributions, and apply the
  MM reconstruction to these fields with $512^3$ grids.
  The reconstruction code solves the displacement potentials iteratively
  until the root mean square (rms) of the results drop from $\sim 7.5$
@@ -45,7 +45,7 @@
  ($\alpha=\beta$ for auto power spectrum) is defined as
  \begin{align}
    \langle \delta_\alpha^\dagger(\bm{k})\delta_\beta(\bm{k'}) \rangle =
-   (2\pi)^3 P_{\alpha\beta}(k) \delta_{\rm {3D}}(\bm{k}-\bm{k'}),
+   (2\pi)^3 P_{\alpha\beta}(k) \delta_{\rm {3D}}(\bm{k}+\bm{k'}),
  \end{align}
  where $\delta_{\alpha}$ and $\delta_{\beta}$ are any two fields and
  $\delta_{\rm{3D}}$ is the three-dimensional Dirac delta function. We typically consider instead
@@ -56,7 +56,7 @@
  In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
  spectrum of linear theory density fields $\delta_L$, nonlinear density
  fields ($\delta_N$) from simulations and reconstructed density fields
- ($\delta_R=-\nabla^2\phi$).  For the simulation
+ (from Eq. \ref{eq:delta}).  For the simulation
  results, we use the average value of all 130 simulations and show
  $1\sigma$ standard deviations as error bars.  
 
@@ -66,13 +66,15 @@
  Fig.~\ref{fig:cp}, we show $r_{NL}$ and $r_{RL}$.  We see that, compared with $\delta_N$,
  $\delta_R$ is much better correlated with $\delta_L$. 
  We compare our reconstruction correlation coefficient to that of the $E$-mode 
- reconstruction, $r_{EL}$, ($\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$) computed in \citet{bib:Yu2016}.
- Even though $r_{RL}$ decreases from $r_{EL}$ in the non-linear regime, due to the fact that the MM reconstruction 
+ reconstruction, $r_{EL}$, 
+ %,($\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$) 
+ computed in \citet{bib:Yu2016}.
+ Even though $r_{RL}$ decreases from $r_{EL}$ in the nonlinear regime due to the fact that the MM reconstruction 
  cannot recover the shell-crossing present on these scales, we find that linear
  modes are recovered successfully on scales $k\simeq 0.05 - 0.3$ $h$/Mpc.
  Specifically, the scale where $r(k)=1/2$ increases from $k\simeq 0.2$ $h$/Mpc to
  $0.8$ $h$/Mpc after reconstruction.  In comparison with the results of \citet{bib:ZhuH2016},
- we find the correlation coefficient falls off at slightly lower
+ which showed $r(k\simeq0.9 h/\rm{Mpc})=1/2$, we find the correlation coefficient falls off at slightly lower
  wave numbers, which we attribute to using fewer particles per simulation.
 
   \begin{figure*}
