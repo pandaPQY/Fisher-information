@@ -7,16 +7,10 @@
   $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.
   The initial conditions are computed by
   transfer function \cite{bib:Lewis2000}
-  % and then propagating the power
-  %back to 
   at $z=100$.
-  %with a linear growth factor.
   Zel'dovich
   approximation is used to calculate the displacement and initial velocities
   of particles.
-  %Different random seeds
-  %are used to produce the initial conditions for different simulations
-  %so that they are independent of each other.
 
   \begin{figure*}[t!]
     \centering
@@ -30,7 +24,7 @@
     \label{fig:simandrec}
  \end{figure*}
 
- We use the Voronoi tessellation method \tcr{[add citation in .bib]} \cite{bib:Van1994} to estimate the density contrast
+ We use the Voronoi tessellation method \cite{bib:Van1994} to estimate the density contrast
  $\delta_N=\rho/\langle\rho\rangle-1$ ($N$ stands for nonlinear density from simulation) from particle distributions, and apply the
  MM reconstruction to these fields with $512^3$ grids.
  The reconstruction code solves the displacement potentials iteratively
@@ -42,8 +36,6 @@
  A 2-D projection
  of one layer of the deformed mesh and the original density field on
  the mesh are shown in Fig.~\ref{fig:simandrec}. 
- %As expected, there
- %is no grid crossing after reconstruction, even in the 2-D projection.
  As expected, the deformed mesh traces the structure very well and
  the deformed grids do not cross each other, even in the 2-D projection.
  
@@ -62,7 +54,7 @@
    \Delta_{\alpha\beta}^2(k) \equiv \frac{k^3 P_{\alpha\beta}(k)}{2\pi ^2}.
  \end{align}
  In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
- spectrum of \tcr{linear theory density fields} $\delta_L$, nonlinear density
+ spectrum of linear theory density fields $\delta_L$, nonlinear density
  fields ($\delta_N$) from simulations and reconstructed density fields
  ($\delta_R=-\nabla^2\phi$).  For the simulation
  results, we use the average value of all 130 simulations and show

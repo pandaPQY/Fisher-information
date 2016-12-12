@@ -25,14 +25,12 @@
   
   Firstly, we simplify the derivative term
   $\partial \mathrm{ln} P(k)/\partial\mathrm{ln} A$.  For a given density field $\delta_\alpha$, we can
-  %conveniently decompose it into a linear and a nonlinear component
   conveniently decompose it into a correlated, linear component,
   and a uncorrelated, noise component with respect to $\delta_L$
   \begin{align}
     \delta_{\alpha}(k) = r'(k) \delta_L (k) + \delta_{n}(k),
     \label{eq:decompose}
   \end{align}
-  %where $\delta_L$ is the linear density field, and 
   where the noise term $\delta_{n}(k)$ is defined such that the correlation
   $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  To solve $r'$, we correlate
   both sides with $\delta_L$ and the uncorrelated noise term drops out,
@@ -46,7 +44,6 @@
     r'(k) = \frac{P_{\alpha L}(k)}{P_{LL}(k)}=r_{\alpha L}(k) b(k).
     \label{eq:bofk}                                              
   \end{align}                                                    
-  %To find the nonlinear term, we correlate $\delta_a$ with itself,
   To find the nonlinear term, we square both sides of Eq.~\ref{eq:decompose}
   and the cross term of the right hand side vanishes,             
   \begin{align}                                                  
@@ -135,8 +132,7 @@
   We plot the Fisher information per unit volume of the power spectra of
   $\delta_N$, $\delta_L$ and $\delta_R$ in the left panel of 
   Fig.~\ref{fig:fisherinfo}. The Fisher information of the linear 
-  power spectra is equal to the number of $k$-modes \tcr {within the shell in 
-  Fourier space, $N_k$}. As expected, Fisher information of
+  power spectra is equal to the number of $k$-modes, $N_k$. As expected, Fisher information of
   $\delta_N$ drops from $\delta_L$ on scale
   $k \simeq 0.05$ $h$/Mpc, and has a flat plateau in the nonlinear
   regime, with a saturated value of
