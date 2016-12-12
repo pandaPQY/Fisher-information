@@ -23,31 +23,32 @@
   Eq.~\ref{eq:fisherdef2} can be written in a simpler
   form in two aspects.   
   
-  First, we simplify the derivative term
+  Firstly, we simplify the derivative term
   $\partial \mathrm{ln} P(k)/\partial\mathrm{ln} A$.  For a given density field $\delta_\alpha$, we can
   %conveniently decompose it into a linear and a nonlinear component
   conveniently decompose it into a correlated, linear component,
-  and a uncorrelated, noise component
+  and a uncorrelated, noise component with respect to $\delta_L$
   \begin{align}
     \delta_{\alpha}(k) = r'(k) \delta_L (k) + \delta_{n}(k),
     \label{eq:decompose}
   \end{align}
-  where $\delta_L$ is the linear density field, and $\delta_{n}(k)$ is defined such that the correlation
-  $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  If we correlate
-  $\delta_\alpha$ and $\delta_L$,
+  %where $\delta_L$ is the linear density field, and 
+  where the noise term $\delta_{n}(k)$ is defined such that the correlation
+  $\langle \delta_L^\dagger(k)\delta_{n}(k) \rangle=0$.  To solve $r'$, we correlate
+  both sides with $\delta_L$ and the uncorrelated noise term drops out,
   \begin{align}
-    \langle \delta_\alpha^\dagger(k)\delta_L(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
+    \langle \delta_L^\dagger(k)\delta_\alpha(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle,
     \label{eq:correlating}
   \end{align} 
-  Remind the definition of cross correlation coefficient $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
-  and using the definition of bias $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
+  and by the definitions of cross correlation coefficient $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
+  and bias $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
   \begin{align}
     r'(k) = \frac{P_{\alpha L}(k)}{P_{LL}(k)}=r_{\alpha L}(k) b(k).
     \label{eq:bofk}                                              
   \end{align}                                                    
   %To find the nonlinear term, we correlate $\delta_a$ with itself,
   To find the nonlinear term, we square both sides of Eq.~\ref{eq:decompose}
-  and the cross terms of the right hand side vanish,             
+  and the cross term of the right hand side vanishes,             
   \begin{align}                                                  
     \langle \delta_\alpha^\dagger(k) \delta_\alpha(k) \rangle =  
     r_{\alpha L}^2(k)b^2(k) \langle \delta_L^\dagger(k) \delta_L(k) \rangle + 
@@ -65,7 +66,7 @@
     r^2_{\alpha L}(k)b^2(k)\frac{P_{LL}(k)}{P_{\alpha\alpha}(k)}=r^2_{\alpha L}(k).
   \end{align}
 
-  Second, we simplify
+  Secondly, we simplify
   $\partial ^2 \mathrm{ln \Largr}/\partial \mathrm{ln} P(k) \partial
   \mathrm{ln} P(k')$
   by using the fact that its expectation value is the Fisher

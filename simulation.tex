@@ -3,13 +3,17 @@
   We use \textsc{CUBEP$^3$M} \cite{bib:Harnois2013} to run
   140 simulations with a box size of 600 Mpc/$h$ and $512^3$ particles.
   For these simulations, we use cosmological
-  parameters $\Omega_m=0.321$, $\Omega_{\Lambda}=1.0-\Omega_m$,
+  parameters $\Omega_m=0.321$, $\Omega_{\Lambda}=1-\Omega_m=0.679$,
   $h=0.67$, $\sigma_8=0.83$, and $n_s=0.96$.
-  The initial conditions are computed using the transfer function
-  given by CAMB \cite{bib:Lewis2000} and then propagating the power
-  back to $z=100$ with a linear growth factor.  The Zel'dovich
-  approximation is used to calculate the displacement and velocity
-  fields of the particles.
+  The initial conditions are computed by
+  transfer function \cite{bib:Lewis2000}
+  % and then propagating the power
+  %back to 
+  at $z=100$.
+  %with a linear growth factor.
+  Zel'dovich
+  approximation is used to calculate the displacement and initial velocities
+  of particles.
   %Different random seeds
   %are used to produce the initial conditions for different simulations
   %so that they are independent of each other.
@@ -26,7 +30,7 @@
     \label{fig:simandrec}
  \end{figure*}
 
- We use the Voronoi tessellation method \cite{bib:Van1994} to estimate the density contrast
+ We use the Voronoi tessellation method \tcr{[add citation in .bib]} \cite{bib:Van1994} to estimate the density contrast
  $\delta_N=\rho/\langle\rho\rangle-1$ ($N$ stands for nonlinear density from simulation) from particle distributions, and apply the
  MM reconstruction to these fields with $512^3$ grids.
  The reconstruction code solves the displacement potentials iteratively
@@ -45,7 +49,8 @@
  
  We study the Fisher information in the matter power
  spectra. More generally,
- the cross power spectrum $P_{\alpha\beta}(k)$ ($\alpha=\beta$ for auto power spectrum) is defined as
+ the cross power spectrum $P_{\alpha\beta}(k)$ for species $\alpha$ and $\beta$
+ ($\alpha=\beta$ for auto power spectrum) is defined as
  \begin{align}
    \langle \delta_\alpha^\dagger(\bm{k})\delta_\beta(\bm{k'}) \rangle =
    (2\pi)^3 P_{\alpha\beta}(k) \delta_{\rm {3D}}(\bm{k}-\bm{k'}),
@@ -57,15 +62,15 @@
    \Delta_{\alpha\beta}^2(k) \equiv \frac{k^3 P_{\alpha\beta}(k)}{2\pi ^2}.
  \end{align}
  In the left panel of Fig.~\ref{fig:cp}, we show the matter auto power
- spectrum of linear theory density fields $\delta_L$, nonlinear density
+ spectrum of \tcr{linear theory density fields} $\delta_L$, nonlinear density
  fields ($\delta_N$) from simulations and reconstructed density fields
  ($\delta_R=-\nabla^2\phi$).  For the simulation
  results, we use the average value of all 130 simulations and show
  $1\sigma$ standard deviations as error bars.  
 
- To determine the cross-correlation
+ To quantify the cross-correlation
  between fields, we compute the cross correlation coefficient
- $r_{\alpha\beta}(k) = P_{\alpha\beta}/\sqrt{P_{\alpha\alpha}P_{\beta\beta}}$.  In the right panel of
+ $r_{\alpha\beta}(k)\equiv P_{\alpha\beta}/\sqrt{P_{\alpha\alpha}P_{\beta\beta}}$.  In the right panel of
  Fig.~\ref{fig:cp}, we show $r_{NL}$ and $r_{RL}$.  We see that, compared with $\delta_N$,
  $\delta_R$ is much better correlated with $\delta_L$. 
  We compare our reconstruction correlation coefficient to that of the $E$-mode 
