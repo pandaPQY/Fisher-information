@@ -145,7 +145,9 @@
   a factor of 50 times greater than $I_{\delta_N}$.
   As an example to illustrate its strength, we compare the Fisher information given by the MM reconstruction method
   with the logarithmic density mapping method \cite{bib:Mark2009}. We find that MM
-  reconstruction gives over 10 times more information.
+  reconstruction gives over 10 times more information.  It also appears to perform 
+  significantly better than the standard BAO reconstruction using the Zel'dovich 
+  approximation \cite{bib:Ngan2012}, although a direct comparison is left for future work.
   
   To test the upper limit of information that the MM reconstruction can recover, 
   we also checked the Fisher information given by $\delta_E$ \cite{bib:Yu2016} as a reference, 
@@ -157,17 +159,17 @@
   In some previous works, the cross correlation $r^2$ terms have been set
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
   increases the information. To demonstrate this, we plot this case in the right panel of 
-  Fig.~\ref{fig:fisherinfo}.  We see that the information of the logarithmic density
-  mapping is much higher than it is in the left panel.
-  In the context of BAO analysis and extracting other primordial cosmological
+  Fig.~\ref{fig:fisherinfo}.  We see that neglecting $r^2$ causes there to be an artificial 
+  increase in information on small scales ($k\gtrsim 1h/\mathrm{Mpc}$).  We also see that 
+  the information of the logarithmic density
+  mapping is much higher than it is in the left panel.  Including the correlation coefficient 
+  ensures that the information we compute is that present in the initial conditions and not 
+  spuriously induced by the transformation procedure.  This therefore resolves the problems 
+  discussed in \cites{bib:HarnoisD2013} \cite{bib:HarnoisD2013} section ``Information about what?''
+  We conclude that, in the context of BAO analysis and extracting other primordial cosmological
   parameters, we should take into account the correlation term $r^2$ and
   use Eq.~\ref{eq:fisherformulaused} to compute the Fisher information.
-  This effectively enables the final fields propagate back to
-  the initial conditions \citep{bib:HarnoisD2013}, and well
-  % also eliminates the second increase of the information on small scales, which 
-  answers the question of section 4
-  ({\it Information about what?}) of \citet{bib:HarnoisD2013}.
-
+  
   Another way to quantify the nonlinear scale of $\delta_\alpha$
   is via the information plateau's linear equivalent scale, $k_p$, satisfying
   \begin{equation}

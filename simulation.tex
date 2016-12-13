@@ -29,7 +29,8 @@
  MM reconstruction to these fields with $512^3$ grids.
  The reconstruction code solves the displacement potentials iteratively
  until the root mean square (rms) of the results drop from $\sim 7.5$
- to 0.20. For different simulation samples, a different number of
+ to 0.20. The compression limiter is set to 0.1 \cite{bib:Pen1995, bib:Pen1998}. 
+ For different simulation samples, a different number of
  iterations are required to get the results of the same rms. A total of
  130 simulations converged to the target rms within 2000 iterations, 
  and we use these results for the calculation in this paper.
@@ -85,7 +86,7 @@
       linear theory (black), the mean value of 130 $N$-body
       simulations with $1\sigma$ error bars (blue), and reconstruction
       of the simulations (red).  {\it Right.} The cross correlation
-      function between simulation and linear densities $r_{NL}$ (blue),
+      coefficient between simulation and linear densities $r_{NL}$ (blue),
       MM reconstructed and linear densities $r_{RL}$ (red), and E-mode reconstruction $r_{EL}$ (dashed
       blue) from \citet{bib:Yu2016}.}
     \label{fig:cp}
