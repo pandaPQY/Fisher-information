@@ -147,9 +147,13 @@
   with the logarithmic density mapping method \cite{bib:Mark2009}. We find that MM
   reconstruction gives over 10 times more information.
   
-  To test the upper limit of information that the MM reconstruction can recover, 
-  we are currently computing the Fisher information given by $\delta_E$ \cite{bib:Yu2016} 
-  which represents the maximum possible information available via MM reconstruction procedures.
+  \tcb{To test the upper limit of information that the MM reconstruction can recover, 
+  we also checked the Fisher information given by $\delta_E$ \cite{bib:Yu2016} as a reference, 
+  which indicates the maximum possible information available via reconstruction procedures.}
+  % comment: Moving-mesh is positive definite and cannot include shell-crossing.
+  % other possible reconstruction techniques (e.g. least action) may take shell-crossing into
+  % account, and might bring the quality closer to E-mode.
+  % that's why I delete the word "MM".
   We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than MM reconstruction.
   This gives motivation to continue to develop and optimize our 
   reconstruction algorithms to achieve this theoretical target.
@@ -159,24 +163,32 @@
   increases the information. To demonstrate this, we plot this case in the right panel of 
   Fig.~\ref{fig:fisherinfo}.  We see that the information of the logarithmic density
   mapping is much higher than it is in the left panel.
-  In the analysis of BAO or extracting other primordial cosmological
-  parameters, we should take into account the correlation term $r^2$
-  to propagate final fields back to the initial conditions \citep{bib:HarnoisD2013}.
-  This also eliminates the second increase of the information on small scales, which answers the question of section 4
-  ({\it Information about what?}) of \citet{bib:HarnoisD2013}.
+  \tcb{In the context of BAO analysis and extracting other primordial cosmological
+  parameters, we should take into account the correlation term $r^2$ and
+  use Eq.~\ref{eq:fisherformulaused} to compute the Fisher information.
+  This effectively enables the final fields propagate back to
+  the initial conditions \citep{bib:HarnoisD2013}, and well
+  % also eliminates the second increase of the information on small scales, which 
+  answers the question of section 4
+  ({\it Information about what?}) of \citet{bib:HarnoisD2013}.}
 
   Another way to quantify the nonlinear scale of $\delta_\alpha$
-  is via the information plateau's linear equivalent scale, $k_{\rm p}$, satisfying
+  is via the information plateau's linear equivalent scale, $k_p$, satisfying
   \begin{equation}
-      I_{\delta_L}(k_{\rm p})=I_{\delta_{\alpha}}(k\rightarrow\infty).
+      I_{\delta_L}(k_p)=I_{\delta_{\alpha}}(k\rightarrow\infty).
   \end{equation}
   In the left panel of Fig. \ref{fig:fisherinfo}, we can see that 
-  $k_{\rm p}$ is just the scale on which 
+  $k_p$ is just the scale on which 
   the horizontal dotted line crosses $I_{\delta_{L}}$ curve.
-  Practically, we take $I_{\delta_{\alpha}}(k\rightarrow\infty)$ to be
-  $I$ ($k=2.7$ $h$/Mpc) where $r$ goes down to zero already.  We find that
-  for $\delta_N$, $k_{\rm p}\simeq 0.15$ $h$/Mpc.
-  The MM reconstruction increases $k_{\rm p}$ to $0.4$ $h$/Mpc,
+  \tcb{Practically, we use $I_{\delta_{\alpha}}$ ($k=2.7$ $h$/Mpc)
+  as a proxy of $I_{\delta_{\alpha}}(k\rightarrow\infty)$,
+  where $k$ is large enough such that $r\rightarrow 0$, ensuring
+  the convergence, or saturation of $I_{\delta_{\alpha}}$.}
+  \tcr{Practically, we take $I_{\delta_{\alpha}}(k\rightarrow\infty)$ to be
+  $I_{\delta_{\alpha}}$ ($k=2.7$ $h$/Mpc) where $r$ goes down to zero already.}
+  We find that
+  for $\delta_N$, $k_p\simeq 0.15$ $h$/Mpc.
+  The MM reconstruction increases $k_p$ to $0.4$ $h$/Mpc,
   whereas the logarithmic density mapping method only increases it to $0.19$ $h$/Mpc.
 
   \begin{figure*}
