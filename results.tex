@@ -1,24 +1,22 @@
 \begin{section}{Conclusion}
   \label{sec:conclusion}
   From 130 large scale structure $N$-body simulations, 
-  we study the moving-mesh reconstruction technique on estimating the underlying displacement
-  field and reconstruction of linear density fields in Lagrangian
+  we study the moving-mesh algorithm on the estimation of the underlying displacement
+  field and the reconstruction of linear density fields in Lagrangian
   space. We measure the power spectra and their covariance of
-  the original nonlinear density fields $\delta_N$, reconstructed density fields $\delta_R$,
-  and quantify the result by (i) cross-correlating them respect to linear density fields $\delta_L$,
-  (ii) studying the $k$-mode coupling in the covariance matrix, and (iii)
+  the original nonlinear density fields $\delta_N$, reconstructed density fields $\delta_R$.
+  We quantify the result by (i) cross-correlating them respect to linear density fields $\delta_L$ (Fig. \ref{fig:cp}),
+  (ii) studying the $k$-mode coupling in the covariance matrix (Fig. \ref{fig:corrall}), and (iii)
   computing the cumulative Fisher information contained
-  in these power spectra. We also apply $E$-mode reconstruction
+  in these power spectra (Fig. \ref{fig:fisherinfo}). We also apply $E$-mode reconstruction
   and logarithmic transformation Gaussianization and compare
-  with the moving-mesh reconstruction result.
-  
-  The MM reconstruction technique largely recovers the linear correlation
-  (Fig. \ref{fig:cp}).  By reducing the mode-mode coupling in nonlinear
-  regime (Fig. \ref{fig:corrall}), it successfully recovers the lost linear
-  information on mildly nonlinear scales and increases the saturated
-  information (Fig. \ref{fig:fisherinfo}).  The result is
-  better than previous methods,
-  e.g. \cite{bib:Mark2006,bib:Mark2009,bib:Zhang2011,bib:Yu2012}.
-  The next step/work is to test the accuracy of BAO dilation scale after the MM reconstruction.
+  with the moving-mesh reconstruction result. We show
+  that the moving-mesh method gives better results than previous works
+  (e.g. \cite{bib:Mark2006,bib:Mark2009,bib:Zhang2011,bib:HarnoisD2013}),
+  and on our scales of interest (BAO), the result is comparable to
+  the optimal $E$-mode reconstruction case \citep{bib:Yu2016}.
+  Next steps are to overcome the Poisson and bias contaminations
+  from realities, and to quantify the error propagation onto
+  the BAO measurements.
 
 \end{section}
