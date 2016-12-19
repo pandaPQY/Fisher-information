@@ -1,57 +1,51 @@
-\documentclass[prd,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootinbib]{revtex4}  % for review and submission
-\usepackage{graphicx}  % needed for figures
-\usepackage{lipsum}
-\usepackage{dcolumn}   % needed for some tables
+\documentclass[fleqn,useAMS,usenatbib]{mnras}
+\usepackage{graphicx,times,amsmath,fleqn,txfonts}
+
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
 \usepackage{bm}        % for math
-\usepackage{amsmath,amssymb}   % for math
-\usepackage{aas_macros}
 \usepackage{multirow}
 \usepackage{color}
-\usepackage{verbatim}
-\usepackage{url}
-\usepackage{hyperref}
 \usepackage{csquotes}
-\usepackage{natbib}
-% avoids incorrect hyphenation, added Nov/08 by SSR
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage{pdflscape}	% Landscape pages
 
 \newcommand{\bs}{\boldsymbol}
 \newcommand{\tcb}{\textcolor{blue}}
 \newcommand{\tcr}{\textcolor{red}}
 \newcommand{\Largr}{\mathcal{L}}
-\newcommand{\cites}[1]{\citeauthor{#1}'s}
+\newcommand{\cites}[1]{\citeauthor{#1}'s (\citeyear{#1})}
 
 \hyphenation{ALPGEN}
 \hyphenation{EVTGEN}
 \hyphenation{PYTHIA}
-\textheight=700pt
+\hyphenation{MNRAS}
 \begin{document}
-% The following information is for internal review, please remove them for submission
-\widetext
-% the following line is for submission, including submission to the arXiv!!
-%\hspace{5.2in} \mbox{Fermilab-Pub-04/xxx-E}
-\title{Increasing Fisher Information by Moving-Mesh Reconstruction}
-\author{Qiaoyin Pan}
-\email{panda@mail.nankai.edu.cn}
-\affiliation{School of Physics, Nankai University, 94 Weijin Rd, Nankai, Tianjin, 300071, China}
-\affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada}
-\author{Ue-Li Pen}
-\email{pen@cita.utoronto.ca}
-\affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada}
-\affiliation{Dunlap Institute for Astronomy and Astrophysics, University of Toronto, Toronto, ON M5S 3H4, Canada}
-\affiliation{Canadian Institute for Advanced Research, Program in Cosmology and Gravitation} 
-\affiliation{Perimeter Institute for Theoretical Physics, Waterloo, ON, N2L 2Y5, Canada}
-\author{Derek Inman}
-\affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada}
-\affiliation{Department of Physics, University of Toronto, 60 St. George, Toronto, ON M5S 1A7, Canada}
-\author{Hao-Ran Yu}
-\affiliation{Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada}
-\affiliation{Kavli Institute for Astronomy and Astrophysics, Peking University, Beijing 100871, China}
+\title[Information increase by Moving-Mesh Reconstruction]
+{Increasing Fisher Information by Moving-Mesh Reconstruction}
+\author[Pan et al.]
+{Qiaoyin Pan$^{1,2}$\thanks{panda@mail.nankai.edu.cn},
+Ue-Li Pen$^{2,3,4,5}$\thanks{pen@cita.utoronto.ca},
+Derek Inman$^{2,6}$,
+Hao-Ran Yu$^{2,7}$\\
+$^{1}$ School of Physics, Nankai University, 94 Weijin Rd, Nankai, Tianjin, 300071, China\\
+$^{2}$ Canadian Institute for Theoretical Astrophysics, University of Toronto, 60 St. George Street, Toronto, Ontario M5S 3H8, Canada\\
+$^{3}$ Dunlap Institute for Astronomy and Astrophysics, University of Toronto, Toronto, ON M5S 3H4, Canada\\
+$^{4}$ Canadian Institute for Advanced Research, Program in Cosmology and Gravitation\\
+$^{5}$ Perimeter Institute for Theoretical Physics, Waterloo, ON, N2L 2Y5, Canada\\
+$^{6}$ Department of Physics, University of Toronto, 60 St. George, Toronto, ON M5S 1A7, Canada\\
+$^{7}$ Kavli Institute for Astronomy and Astrophysics, Peking University, Beijing 100871, China}
 
-\date{\today}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2016}
+\maketitle
+\label{firstpage}
 
 \input{./abstract.tex}
 
-\maketitle
+\begin{keywords}
+  cosmology: theory --- large-scale structure of Universe.
+\end{keywords}
 
 \input{./introduction.tex}
 
@@ -65,7 +59,9 @@
 
 \input{./acknowledgements.tex}
 
-\bibliographystyle{apsrev}
-\bibliography{myreference}
+\bibliographystyle{mnras}
+\bibliography{reference_mnras}
 
+\bsp	% typesetting comment
+\label{lastpage}
 \end{document}

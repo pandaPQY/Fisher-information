@@ -6,7 +6,7 @@
     I_A \equiv -\left\langle \frac{\partial ^2 \mathrm{ln \Largr}}{\partial  \mathrm{ln} A ^2}\right\rangle,
     \label{eq:fisherdefine}
   \end{align}
-  where $\Largr$ is the likelihood \cite{bib:Tegmark1997}.  
+  where $\Largr$ is the likelihood \citep{bib:Tegmark1997}.  
   In this paper, the word \enquote{information} and the symbol \enquote{$I$} both implicitly 
   mean cumulative Fisher information 
   of $A$. For Gaussian
@@ -19,7 +19,7 @@
     \label{eq:fisherdef2}
   \end{align}
   where the angle bracket averages over realizations
-  \cite{bib:Rimes2006}.
+  \citep{bib:Rimes2006}.
   Eq.~\ref{eq:fisherdef2} can be written in a simpler
   form in two aspects.   
   
@@ -38,7 +38,7 @@
     \langle \delta_L^\dagger(k)\delta_\alpha(k) \rangle = r'(k) \langle \delta_L^\dagger(k)\delta_L(k) \rangle.
     \label{eq:correlating}
   \end{align} 
-  Using the definitions of cross correlation coefficient, $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$ 
+  Using the definitions of cross correlation coefficient, $r_{\alpha L}(k)\equiv P_{\alpha L}/\sqrt{P_{\alpha\alpha}P_{LL}}$,
   and bias, $b^2(k)\equiv P_{\alpha\alpha}/P_{LL}$, we can solve for $r'$ as
   \begin{align}
     r'(k) = \frac{P_{\alpha L}(k)}{P_{LL}(k)}=r_{\alpha L}(k) b(k).
@@ -72,7 +72,7 @@
   number of modes in each bin (when considering $\bs{k}$ and $-\bs{k}$ as the same mode).  
   We can extend this definition to
   non-Gaussian fields, by taking into account that the covariance
-  matrix is no longer diagonal \cite{bib:Rimes2006}.  Thus, we
+  matrix is no longer diagonal \citep{bib:Rimes2006}.  Thus, we
   write the Fisher information in terms of matrix multiplication:
   \begin{align}
     I \left( < k_n\right) = r^2(k)^{\mathrm{T}} \left[ \mathrm{C^{-1}_{norm}} 
@@ -111,10 +111,10 @@
   elements are produced by strong mode coupling on nonlinear scales
   and the super-survey tidal effect which is small on linear scales
   but dominates in the weakly nonlinear regime
-  \cite{bib:Kazuyuki2016}.  The correlation matrix for the nonlinear
+  \citep{bib:Kazuyuki2016}.  The correlation matrix for the nonlinear
   power spectra has a small amount of negative elements
   ($\mathrm{Corr} \gtrsim -0.18$), which should vanish with more
-  simulations \cite{bib:Takahashi2009}.  For the reconstructed
+  simulations \citep{bib:Takahashi2009}.  For the reconstructed
   correlation matrix, the linear regime extends up to $k \simeq 0.3$
   $h$/Mpc.  However, the number and magnitude of negative off-diagonal elements
   also increases ($\mathrm{Corr} \gtrsim -0.49$).
@@ -144,13 +144,13 @@
   $I \simeq 1.3 \times 10^{-3}/({\rm Mpc}/h)^3$ at $k \simeq 2.7$ $h$/Mpc,
   a factor of 50 times greater than $I_{\delta_N}$.
   As an example to illustrate its strength, we compare the Fisher information given by the MM reconstruction method
-  with the logarithmic density mapping method \cite{bib:Mark2009}. We find that MM
+  with the logarithmic density mapping method \citep{bib:Mark2009}. We find that MM
   reconstruction gives over 10 times more information.  It also appears to perform 
   significantly better than the standard BAO reconstruction using the Zel'dovich 
-  approximation \cite{bib:Ngan2012}, although a direct comparison is left for future work.
+  approximation \citep{bib:Ngan2012}, although a direct comparison is left for future work.
   
   To test the upper limit of information that the MM reconstruction can recover, 
-  we also checked the Fisher information given by $\delta_E$ \cite{bib:Yu2016} as a reference, 
+  we also checked the Fisher information given by $\delta_E$ \citep{bib:Yu2016} as a reference, 
   which indicates the maximum possible information available via reconstruction procedures.
   We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than MM reconstruction.
   This gives motivation to continue to develop and optimize our 
@@ -165,7 +165,7 @@
   mapping is much higher than it is in the left panel.  Including the correlation coefficient 
   ensures that the information we compute is that present in the initial conditions and not 
   spuriously induced by the transformation procedure.  This therefore resolves the problems 
-  discussed in \cites{bib:HarnoisD2013} \cite{bib:HarnoisD2013} section ``Information about what?''
+  discussed in \cites{bib:HarnoisD2013} section ``Information about what?''
   We conclude that, in the context of BAO analysis and extracting other primordial cosmological
   parameters, we should take into account the correlation term $r^2$ and
   use Eq.~\ref{eq:fisherformulaused} to compute the Fisher information.
@@ -191,15 +191,15 @@
     \includegraphics[width=0.48\textwidth]{fig4a.pdf}
     \includegraphics[width=0.48\textwidth]{fig4b.pdf}
     \centering
-    \caption{{\it Left.} The Fisher information (solid lines) per unit volume as
-      a function of wave number.  The blue, red, and black curves correspond to the power spectra
+    \caption{{\it Left.} The Fisher information (thick curves) per unit volume as
+      a function of wave number.  The blue solid, red dashed, and black dash-dotted curves correspond to the power spectra
       of $\delta_N$, $\delta_R$ and $\delta_L$ respectively,
-      and the cyan curve
+      and the cyan dotted curve
       corresponds to the logarithmic density mapping. The circles
-      are the cumulative number of $k$ modes.  Dotted horizontal lines indicate the value of the 
+      are the cumulative number of $k$ modes.  Thin dotted horizontal lines indicate the value of the 
       Fisher information at $k \simeq 2.7$ $h$/Mpc.  {\it Right.} Same
       as the left panel except setting $r\equiv 1$ in Eq.~\ref{eq:fisherformulaused}. The
-      black, blue, and cyan lines match the results in \cite{bib:Rimes2006,bib:Mark2009}. 
+      black dash-dotted, blue solid, and cyan dotted curves match the results in \citealt{bib:Rimes2006,bib:Mark2009}. 
 This naive estimate does not account for the lack of correlation
 of the final density field with the initial conditions, and represents
 an overestimate of the information.}

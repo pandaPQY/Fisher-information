@@ -1,203 +1,126 @@
-\begin{thebibliography}{22}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-\expandafter\ifx\csname bibnamefont\endcsname\relax
-  \def\bibnamefont#1{#1}\fi
-\expandafter\ifx\csname bibfnamefont\endcsname\relax
-  \def\bibfnamefont#1{#1}\fi
-\expandafter\ifx\csname citenamefont\endcsname\relax
-  \def\citenamefont#1{#1}\fi
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\providecommand{\bibinfo}[2]{#2}
-\providecommand{\eprint}[2][]{\url{#2}}
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@}
+  {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href
+  {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi
+  \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml}
+  {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc
+  {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx
+  \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined
+  {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname
+  mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
 
-\bibitem[{\citenamefont{{Weinberg}}(1992)}]{bib:Weinberg1992}
-\bibinfo{author}{\bibfnamefont{D.~H.} \bibnamefont{{Weinberg}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{254}},
-  \bibinfo{pages}{315} (\bibinfo{year}{1992}).
+\bibitem[\protect\citeauthoryear{{Akitsu}, {Takada}  \& {Li}}{{Akitsu}
+  et~al.}{2016}]{bib:Kazuyuki2016}
+{Akitsu} K.,  {Takada} M.,   {Li} Y.,  2016, preprint (\mn@eprint {arXiv}
+  {1611.04723})
 
-\bibitem[{\citenamefont{{Neyrinck} et~al.}(2009)\citenamefont{{Neyrinck},
-  {Szapudi}, and {Szalay}}}]{bib:Mark2009}
-\bibinfo{author}{\bibfnamefont{M.~C.} \bibnamefont{{Neyrinck}}},
-  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Szapudi}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~S.}
-  \bibnamefont{{Szalay}}}, \bibinfo{journal}{\apjl}
-  \textbf{\bibinfo{volume}{698}}, \bibinfo{pages}{L90} (\bibinfo{year}{2009}),
-  \eprint{0903.4693}.
+\bibitem[\protect\citeauthoryear{{Eisenstein}, {Seo}, {Sirko}  \&
+  {Spergel}}{{Eisenstein} et~al.}{2007a}]{bib:Daniel2007}
+{Eisenstein} D.~J.,  {Seo} H.-J.,  {Sirko} E.,   {Spergel} D.~N.,  2007a,
+  \mn@doi [\apj] {10.1086/518712}, 664, 675
 
-\bibitem[{\citenamefont{{Zhang} et~al.}(2011)\citenamefont{{Zhang}, {Yu},
-  {Harnois-D{\'e}raps}, {MacDonald}, and {Pen}}}]{bib:Zhang2011}
-\bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
-  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
-  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{MacDonald}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{728}}, \bibinfo{eid}{35}
-  (\bibinfo{year}{2011}), \eprint{1008.3506}.
+\bibitem[\protect\citeauthoryear{{Eisenstein}, {Seo}, {Sirko}  \&
+  {Spergel}}{{Eisenstein} et~al.}{2007b}]{bib:Eisenstein2007}
+{Eisenstein} D.~J.,  {Seo} H.-J.,  {Sirko} E.,   {Spergel} D.~N.,  2007b,
+  \mn@doi [\apj] {10.1086/518712}, 664, 675
 
-\bibitem[{\citenamefont{{Yu} et~al.}(2012)\citenamefont{{Yu},
-  {Harnois-D{\'e}raps}, {Zhang}, and {Pen}}}]{bib:Yu2012}
-\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
-  \bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{421}},
-  \bibinfo{pages}{832} (\bibinfo{year}{2012}), \eprint{1012.0444}.
+\bibitem[\protect\citeauthoryear{{Harnois-D{\'e}raps}, {Pen}, {Iliev}, {Merz},
+  {Emberson}  \& {Desjacques}}{{Harnois-D{\'e}raps}
+  et~al.}{2013a}]{bib:Harnois2013}
+{Harnois-D{\'e}raps} J.,  {Pen} U.-L.,  {Iliev} I.~T.,  {Merz} H.,  {Emberson}
+  J.~D.,   {Desjacques} V.,  2013a, \mn@doi [\mnras] {10.1093/mnras/stt1591},
+  436, 540
 
-\bibitem[{\citenamefont{{Harnois-D{\'e}raps}
-  et~al.}(2013{\natexlab{a}})\citenamefont{{Harnois-D{\'e}raps}, {Yu}, {Zhang},
-  and {Pen}}}]{bib:HarnoisD2013}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
-  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{T.-J.} \bibnamefont{{Zhang}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{436}},
-  \bibinfo{pages}{759} (\bibinfo{year}{2013}{\natexlab{a}}),
-  \eprint{1205.4989}.
+\bibitem[\protect\citeauthoryear{{Harnois-D{\'e}raps}, {Yu}, {Zhang}  \&
+  {Pen}}{{Harnois-D{\'e}raps} et~al.}{2013b}]{bib:HarnoisD2013}
+{Harnois-D{\'e}raps} J.,  {Yu} H.-R.,  {Zhang} T.-J.,   {Pen} U.-L.,  2013b,
+  \mn@doi [\mnras] {10.1093/mnras/stt1611}, 436, 759
 
-\bibitem[{\citenamefont{{Eisenstein}
-  et~al.}(2007{\natexlab{a}})\citenamefont{{Eisenstein}, {Seo}, {Sirko}, and
-  {Spergel}}}]{bib:Daniel2007}
-\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
-  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
-  (\bibinfo{year}{2007}{\natexlab{a}}), \eprint{astro-ph/0604362}.
+\bibitem[\protect\citeauthoryear{{Lewis}, {Challinor}  \& {Lasenby}}{{Lewis}
+  et~al.}{2000}]{bib:Lewis2000}
+{Lewis} A.,  {Challinor} A.,   {Lasenby} A.,  2000, \mn@doi [\apj]
+  {10.1086/309179}, 538, 473
 
-\bibitem[{\citenamefont{{Rimes} and {Hamilton}}(2005)}]{bib:Rimes2006}
-\bibinfo{author}{\bibfnamefont{C.~D.} \bibnamefont{{Rimes}}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.~J.~S.} \bibnamefont{{Hamilton}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{360}},
-  \bibinfo{pages}{L82} (\bibinfo{year}{2005}), \eprint{astro-ph/0502081}.
+\bibitem[\protect\citeauthoryear{{Meiksin} \& {White}}{{Meiksin} \&
+  {White}}{1999}]{bib:Martin1999}
+{Meiksin} A.,  {White} M.,  1999, \mn@doi [\mnras]
+  {10.1046/j.1365-8711.1999.02825.x}, 308, 1179
 
-\bibitem[{\citenamefont{{Meiksin} and {White}}(1999)}]{bib:Martin1999}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Meiksin}}} \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{White}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{308}},
-  \bibinfo{pages}{1179} (\bibinfo{year}{1999}), \eprint{astro-ph/9812129}.
+\bibitem[\protect\citeauthoryear{{Neyrinck}, {Szapudi}  \& {Szalay}}{{Neyrinck}
+  et~al.}{2009}]{bib:Mark2009}
+{Neyrinck} M.~C.,  {Szapudi} I.,   {Szalay} A.~S.,  2009, \mn@doi [\apjl]
+  {10.1088/0004-637X/698/2/L90}, 698, L90
 
-\bibitem[{\citenamefont{{Ngan} et~al.}(2012)\citenamefont{{Ngan},
-  {Harnois-D{\'e}raps}, {Pen}, {McDonald}, and {MacDonald}}}]{bib:Ngan2012}
-\bibinfo{author}{\bibfnamefont{W.}~\bibnamefont{{Ngan}}},
-  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{author}{\bibfnamefont{P.}~\bibnamefont{{McDonald}}},
-  \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{MacDonald}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{419}},
-  \bibinfo{pages}{2949} (\bibinfo{year}{2012}), \eprint{1106.5548}.
+\bibitem[\protect\citeauthoryear{{Ngan}, {Harnois-D{\'e}raps}, {Pen},
+  {McDonald}  \& {MacDonald}}{{Ngan} et~al.}{2012}]{bib:Ngan2012}
+{Ngan} W.,  {Harnois-D{\'e}raps} J.,  {Pen} U.-L.,  {McDonald} P.,
+  {MacDonald} I.,  2012, \mn@doi [\mnras] {10.1111/j.1365-2966.2011.19936.x},
+  419, 2949
 
-\bibitem[{\citenamefont{{Eisenstein}
-  et~al.}(2007{\natexlab{b}})\citenamefont{{Eisenstein}, {Seo}, {Sirko}, and
-  {Spergel}}}]{bib:Eisenstein2007}
-\bibinfo{author}{\bibfnamefont{D.~J.} \bibnamefont{{Eisenstein}}},
-  \bibinfo{author}{\bibfnamefont{H.-J.} \bibnamefont{{Seo}}},
-  \bibinfo{author}{\bibfnamefont{E.}~\bibnamefont{{Sirko}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{D.~N.} \bibnamefont{{Spergel}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{664}}, \bibinfo{pages}{675}
-  (\bibinfo{year}{2007}{\natexlab{b}}), \eprint{astro-ph/0604362}.
+\bibitem[\protect\citeauthoryear{{Pen}}{{Pen}}{1995}]{bib:Pen1995}
+{Pen} U.-L.,  1995, \mn@doi [\apjs] {10.1086/192219}, 100, 269
 
-\bibitem[{\citenamefont{{Zel'dovich}}(1970)}]{bib:Zel1970}
-\bibinfo{author}{\bibfnamefont{Y.~B.} \bibnamefont{{Zel'dovich}}},
-  \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{84}
-  (\bibinfo{year}{1970}).
+\bibitem[\protect\citeauthoryear{{Pen}}{{Pen}}{1998}]{bib:Pen1998}
+{Pen} U.-L.,  1998, \mn@doi [\apjs] {10.1086/313074}, 115, 19
 
-\bibitem[{\citenamefont{{Yu} et~al.}(2016)\citenamefont{{Yu}, {Pen}, and
-  {Zhu}}}]{bib:Yu2016}
-\bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
-  \eprint{1610.07112}.
+\bibitem[\protect\citeauthoryear{{Rimes} \& {Hamilton}}{{Rimes} \&
+  {Hamilton}}{2005}]{bib:Rimes2006}
+{Rimes} C.~D.,  {Hamilton} A.~J.~S.,  2005, \mn@doi [\mnras]
+  {10.1111/j.1745-3933.2005.00051.x}, 360, L82
 
-\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{a}})\citenamefont{{Zhu},
-  {Pen}, and {Chen}}}]{bib:Zhu2016}
-\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}{\natexlab{a}}),
-  \eprint{1609.07041}.
+\bibitem[\protect\citeauthoryear{{Takahashi} et~al.,}{{Takahashi}
+  et~al.}{2009}]{bib:Takahashi2009}
+{Takahashi} R.,  et~al., 2009, \mn@doi [\apj] {10.1088/0004-637X/700/1/479},
+  700, 479
 
-\bibitem[{\citenamefont{{Zhu} et~al.}(2016{\natexlab{b}})\citenamefont{{Zhu},
-  {Yu}, {Pen}, {Chen}, and {Yu}}}]{bib:ZhuH2016}
-\bibinfo{author}{\bibfnamefont{H.-M.} \bibnamefont{{Zhu}}},
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Yu}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{{Chen}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{H.-R.} \bibnamefont{{Yu}}}
-  (\bibinfo{year}{2016}{\natexlab{b}}), \eprint{1611.09638}.
+\bibitem[\protect\citeauthoryear{{Tegmark}, {Taylor}  \& {Heavens}}{{Tegmark}
+  et~al.}{1997}]{bib:Tegmark1997}
+{Tegmark} M.,  {Taylor} A.~N.,   {Heavens} A.~F.,  1997, \apj, 480, 22
 
-\bibitem[{\citenamefont{{Pen}}(1995)}]{bib:Pen1995}
-\bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{journal}{\apjs} \textbf{\bibinfo{volume}{100}}, \bibinfo{pages}{269}
-  (\bibinfo{year}{1995}).
+\bibitem[\protect\citeauthoryear{{Weinberg}}{{Weinberg}}{1992}]{bib:Weinberg19%
+92}
+{Weinberg} D.~H.,  1992, \mn@doi [\mnras] {10.1093/mnras/254.2.315}, 254, 315
 
-\bibitem[{\citenamefont{{Pen}}(1998)}]{bib:Pen1998}
-\bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{journal}{\apjs} \textbf{\bibinfo{volume}{115}}, \bibinfo{pages}{19}
-  (\bibinfo{year}{1998}), \eprint{astro-ph/9704258}.
+\bibitem[\protect\citeauthoryear{{Yu}, {Harnois-D{\'e}raps}, {Zhang}  \&
+  {Pen}}{{Yu} et~al.}{2012}]{bib:Yu2012}
+{Yu} H.-R.,  {Harnois-D{\'e}raps} J.,  {Zhang} T.-J.,   {Pen} U.-L.,  2012,
+  \mn@doi [\mnras] {10.1111/j.1365-2966.2011.20360.x}, 421, 832
 
-\bibitem[{\citenamefont{{Harnois-D{\'e}raps}
-  et~al.}(2013{\natexlab{b}})\citenamefont{{Harnois-D{\'e}raps}, {Pen},
-  {Iliev}, {Merz}, {Emberson}, and {Desjacques}}}]{bib:Harnois2013}
-\bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{{Harnois-D{\'e}raps}}},
-  \bibinfo{author}{\bibfnamefont{U.-L.} \bibnamefont{{Pen}}},
-  \bibinfo{author}{\bibfnamefont{I.~T.} \bibnamefont{{Iliev}}},
-  \bibinfo{author}{\bibfnamefont{H.}~\bibnamefont{{Merz}}},
-  \bibinfo{author}{\bibfnamefont{J.~D.} \bibnamefont{{Emberson}}},
-  \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Desjacques}}},
-  \bibinfo{journal}{\mnras} \textbf{\bibinfo{volume}{436}},
-  \bibinfo{pages}{540} (\bibinfo{year}{2013}{\natexlab{b}}),
-  \eprint{1208.5098}.
+\bibitem[\protect\citeauthoryear{{Yu}, {Pen}  \& {Zhu}}{{Yu}
+  et~al.}{2016}]{bib:Yu2016}
+{Yu} H.-R.,  {Pen} U.-L.,   {Zhu} H.-M.,  2016, preprint (\mn@eprint {arXiv}
+  {1610.07112})
 
-\bibitem[{\citenamefont{{Lewis} et~al.}(2000)\citenamefont{{Lewis},
-  {Challinor}, and {Lasenby}}}]{bib:Lewis2000}
-\bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lewis}}},
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Challinor}}},
-  \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Lasenby}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{538}}, \bibinfo{pages}{473}
-  (\bibinfo{year}{2000}), \eprint{astro-ph/9911177}.
+\bibitem[\protect\citeauthoryear{{Zel'dovich}}{{Zel'dovich}}{1970}]{bib:Zel197%
+0}
+{Zel'dovich} Y.~B.,  1970, \aap, 5, 84
 
-\bibitem[{\citenamefont{{van de Weygaert}}(1994)}]{bib:Van1994}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{van de Weygaert}}},
-  \bibinfo{journal}{\aap} \textbf{\bibinfo{volume}{283}}, \bibinfo{pages}{361}
-  (\bibinfo{year}{1994}).
+\bibitem[\protect\citeauthoryear{{Zhang}, {Yu}, {Harnois-D{\'e}raps},
+  {MacDonald}  \& {Pen}}{{Zhang} et~al.}{2011}]{bib:Zhang2011}
+{Zhang} T.-J.,  {Yu} H.-R.,  {Harnois-D{\'e}raps} J.,  {MacDonald} I.,   {Pen}
+  U.-L.,  2011, \mn@doi [\apj] {10.1088/0004-637X/728/1/35}, 728, 35
 
-\bibitem[{\citenamefont{{Tegmark} et~al.}(1997)\citenamefont{{Tegmark},
-  {Taylor}, and {Heavens}}}]{bib:Tegmark1997}
-\bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Tegmark}}},
-  \bibinfo{author}{\bibfnamefont{A.~N.} \bibnamefont{{Taylor}}},
-  \bibnamefont{and} \bibinfo{author}{\bibfnamefont{A.~F.}
-  \bibnamefont{{Heavens}}}, \bibinfo{journal}{\apj}
-  \textbf{\bibinfo{volume}{480}}, \bibinfo{pages}{22} (\bibinfo{year}{1997}),
-  \eprint{astro-ph/9603021}.
+\bibitem[\protect\citeauthoryear{{Zhu}, {Yu}, {Pen}, {Chen}  \& {Yu}}{{Zhu}
+  et~al.}{2016b}]{bib:ZhuH2016}
+{Zhu} H.-M.,  {Yu} Y.,  {Pen} U.-L.,  {Chen} X.,   {Yu} H.-R.,  2016b, preprint
+  (\mn@eprint {arXiv} {1611.09638})
 
-\bibitem[{\citenamefont{{Akitsu} et~al.}(2016)\citenamefont{{Akitsu}, {Takada},
-  and {Li}}}]{bib:Kazuyuki2016}
-\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{{Akitsu}}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Takada}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{Y.}~\bibnamefont{{Li}}},
-  \bibinfo{journal}{ArXiv e-prints}  (\bibinfo{year}{2016}),
-  \eprint{1611.04723}.
+\bibitem[\protect\citeauthoryear{{Zhu}, {Pen}  \& {Chen}}{{Zhu}
+  et~al.}{2016a}]{bib:Zhu2016}
+{Zhu} H.-M.,  {Pen} U.-L.,   {Chen} X.,  2016a, preprint (\mn@eprint {arXiv}
+  {1609.07041})
 
-\bibitem[{\citenamefont{{Takahashi} et~al.}(2009)\citenamefont{{Takahashi},
-  {Yoshida}, {Takada}, {Matsubara}, {Sugiyama}, {Kayo}, {Nishizawa},
-  {Nishimichi}, {Saito}, and {Taruya}}}]{bib:Takahashi2009}
-\bibinfo{author}{\bibfnamefont{R.}~\bibnamefont{{Takahashi}}},
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Yoshida}}},
-  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{{Takada}}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Matsubara}}},
-  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{{Sugiyama}}},
-  \bibinfo{author}{\bibfnamefont{I.}~\bibnamefont{{Kayo}}},
-  \bibinfo{author}{\bibfnamefont{A.~J.} \bibnamefont{{Nishizawa}}},
-  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{{Nishimichi}}},
-  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{{Saito}}}, \bibnamefont{and}
-  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{{Taruya}}},
-  \bibinfo{journal}{\apj} \textbf{\bibinfo{volume}{700}}, \bibinfo{pages}{479}
-  (\bibinfo{year}{2009}), \eprint{0902.0371}.
+\bibitem[\protect\citeauthoryear{{van de Weygaert}}{{van de
+  Weygaert}}{1994}]{bib:Van1994}
+{van de Weygaert} R.,  1994, \aap, 283, 361
 
+\makeatother
 \end{thebibliography}

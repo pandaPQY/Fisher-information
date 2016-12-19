@@ -1,11 +1,11 @@
 \begin{section}{Reconstruction Technique}
   \label{sec:reconstruction}
   Here we briefly review the MM algorithm used in the new reconstruction technique; for a more
-  complete description we refer the reader to \cite{bib:ZhuH2016}.  
+  complete description we refer the reader to \citealt{bib:ZhuH2016}.  
   The aim of the MM algorithm is to estimate the displacement field of mass elements in 
   Lagrangian coordinates from their final Eulerian position only, and from this
   estimated displacement field one directly reconstructs the linear density field. The
-  general principle is to relate the Eulerian coordinates of a mass element, $x^i$ to
+  general principle is to relate the Eulerian coordinates of a mass element, $x^i$, to
   a curvilinear system, $\xi^\mu$, such that the mass
   per grid cell is approximately constant,
   \begin{align}
@@ -33,9 +33,9 @@
   where $\Delta \rho = \langle\rho\rangle-\rho \sqrt{g}$ is the difference in density 
   due to displacing the grids. A detailed description 
   of the analytical formulation can be found in the adaptive
-  particle mesh and moving mesh (MM) hydrodynamics algorithms \cite{bib:Pen1995,bib:Pen1998}.
+  particle mesh and moving mesh (MM) hydrodynamics algorithms \citep{bib:Pen1995,bib:Pen1998}.
   Eq.~\ref{eq:li_elip} can be solved by multi-grid
-  algorithm\cite{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
+  algorithm \citep{bib:Pen1995,bib:Pen1998,bib:ZhuH2016}.
   Then the estimated displacement field is given by
   \begin{align}
    \label{eq:disp}
