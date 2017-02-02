@@ -143,16 +143,16 @@
   until $k\simeq 0.3$ $h$/Mpc, and reaches a value of 
   $I \simeq 1.3 \times 10^{-3}/({\rm Mpc}/h)^3$ at $k \simeq 2.7$ $h$/Mpc,
   a factor of 50 times greater than $I_{\delta_N}$.
-  As an example to illustrate its strength, we compare the Fisher information given by the MM reconstruction method
-  with the logarithmic density mapping method \citep{bib:Mark2009}. We find that MM
+  As an example to illustrate its strength, we compare the Fisher information given by the \tcr{IMC} reconstruction method
+  with the logarithmic density mapping method \citep{bib:Mark2009}. We find that \tcr{IMC}
   reconstruction gives over 10 times more information.  It also appears to perform 
   significantly better than the standard BAO reconstruction using the Zel'dovich 
   approximation \citep{bib:Ngan2012}, although a direct comparison is left for future work.
   
-  To test the upper limit of information that the MM reconstruction can recover, 
+  To test the upper limit of information that the \tcr{IMC} reconstruction can recover, 
   we also checked the Fisher information given by $\delta_E$ \citep{bib:Yu2016} as a reference, 
   which indicates the maximum possible information available via reconstruction procedures.
-  We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than MM reconstruction.
+  We find that $I_{\delta_E}$ is 3 times higher ($150 I_{\delta_N}$) than \tcr{IMC} reconstruction.
   This gives motivation to continue to develop and optimize our 
   reconstruction algorithms to achieve this theoretical target.
   
@@ -160,7 +160,7 @@
   to unity in Eq.~\ref{eq:fisherformulaused}, which artificially
   increases the information. To demonstrate this, we plot this case in the right panel of 
   Fig.~\ref{fig:fisherinfo}.  We see that neglecting $r^2$ causes there to be an artificial 
-  increase in information on small scales ($k\gtrsim 1h/\mathrm{Mpc}$).  We also see that 
+  increase in information on small scales ($k\gtrsim 1 h/\mathrm{Mpc}$).  We also see that 
   the information of the logarithmic density
   mapping is much higher than it is in the left panel.  Including the correlation coefficient 
   ensures that the information we compute is that present in the initial conditions and not 
@@ -184,7 +184,7 @@
   the convergence, or saturation of $I_{\delta_{\alpha}}$.
   We find that
   for $\delta_N$, $k_p\simeq 0.15$ $h$/Mpc.
-  The MM reconstruction increases $k_p$ to $0.4$ $h$/Mpc,
+  The \tcr{IMC} reconstruction increases $k_p$ to $0.4$ $h$/Mpc,
   whereas the logarithmic density mapping method only increases it to $0.19$ $h$/Mpc.
 
   \begin{figure*}
