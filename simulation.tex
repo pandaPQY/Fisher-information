@@ -15,7 +15,7 @@
   \begin{figure*}
     \centering
     \includegraphics[width=0.9\textwidth]{fig1.pdf}
-    \caption{ Illustration of \tcr{IMC} reconstruction.
+    \caption{ Illustration of IMC reconstruction.
       The 2-D projection of one layer of the deformed mesh of a sample
       $N$-body simulation is shown as curved white lines.  The
       density $\rho/\langle\rho\rangle=1+\delta$ on the mesh is shown
@@ -26,7 +26,7 @@
 
  We use the Voronoi tessellation method \citep{bib:Van1994} to estimate the density contrast
  $\delta_N=\rho/\langle\rho\rangle-1$ ($N$ stands for nonlinear) from particle distributions, and apply the
- \tcr{IMC} reconstruction to these fields with $512^3$ grids.
+ IMC reconstruction to these fields with $512^3$ grids.
  The reconstruction code solves the displacement potentials iteratively
  until the root mean square (rms) of the results drop from $\sim 7.5$
  to 0.20. The compression limiter is set to be 0.1 \citep{bib:Pen1995, bib:Pen1998,bib:ZhuH2016}. 
@@ -70,7 +70,7 @@
  reconstruction, $r_{EL}$, 
  %,($\delta_E(\bs{q})= - \nabla_q \cdot \bs{\Psi}(\bs{q})$) 
  computed in \citealt{bib:Yu2016}.
- Even though $r_{RL}$ decreases from $r_{EL}$ in the nonlinear regime due to the fact that the \tcr{IMC} reconstruction 
+ Even though $r_{RL}$ decreases from $r_{EL}$ in the nonlinear regime due to the fact that the IMC reconstruction 
  cannot recover the shell-crossing present on these scales, we find that linear
  modes are recovered successfully on scales $k\simeq 0.05 - 0.3$ $h$/Mpc.
  Specifically, the scale where $r(k)=1/2$ increases from $k\simeq 0.2$ $h$/Mpc to
@@ -87,7 +87,7 @@
       simulations with $1\sigma$ error bars (blue solid line), and reconstruction
       of the simulations (red dashed line).  {\it Right.} The cross correlation
       coefficient between simulation and linear densities $r_{NL}$ (blue solid line),
-      \tcr{IMC} reconstructed and linear densities $r_{RL}$ (red dashed line), and E-mode reconstruction $r_{EL}$ (cyan dotted line) from \citealt{bib:Yu2016}.}
+      IMC reconstructed and linear densities $r_{RL}$ (red dashed line), and E-mode reconstruction $r_{EL}$ (cyan dotted line) from \citealt{bib:Yu2016}.}
     \label{fig:cp}
   \end{figure*}
 
