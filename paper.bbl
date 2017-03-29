@@ -95,9 +95,10 @@
   \mn@doi [\mnras] {10.1111/j.1365-2966.2011.20360.x}, 421, 832
 
 \bibitem[\protect\citeauthoryear{{Yu}, {Pen}  \& {Zhu}}{{Yu}
-  et~al.}{2016}]{bib:Yu2016}
-{Yu} H.-R.,  {Pen} U.-L.,   {Zhu} H.-M.,  2016, preprint (\mn@eprint {arXiv}
-  {1610.07112})
+  et~al.}{2017}]{bib:Yu2016}
+{Yu} H.-R.,  {Pen} U.-L.,   {Zhu} H.-M.,  2017, \mn@doi [\prd]
+  {10.1103/PhysRevD.95.043501}, \href
+  {http://adsabs.harvard.edu/abs/2017PhRvD..95d3501Y} {95, 043501}
 
 \bibitem[\protect\citeauthoryear{{Zel'dovich}}{{Zel'dovich}}{1970}]{bib:Zel197%
 0}
