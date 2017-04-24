@@ -14,7 +14,7 @@
   filters have been used to separate Gaussian and non-Gaussian
   components of the density field
   \citep{bib:Zhang2011,bib:Yu2012,bib:HarnoisD2013}.
-  {\it Reconstruction} techniques \citep{bib:Daniel2007} provide a more
+  {\it Reconstruction} techniques \tcr{\citep{bib:Eisenstein2007}} provide a more
   effective way by converting matter distributions back to an
   earlier stage \citep{bib:HarnoisD2013}.
 
@@ -24,7 +24,7 @@
   \citet{bib:Martin1999} were the first to study the Fisher information in the nonlinear
   matter power spectrum calculated from $N$-body simulations.  They
   found that the cumulative information has a plateau on translinear scales
-  ($k \simeq 0.2-0.8$ $h$/Mpc) due to strong coupling between Fourier
+  ($k \simeq 0.2-0.8$ $h$ \tcr{Mpc$^{-1}$}) due to strong coupling between Fourier
   modes.  Qualitatively, this means that the power spectra on these
   scales give little additional information.  
   \citet{bib:Ngan2012} applied the linear reconstruction using the Zel'dovich approximation 
@@ -35,29 +35,29 @@
   necessarily an improvement in the cross correlation between the
   initial density fields and the final nonlinear ones. 
 
-  In studies of Baryon Acoustic Oscillations (BAO), density fields are
-  subjected to reconstruction which partially inverts nonlinear
+  In studies of \tcr{baryon acoustic oscillations} (BAO), density fields are
+  subjected to reconstruction \tcr{that} partially inverts nonlinear
   evolution by applying the negative Zel'dovich displacement field \citep{bib:Eisenstein2007,bib:Zel1970}.
-  \citet{bib:Yu2016} studied the curl-free, or $E$-mode, component of 
+  \citet{bib:Yu2016} studied the curl-free, or \tcr{E}-mode, component of 
   the exact displacement field in Lagrangian
   space and found that the linear density field can be well recovered by
-  the $E$-mode displacement field.
-  This $E$-mode reconstruction therefore provides a theoretical 
+  the \tcr{E}-mode displacement field.
+  This \tcr{E}-mode reconstruction therefore provides a theoretical 
   target for other reconstruction techniques to be compared with.
   Recently \citet{bib:Zhu2016,bib:ZhuH2016} described a new reconstruction 
-  technique using the Moving-Mesh
+  technique using the \tcr{moving-mesh}
   algorithm (MM), first described in \citep{bib:Pen1995,bib:Pen1998},
   to effectively estimate $\bs{\Psi}(\bs{q})$ from only nonlinear
-  density fields.  They further showed that even though shell-crossing
+  density fields.  They further showed that even though \tcr{shell crossing}
   and vorticity are not recovered, linear density modes are still 
-  recovered up to scales relevent to the BAO.
+  recovered up to scales \tcr{relevant} to the BAO.
 
   In this paper, we compute the Fisher information recovered after
   using this new reconstruction scheme on 130 independent $N$-body
   simulations, and compared with other methods and unreconstructed
-  fields.  The paper is organized as follows.  In \S
+  fields.  \tcr{This} paper is organized as follows.  In \S
   \ref{sec:reconstruction}, we briefly
-  describe the computation of the displacement potential using \tcr{Potential Isobaric 
+  describe the computation of the displacement potential using \tcr{potential isobaric 
   reconstruction (PI) method}.
   In \S \ref{sec:simulation}, we describe  
   the simulations, implementation of the reconstruction and compare 
